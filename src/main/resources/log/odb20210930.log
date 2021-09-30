@@ -1,0 +1,434 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-09-30 06:03:35 #1 store] 
+Database 'C:\Users\Julen\Documents\GitHub\horse-races\src\main\resources\horseRaces.temp' is opened by 1572@DESKTOP-D1B8POF
+
+[2021-09-30 06:03:35 #2 type.registry] 
+New type domain.Registered
+
+[2021-09-30 06:03:35 #3 type.registry] 
+New type domain.Admin
+
+[2021-09-30 06:03:35 #4 type] 
+Type domain.Registered is not enhanced.
+
+[2021-09-30 06:03:35 #5 type] 
+Type domain.Admin is not enhanced.
+
+[2021-09-30 06:03:35 #6 type.registry] 
+New type domain.Client
+
+[2021-09-30 06:03:35 #7 type] 
+Type domain.Client is not enhanced.
+
+[2021-09-30 06:03:35 #8 type.registry] 
+New type domain.Bet
+
+[2021-09-30 06:03:35 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2021-09-30 06:03:35 #10 type.registry] 
+New type domain.RaceHorse
+
+[2021-09-30 06:03:35 #11 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-09-30 06:03:35 #12 type.registry] 
+New type domain.Horse
+
+[2021-09-30 06:03:35 #13 type.registry] 
+New type domain.Race
+
+[2021-09-30 06:03:35 #14 type] 
+Type domain.Horse is not enhanced.
+
+[2021-09-30 06:03:35 #15 type] 
+Type domain.Race is not enhanced.
+
+[2021-09-30 06:03:35 #16 type.registry] 
+New type domain.StartTime
+
+[2021-09-30 06:03:35 #17 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-09-30 06:03:35 #18 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-09-30 06:03:35 #19 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-09-30 06:03:35 #20 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-09-30 06:19:10 #1 store] 
+Database 'C:\Users\Julen\Documents\GitHub\horse-races\src\main\resources\horseRaces.temp' is opened by 12048@DESKTOP-D1B8POF
+
+[2021-09-30 06:19:10 #2 type.registry] 
+New type domain.Registered
+
+[2021-09-30 06:19:10 #3 type.registry] 
+New type domain.Admin
+
+[2021-09-30 06:19:10 #4 type] 
+Type domain.Registered is not enhanced.
+
+[2021-09-30 06:19:10 #5 type] 
+Type domain.Admin is not enhanced.
+
+[2021-09-30 06:19:10 #6 type.registry] 
+New type domain.Client
+
+[2021-09-30 06:19:10 #7 type] 
+Type domain.Client is not enhanced.
+
+[2021-09-30 06:19:10 #8 type.registry] 
+New type domain.Bet
+
+[2021-09-30 06:19:10 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2021-09-30 06:19:10 #10 type.registry] 
+New type domain.RaceHorse
+
+[2021-09-30 06:19:10 #11 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-09-30 06:19:10 #12 type.registry] 
+New type domain.Horse
+
+[2021-09-30 06:19:10 #13 type.registry] 
+New type domain.Race
+
+[2021-09-30 06:19:10 #14 type] 
+Type domain.Horse is not enhanced.
+
+[2021-09-30 06:19:10 #15 type] 
+Type domain.Race is not enhanced.
+
+[2021-09-30 06:19:10 #16 type.registry] 
+New type domain.StartTime
+
+[2021-09-30 06:19:10 #17 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-09-30 06:19:10 #18 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-09-30 06:19:10 #19 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-09-30 06:19:10 #20 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-09-30 06:25:32 #1 store] 
+Database 'C:\Users\Julen\Documents\GitHub\horse-races\src\main\resources\horseRaces.temp' is opened by 17144@DESKTOP-D1B8POF
+
+[2021-09-30 06:25:32 #2 type.registry] 
+New type domain.Registered
+
+[2021-09-30 06:25:32 #3 type.registry] 
+New type domain.Admin
+
+[2021-09-30 06:25:32 #4 type] 
+Type domain.Registered is not enhanced.
+
+[2021-09-30 06:25:32 #5 type] 
+Type domain.Admin is not enhanced.
+
+[2021-09-30 06:25:32 #6 type.registry] 
+New type domain.Client
+
+[2021-09-30 06:25:32 #7 type] 
+Type domain.Client is not enhanced.
+
+[2021-09-30 06:25:32 #8 type.registry] 
+New type domain.Bet
+
+[2021-09-30 06:25:32 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2021-09-30 06:25:32 #10 type.registry] 
+New type domain.RaceHorse
+
+[2021-09-30 06:25:32 #11 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-09-30 06:25:32 #12 type.registry] 
+New type domain.Horse
+
+[2021-09-30 06:25:32 #13 type.registry] 
+New type domain.Race
+
+[2021-09-30 06:25:32 #14 type] 
+Type domain.Horse is not enhanced.
+
+[2021-09-30 06:25:32 #15 type] 
+Type domain.Race is not enhanced.
+
+[2021-09-30 06:25:32 #16 type.registry] 
+New type domain.StartTime
+
+[2021-09-30 06:25:32 #17 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-09-30 06:25:32 #18 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-09-30 06:25:32 #19 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-09-30 06:25:32 #20 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-09-30 06:32:04 #1 store] 
+Database 'C:\Users\Julen\Documents\GitHub\horse-races\src\main\resources\horseRaces.temp' is opened by 12464@DESKTOP-D1B8POF
+
+[2021-09-30 06:32:04 #2 type.registry] 
+New type domain.Registered
+
+[2021-09-30 06:32:04 #3 type.registry] 
+New type domain.Admin
+
+[2021-09-30 06:32:04 #4 type] 
+Type domain.Registered is not enhanced.
+
+[2021-09-30 06:32:04 #5 type] 
+Type domain.Admin is not enhanced.
+
+[2021-09-30 06:32:04 #6 type.registry] 
+New type domain.Client
+
+[2021-09-30 06:32:04 #7 type] 
+Type domain.Client is not enhanced.
+
+[2021-09-30 06:32:04 #8 type.registry] 
+New type domain.Bet
+
+[2021-09-30 06:32:04 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2021-09-30 06:32:04 #10 type.registry] 
+New type domain.RaceHorse
+
+[2021-09-30 06:32:04 #11 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-09-30 06:32:04 #12 type.registry] 
+New type domain.Horse
+
+[2021-09-30 06:32:04 #13 type.registry] 
+New type domain.Race
+
+[2021-09-30 06:32:04 #14 type] 
+Type domain.Horse is not enhanced.
+
+[2021-09-30 06:32:04 #15 type] 
+Type domain.Race is not enhanced.
+
+[2021-09-30 06:32:04 #16 type.registry] 
+New type domain.StartTime
+
+[2021-09-30 06:32:04 #17 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-09-30 06:32:04 #18 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-09-30 06:32:04 #19 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-09-30 06:32:04 #20 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-09-30 07:00:55 #1 store] 
+Database 'C:\Users\Julen\Documents\GitHub\horse-races\src\main\resources\horseRaces.temp' is opened by 15112@DESKTOP-D1B8POF
+
+[2021-09-30 07:00:55 #2 type.registry] 
+New type domain.Registered
+
+[2021-09-30 07:00:55 #3 type.registry] 
+New type domain.Admin
+
+[2021-09-30 07:00:55 #4 type] 
+Type domain.Registered is not enhanced.
+
+[2021-09-30 07:00:55 #5 type] 
+Type domain.Admin is not enhanced.
+
+[2021-09-30 07:00:55 #6 type.registry] 
+New type domain.Client
+
+[2021-09-30 07:00:55 #7 type] 
+Type domain.Client is not enhanced.
+
+[2021-09-30 07:00:55 #8 type.registry] 
+New type domain.Bet
+
+[2021-09-30 07:00:55 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2021-09-30 07:00:55 #10 type.registry] 
+New type domain.RaceHorse
+
+[2021-09-30 07:00:55 #11 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-09-30 07:00:55 #12 type.registry] 
+New type domain.Horse
+
+[2021-09-30 07:00:55 #13 type.registry] 
+New type domain.Race
+
+[2021-09-30 07:00:55 #14 type] 
+Type domain.Horse is not enhanced.
+
+[2021-09-30 07:00:55 #15 type] 
+Type domain.Race is not enhanced.
+
+[2021-09-30 07:00:55 #16 type.registry] 
+New type domain.StartTime
+
+[2021-09-30 07:00:55 #17 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-09-30 07:00:55 #18 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-09-30 07:00:55 #19 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-09-30 07:00:55 #20 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-09-30 08:50:22 #1 store] 
+Database 'C:\Users\Julen\OneDrive\WorkSpace\horse-races\src\main\resources\horseRaces.temp' is opened by 7452@DESKTOP-HIV4AM9
+
+[2021-09-30 08:50:22 #2 type.registry] 
+New type domain.Registered
+
+[2021-09-30 08:50:22 #3 type.registry] 
+New type domain.Admin
+
+[2021-09-30 08:50:22 #4 type] 
+Type domain.Registered is not enhanced.
+
+[2021-09-30 08:50:22 #5 type] 
+Type domain.Admin is not enhanced.
+
+[2021-09-30 08:50:23 #6 type.registry] 
+New type domain.Client
+
+[2021-09-30 08:50:23 #7 type] 
+Type domain.Client is not enhanced.
+
+[2021-09-30 08:50:23 #8 type.registry] 
+New type domain.Bet
+
+[2021-09-30 08:50:23 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2021-09-30 08:50:23 #10 type.registry] 
+New type domain.RaceHorse
+
+[2021-09-30 08:50:23 #11 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-09-30 08:50:23 #12 type.registry] 
+New type domain.Horse
+
+[2021-09-30 08:50:23 #13 type.registry] 
+New type domain.Race
+
+[2021-09-30 08:50:23 #14 type] 
+Type domain.Horse is not enhanced.
+
+[2021-09-30 08:50:23 #15 type] 
+Type domain.Race is not enhanced.
+
+[2021-09-30 08:50:23 #16 type.registry] 
+New type domain.StartTime
+
+[2021-09-30 08:50:23 #17 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-09-30 08:50:23 #18 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-09-30 08:50:23 #19 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-09-30 08:50:23 #20 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-09-30 16:03:36 #1 store] 
+Database 'C:\Users\Julen\Desktop\HorseRaces\src\main\resources\horseRaces.temp' is opened by 14700@DESKTOP-HIV4AM9
+
+[2021-09-30 16:03:36 #2 type.registry] 
+New type domain.Registered
+
+[2021-09-30 16:03:36 #3 type.registry] 
+New type domain.Admin
+
+[2021-09-30 16:03:36 #4 type] 
+Type domain.Registered is not enhanced.
+
+[2021-09-30 16:03:36 #5 type] 
+Type domain.Admin is not enhanced.
+
+[2021-09-30 16:03:36 #6 type.registry] 
+New type domain.Client
+
+[2021-09-30 16:03:36 #7 type] 
+Type domain.Client is not enhanced.
+
+[2021-09-30 16:03:36 #8 type.registry] 
+New type domain.Bet
+
+[2021-09-30 16:03:36 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2021-09-30 16:03:36 #10 type.registry] 
+New type domain.RaceHorse
+
+[2021-09-30 16:03:36 #11 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-09-30 16:03:36 #12 type.registry] 
+New type domain.Horse
+
+[2021-09-30 16:03:36 #13 type.registry] 
+New type domain.Race
+
+[2021-09-30 16:03:36 #14 type] 
+Type domain.Horse is not enhanced.
+
+[2021-09-30 16:03:36 #15 type] 
+Type domain.Race is not enhanced.
+
+[2021-09-30 16:03:36 #16 type.registry] 
+New type domain.StartTime
+
+[2021-09-30 16:03:36 #17 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-09-30 16:03:36 #18 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-09-30 16:03:36 #19 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-09-30 16:03:36 #20 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+
