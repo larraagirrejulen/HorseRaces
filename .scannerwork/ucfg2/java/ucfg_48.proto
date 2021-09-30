@@ -1,0 +1,34 @@
+
+Ubusiness_logic.BLFacadeImplementation#getRacesMonth(Ljava/util/Date;)Ljava/util/List;o
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.javaB B( "startingBlock*Â
+startingBlocko
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.javaB  B(+∏
+µ
+o
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.javaA A(
+
+%0"
+__annotate*
+java.lang.Override*
+
+datejava.util.Date¢
+ü
+o
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.javaB& B(*
+datejava.util.Date"__annotation*
+
+%0*
+1*´
+1o
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.javaC C(†
+ù
+o
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.javaD D(I
+datesjava.util.ArrayList"__id*
+"""ë
+o
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.javaF F(
+
+datesjava.util.ArrayList:
+datejava.util.DateB)'
+%business_logic.BLFacadeImplementation

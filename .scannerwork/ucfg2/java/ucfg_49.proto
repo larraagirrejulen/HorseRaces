@@ -1,0 +1,44 @@
+
+Ubusiness_logic.BLFacadeImplementation#register(Ljava/lang/String;Ljava/lang/String;)Zq
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java¬ ¬("startingBlock*ç
+startingBlockq
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java¬ ¬(:À
+½
+q
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java« «(
+
+%0"
+__annotate*
+java.lang.Override*
+
+userNamejava.lang.Stringª
+§
+q
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java¬  ¬((
+userNamejava.lang.String"__annotation*
+
+%0À
+½
+q
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java« «(
+
+%1"
+__annotate*
+java.lang.Override*
+
+passwordjava.lang.Stringª
+§
+q
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java¬1 ¬(9
+passwordjava.lang.String"__annotation*
+
+%1*
+1*ó
+1q
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java­ ­("{
+q
+eC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/business_logic/BLFacadeImplementation.java° °(
+"":
+userNamejava.lang.String:
+passwordjava.lang.StringB)'
+%business_logic.BLFacadeImplementation

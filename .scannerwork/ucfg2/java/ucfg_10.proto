@@ -1,0 +1,37 @@
+
+-domain.StartTime#toString()Ljava/lang/String;Z
+PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/StartTime.javaL L("1*˙
+1Z
+PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/StartTime.javaM	 M(û
+õ
+Z
+PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/StartTime.javaM	 M(
+%0java.lang.Integer"__id**
+domain.StartTime"
+hour£
+†
+Z
+PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/StartTime.javaM	 M(
+%1java.lang.String"__concat*
+
+%0java.lang.Integer*
+:†
+ù
+Z
+PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/StartTime.javaM M(&
+%2java.lang.Integer"__id* *
+domain.StartTime"
+minute∂
+≥
+Z
+PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/StartTime.javaM	 M(&
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.Integer"v
+Z
+PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/StartTime.javaM M('
+
+%3java.lang.StringB
+domain.StartTime

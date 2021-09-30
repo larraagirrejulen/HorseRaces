@@ -1,0 +1,86 @@
+
+)domain.Horse#toString()Ljava/lang/String;V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaY Y("1*Ÿ
+1V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(ï
+í
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(
+%0java.lang.String"__id**
+domain.Horse"
+name†
+ù
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+ | û
+õ
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ Z(*
+%2java.lang.String"__id*#*!
+domain.Horse"
+cavalryOrigin±
+Æ
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(*
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String†
+ù
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(2
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+ | ü
+ú
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(8
+%5java.lang.String"__concat*
+
+%4java.lang.String*
+""†
+ù
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(@
+%6java.lang.String"__concat*
+
+%5java.lang.String*
+ | î
+ë
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZC Z(F
+%7java.lang.String"__id**
+domain.Horse"
+sex±
+Æ
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(F
+%8java.lang.String"__concat*
+
+%6java.lang.String*
+
+%7java.lang.String†
+ù
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(N
+%9java.lang.String"__concat*
+
+%8java.lang.String*
+ | †
+ù
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ	 Z(W
+%10java.lang.String"__concat*
+
+%9java.lang.String*
+"""s
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaZ Z(X
+
+%10java.lang.StringB
+domain.Horse

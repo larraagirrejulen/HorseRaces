@@ -1,0 +1,29 @@
+
+Fdata_access.DataAccess#register(Ljava/lang/String;Ljava/lang/String;)Zb
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.javaŽ Ž("2"1*ÿ
+2b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java‘ ‘(!
+
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java• •(
+%0java.io.PrintStream"__id*
+""”‘
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java• •(H
+
+%1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*31
+/DB>>> New Client created and added to data base2println(Ljava/lang/String;)"l
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java– –(
+""*Õ
+1b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java˜
+ ˜("l
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java˜ ˜(
+"":
+userNamejava.lang.String:
+passwordjava.lang.StringB
+data_access.DataAccess

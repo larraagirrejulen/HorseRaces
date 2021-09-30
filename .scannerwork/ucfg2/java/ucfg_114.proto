@@ -1,0 +1,66 @@
+
+(domain.Horse#equals(Ljava/lang/Object;)ZV
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaa a("startingBlock*Ω
+2V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javab9 b(>"`
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javab2 b(?
+""*Ï
+3V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javab b(æª
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javab b("
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+domain.Horse2
+getClass()≈¬
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javab$ b(0
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+
+ojava.lang.Object2
+getClass()*
+2
+1*õ
+startingBlockV
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaa a( û
+õ
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.java` `(
+
+%4"
+__annotate*
+java.lang.Override*
+
+ojava.lang.Objectà
+Ö
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javaa a(
+ojava.lang.Object"__annotation*
+
+%4*
+2
+3*•
+1V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javac c(ç
+ä
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javac c(
+hdomain.Horse"__id*
+
+ojava.lang.Objectï
+í
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javad	 d(
+%2java.lang.String"__id**
+domain.Horse"
+nameΩ∫
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javad d(
+%3java.lang.String"(domain.Horse#getName()Ljava/lang/String;*
+
+hdomain.Horse2	getName()"`
+V
+LC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Horse.javad d( 
+"":
+ojava.lang.ObjectB
+domain.Horse
