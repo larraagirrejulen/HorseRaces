@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,9 +9,9 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Bet{
-	
+
 	//-----ATTRIBUTES-----//
-	
+
 	@Id @GeneratedValue
 	private int key;
 	private double amount;
@@ -19,20 +20,20 @@ public class Bet{
 	private Client client;
 	@OneToOne
 	private RaceHorse raceHorse;
-	
-	
+
+
 	//-----CONSTRUCTOR-----//
-	
+
 	public Bet(double amount, RaceHorse raceHorse, Client client) {
 		this.amount = amount;
 		this.raceHorse = raceHorse;
 		this.client = client;
 		this.date = new Date();
 	}
-	
-	
+
+
 	//-----GET/SET-----//
-	
+
 	public int getKey() {
 		return key;
 	}
@@ -40,7 +41,7 @@ public class Bet{
 	public void setKey(int key) {
 		this.key = key;
 	}
-	
+
 	public Client getClient() {
 		return client;
 	}
@@ -72,5 +73,5 @@ public class Bet{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
+
 }

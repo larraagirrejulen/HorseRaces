@@ -8,20 +8,20 @@ import javax.persistence.Id;
 public class StartTime{
 
 	//-----ATRIBUTES-----//
-	
+
 	@Id @GeneratedValue
 	private int key;
 	private Integer hour;
 	private Integer minute;
-	
-	
+
+
 	//-----CONSTRUCTOR-----//
-	
+
 	public StartTime(String startTime) {
 		this.parse(startTime);
 	}
-	
-	
+
+
 	//-----GET/SET-----//
 
 	public Integer getHour() {
@@ -39,10 +39,10 @@ public class StartTime{
 	public void setMinute(Integer minute) {
 		this.minute = minute;
 	}
-	
-	
+
+
 	//-----MORE METHODS-----//
-	
+
 	/**
 	 * This method parses the given parameter
 	 * @param startTime String to parse
@@ -68,10 +68,11 @@ public class StartTime{
             return false;
         }
     }
-	
+
     /**
 	 * Returns a string with objects attributes information prepared to print
 	 */
+	@Override
 	public String toString() {
 		return this.hour + ":" + this.minute;
 	}

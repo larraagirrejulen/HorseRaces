@@ -2,7 +2,7 @@ package exceptions;
 
 public class RaceFinished extends Exception {
  private static final long serialVersionUID = 1L;
- 
+
  public RaceFinished()
   {
     super();

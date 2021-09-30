@@ -1,34 +1,34 @@
 package gui;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import domain.*;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import java.util.ResourceBundle;
-import javax.swing.JLabel;
 import java.awt.Color;
-import javax.swing.DefaultComboBoxModel;
-
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.WindowConstants;
-import javax.swing.border.LineBorder;
-import java.awt.Cursor;
 import java.awt.Component;
-import javax.swing.border.MatteBorder;
-
-import business_logic.BLFacade;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JComboBox;
-import javax.swing.ImageIcon;
+import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ResourceBundle;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+
+import business_logic.BLFacade;
+import domain.Admin;
+import domain.Client;
+import domain.Registered;
 
 @SuppressWarnings("serial")
 public class LoginGUI extends JFrame {
@@ -38,7 +38,7 @@ public class LoginGUI extends JFrame {
 	private String language = "Etiquetas_en";
 	private static final String FONT = "Verdana";
 	private static final String PSWLBL = "Verdana";
-	
+
 	private JLabel lblError;
 	private JPasswordField pwdPassword;
 	private JTextField userNameField;
@@ -46,16 +46,16 @@ public class LoginGUI extends JFrame {
 	private JButton loginButton;
 	private JButton viewRacesButton;
 	private DefaultComboBoxModel<String> selectedLanguage = new DefaultComboBoxModel<>();
-	
-	
+
+
 	public static BLFacade getBusinessLogic(){
 		return appFacadeInterface;
 	}
-	 
+
 	public static void setBussinessLogic (BLFacade afi){
 		appFacadeInterface = afi;
 	}
-	
+
 	public void refresh() {
 		language = selectedLanguage.getSelectedItem().toString();
 		if(language.equals("English"))language="Etiquetas_en";
@@ -68,12 +68,12 @@ public class LoginGUI extends JFrame {
 		registerButton.setText(ResourceBundle.getBundle(language).getString("Register"));
 		viewRacesButton.setText(ResourceBundle.getBundle(language).getString("UpcomingRace"));
 	}
-	
+
 	public LoginGUI() {
 		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);
-		
+
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 500);
 		JPanel contentPane = new JPanel();
@@ -81,7 +81,7 @@ public class LoginGUI extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JComboBox<String> comboBox = new JComboBox<>();
 		comboBox.setForeground(new Color(255, 255, 255));
 		comboBox.setFont(new Font(FONT, Font.PLAIN, 11));
@@ -94,7 +94,7 @@ public class LoginGUI extends JFrame {
 		comboBox.setBounds(10, 11, 100, 20);
 		comboBox.addActionListener(input -> refresh());
 		contentPane.add(comboBox);
-		
+
 		userNameField = new JTextField();
 		userNameField.addFocusListener(new FocusAdapter() {
 			@Override
@@ -117,7 +117,7 @@ public class LoginGUI extends JFrame {
 		userNameField.setBounds(254, 184, 200, 35);
 		contentPane.add(userNameField);
 		userNameField.setColumns(10);
-		
+
 		pwdPassword = new JPasswordField();
 		pwdPassword.addFocusListener(new FocusAdapter() {
 			@Override
@@ -136,7 +136,7 @@ public class LoginGUI extends JFrame {
 		pwdPassword.setBackground(new Color(0, 128, 128));
 		pwdPassword.setBounds(254, 230, 200, 35);
 		contentPane.add(pwdPassword);
-		
+
 		loginButton = new JButton("");
 		loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		loginButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -164,10 +164,10 @@ public class LoginGUI extends JFrame {
 		contentPane.add(lblError);
 		lblError.setBackground(Color.WHITE);
 		lblError.setForeground(new Color(0, 0, 51));
-		
-		
+
+
 		//Button to register
-		
+
 		registerButton = new JButton("");
 		registerButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		registerButton.setBorder(new LineBorder(new Color(0, 0, 51)));
@@ -176,10 +176,10 @@ public class LoginGUI extends JFrame {
 		registerButton.setForeground(Color.WHITE);
 		registerButton.setFont(new Font(FONT, Font.PLAIN, 11));
 		registerButton.setBackground(new Color(0, 128, 128));
-		
-		
+
+
 		//Button to view races
-		
+
 		viewRacesButton = new JButton("");
 		viewRacesButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		viewRacesButton.setBorder(new LineBorder(new Color(0, 0, 51)));
@@ -189,7 +189,7 @@ public class LoginGUI extends JFrame {
 		viewRacesButton.setForeground(Color.WHITE);
 		viewRacesButton.setFont(new Font(FONT, Font.PLAIN, 11));
 		viewRacesButton.setBackground(new Color(0, 128, 128));
-		
+
 		JLabel lblNewLabel = new JLabel("X");
 		lblNewLabel.setBounds(640, 11, 50, 25);
 		contentPane.add(lblNewLabel);
@@ -202,18 +202,18 @@ public class LoginGUI extends JFrame {
 		lblNewLabel.setFont(new Font(FONT, Font.PLAIN, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		
+
 		JLabel lblNewLabel1 = new JLabel("");
 		lblNewLabel1.setIcon(new ImageIcon("src\\main\\resources\\icon.png"));
 		lblNewLabel1.setBounds(302, 46, 133, 127);
 		contentPane.add(lblNewLabel1);
-		
+
 		viewRacesButton.addActionListener(input -> {new ViewRacesGUI(frame, language).setVisible(true); frame.dispose();});
-		
+
 		registerButton.addActionListener(input -> {frame.setVisible(false); new RegisterGUI(frame, language).setVisible(true);});
-		
+
 		lblError.setVisible(false);
 		refresh();
-		
+
 	}
 }

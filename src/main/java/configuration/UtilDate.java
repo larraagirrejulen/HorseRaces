@@ -6,7 +6,7 @@ import java.util.TimeZone;
 
 public class UtilDate {
 
-	
+
 	public static Date trim(Date date) {
 
 		Calendar calendar = Calendar.getInstance();
@@ -18,7 +18,7 @@ public class UtilDate {
 		calendar.set(Calendar.HOUR_OF_DAY, 0);
 		return calendar.getTime();
 	}
-	
+
 	public static Date newDate(int year,int month,int day) {
 
 	     Calendar calendar = Calendar.getInstance();
@@ -28,7 +28,7 @@ public class UtilDate {
 	     System.out.println("newDate: "+calendar.getTime());
 	     return calendar.getTime();
 	}
-	
+
 	public static Date firstDayMonth(Date date) {
 
 		Calendar calendar = Calendar.getInstance();
@@ -41,8 +41,8 @@ public class UtilDate {
 		calendar.set(Calendar.HOUR_OF_DAY, 0);
 		return calendar.getTime();
 	}
-	
-	
+
+
 	public static Date lastDayMonth(Date date) {
 
 		Calendar calendar = Calendar.getInstance();
@@ -57,5 +57,5 @@ public class UtilDate {
 		return calendar.getTime();
 
 	}
-	
+
 }

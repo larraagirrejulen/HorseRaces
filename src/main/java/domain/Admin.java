@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 public class Admin extends Registered{
 
 	//-----CONSTRUCTOR-----//
-	
+
 	public Admin(String userName, String password) {
 		super(userName, password);
 	}

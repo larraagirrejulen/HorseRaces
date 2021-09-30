@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,18 +14,18 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-
-import domain.*;
 import javax.swing.JList;
-import javax.swing.JTextField;
 import javax.swing.JPanel;
-import java.awt.Font;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
 import business_logic.BLFacade;
+import domain.Client;
+import domain.Race;
+import domain.RaceHorse;
 
 @SuppressWarnings("serial")
 public class ViewRacesClientGUI extends JFrame {
@@ -34,7 +35,7 @@ public class ViewRacesClientGUI extends JFrame {
 	private BLFacade facade = LoginGUI.getBusinessLogic();
 	private ViewRacesClientGUI frame = this;
 	private static final String FONT = "Verdana";
-	
+
 	private JLabel lblMoneyBet;
 	private JLabel lblError;
 	private JScrollPane scrollPaneEvents = new JScrollPane();
@@ -47,7 +48,7 @@ public class ViewRacesClientGUI extends JFrame {
 	private JLabel lblCash;
 	private JList<RaceHorse> raceHorsesList;
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
-	
+
 	public ViewRacesClientGUI(ClientGUI clFrame, Client client, String language) {
 		setUndecorated(true);
 		getContentPane().setFont(new Font(FONT, Font.PLAIN, 11));
@@ -69,15 +70,15 @@ public class ViewRacesClientGUI extends JFrame {
 		this.setTitle(ResourceBundle.getBundle(language).getString("CreateNewRace"));
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 		getContentPane().setLayout(null);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 700, 500);
 		panel.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		panel.setBackground(new Color(32, 178, 170));
 		getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		
+
+
 		lblCash = new JLabel(ResourceBundle.getBundle(language).getString("Balance") + this.client.getWallet() + " $");
 		lblCash.setOpaque(true);
 		lblCash.setBorder(null);
@@ -87,7 +88,7 @@ public class ViewRacesClientGUI extends JFrame {
 		lblCash.setBackground(new Color(0, 128, 128));
 		lblCash.setBounds(10, 11, 150, 20);
 		panel.add(lblCash);
-		
+
 		JLabel lblRace = new JLabel("");
 		lblRace.setOpaque(true);
 		lblRace.setHorizontalAlignment(SwingConstants.CENTER);
@@ -97,7 +98,7 @@ public class ViewRacesClientGUI extends JFrame {
 		lblRace.setBackground(new Color(0, 128, 128));
 		lblRace.setBounds(206, 87, 280, 20);
 		panel.add(lblRace);
-		
+
 		lblMoneyBet = new JLabel(ResourceBundle.getBundle(language).getString("BetMoney"));
 		lblMoneyBet.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMoneyBet.setBounds(206, 336, 280, 13);
@@ -105,7 +106,7 @@ public class ViewRacesClientGUI extends JFrame {
 		lblMoneyBet.setBackground(Color.WHITE);
 		lblMoneyBet.setForeground(new Color(0, 0, 51));
 		lblMoneyBet.setFont(new Font(FONT, Font.PLAIN, 11));
-		
+
 		moneyBet = new JTextField();
 		moneyBet.setHorizontalAlignment(SwingConstants.CENTER);
 		moneyBet.setBorder(new MatteBorder(0, 0, 3, 0,  new Color(0, 0, 51)));
@@ -115,10 +116,10 @@ public class ViewRacesClientGUI extends JFrame {
 		moneyBet.setBackground(new Color(0, 128, 128));
 		moneyBet.setFont(new Font(FONT, Font.PLAIN, 11));
 		moneyBet.setColumns(10);
-		
-		
+
+
 		//Button to bet for the selected horse
-		
+
 		btnBetForHorse = new JButton(ResourceBundle.getBundle(language).getString("BetHorse"));
 		btnBetForHorse.setBorder(new LineBorder(new Color(0, 0, 51)));
 		btnBetForHorse.setBounds(232, 418, 230, 35);
@@ -126,7 +127,7 @@ public class ViewRacesClientGUI extends JFrame {
 		btnBetForHorse.setFont(new Font(FONT, Font.PLAIN, 11));
 		btnBetForHorse.setForeground(Color.WHITE);
 		btnBetForHorse.setBackground(new Color(0, 0, 51));
-		
+
 		raceHorsesList = new JList<>();
 		raceHorsesList.setBorder(new MatteBorder(0, 0, 3, 0,  new Color(0, 0, 51)));
 		raceHorsesList.setBounds(206, 118, 280, 150);
@@ -135,7 +136,7 @@ public class ViewRacesClientGUI extends JFrame {
 		raceHorsesList.setFont(new Font(FONT, Font.PLAIN, 11));
 		raceHorsesList.setBackground(new Color(0, 128, 128));
 		raceHorsesList.setModel(raceHorses);
-		
+
 		JLabel jLabelRaceDate = new JLabel(ResourceBundle.getBundle(language).getString("UpcomingRace"));
 		jLabelRaceDate.setHorizontalAlignment(SwingConstants.CENTER);
 		jLabelRaceDate.setForeground(new Color(0, 0, 51));
@@ -145,7 +146,7 @@ public class ViewRacesClientGUI extends JFrame {
 		panel.add(jLabelRaceDate);
 
 		//Button to check selected horses stats
-		
+
 		btnCheckStats = new JButton(ResourceBundle.getBundle(language).getString("CheckStats"));
 		btnCheckStats.setBorder(new LineBorder(new Color(0, 0, 51)));
 		btnCheckStats.setBounds(232, 279, 230, 35);
@@ -154,6 +155,7 @@ public class ViewRacesClientGUI extends JFrame {
 		btnCheckStats.setBackground(new Color(0, 128, 128));
 		btnCheckStats.setFont(new Font(FONT, Font.PLAIN, 11));
 		btnCheckStats.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				RaceHorse rh = raceHorsesList.getSelectedValue();
 				if(rh!=null) {
@@ -162,7 +164,7 @@ public class ViewRacesClientGUI extends JFrame {
 				}
 			}
 		});
-		
+
 		lblError = new JLabel("");
 		lblError.setBounds(206, 390, 280, 20);
 		panel.add(lblError);
@@ -170,6 +172,7 @@ public class ViewRacesClientGUI extends JFrame {
 		lblError.setFont(new Font(FONT, Font.ITALIC, 10));
 		lblError.setBackground(Color.WHITE);
 		btnBetForHorse.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
 					RaceHorse rh = raceHorsesList.getSelectedValue();
@@ -192,15 +195,15 @@ public class ViewRacesClientGUI extends JFrame {
 				}
 			}
 		});
-		
+
 		List<RaceHorse> rhl = nextRace.getRaceHorses();
 		for(RaceHorse rh: rhl)
 			raceHorses.addElement(rh);
 		lblRace.setText(nextRace.getDate() + ResourceBundle.getBundle(language).getString("Streets") + nextRace.getNumOfStreets());
-		
-		
+
+
 		//Button to close current window
-				
+
 		jButtonClose = new JButton(ResourceBundle.getBundle(language).getString("Back"));
 		jButtonClose.setBorder(new LineBorder(new Color(0, 0, 51)));
 		jButtonClose.setForeground(Color.WHITE);
@@ -208,6 +211,7 @@ public class ViewRacesClientGUI extends JFrame {
 		jButtonClose.setFont(new Font(FONT, Font.PLAIN, 10));
 		jButtonClose.setBounds(610, 11, 80, 20);
 		jButtonClose.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				clientFrame.setClient(client);
 				clientFrame.setVisible(true);

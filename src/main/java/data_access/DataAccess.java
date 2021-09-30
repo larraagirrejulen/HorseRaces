@@ -14,12 +14,19 @@ import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
 import configuration.UtilDate;
-import domain.*;
+import domain.Admin;
+import domain.Bet;
+import domain.Client;
+import domain.Horse;
+import domain.Race;
+import domain.RaceHorse;
+import domain.Registered;
+import domain.StartTime;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 
 public class DataAccess  {
-	
+
 	private static final String DB_HEADER = "DB>>> ";
 	private static final String GENDER = "female";
 	protected static EntityManager  db;
@@ -34,21 +41,21 @@ public class DataAccess  {
 		open(initializeMode);
 		close();
 	}
-	
+
     /**
      * Initializes the data base with default objects
      */
 	public void initializeDB(){
-		try { 
+		try {
 			db.getTransaction().begin();
-			
+
 			Admin admin = new Admin("admin", "admin");
 			Client client = new Client("client", "client");
 			client.addMoney(20);
 			db.persist(admin);
 			db.persist(client);
 			System.out.println("DB>>> Admin and Client created");
-			
+
 			Horse h1 = new Horse("Seattle Slew", "a", 9, "male", 11);
 			Horse h2 = new Horse("Man o' War", "a", 5, GENDER, 5);
 			Horse h3 = new Horse("Citation", "b", 8, GENDER, 9);
@@ -68,19 +75,19 @@ public class DataAccess  {
 			db.persist(h8);
 			db.persist(h9);
 			System.out.println("DB>>> Horses created");
-			
+
 			Calendar today = Calendar.getInstance();
 			int month=today.get(Calendar.MONTH);
 			int year=today.get(Calendar.YEAR);
-			if (month==12) { month=0; year+=1;} 
+			if (month==12) { month=0; year+=1;}
 			else month+=1;
-			
+
 			Race race = new Race(UtilDate.newDate(year,month,17), 4, new StartTime("10:30"));
 			Race race1 = new Race(UtilDate.newDate(year,month-2,17), 4, new StartTime("10:30"));
 			db.persist(race);
 			db.persist(race1);
 			System.out.println("DB>>> Races created");
-			
+
 			RaceHorse raceHorse0 = new RaceHorse(race.getSize()+1, 1.4, race, h4);
 			race.addRaceHorse(raceHorse0);
 			race1.addRaceHorse(raceHorse0);
@@ -94,14 +101,14 @@ public class DataAccess  {
 			race.addRaceHorse(raceHorse3);
 			race1.addRaceHorse(raceHorse3);
 			System.out.println("DB>>> Race horses created");
-			
+
 			db.getTransaction().commit();
 			System.out.println("DB initialized");
 		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Opens the data base initializing it depending on the initialize mode parameter
 	 * @param initializeMode boolean parameter
@@ -123,7 +130,7 @@ public class DataAccess  {
     	}
 		db = emf.createEntityManager();
 	}
-	
+
 	/**
 	 * Closes the data base
 	 */
@@ -131,11 +138,11 @@ public class DataAccess  {
 		db.close();
 		System.out.println("DB closed");
 	}
-	
+
 	/**
 	 * This method retrieves from the database the dates a month for which there are events
-	 * 
-	 * @param date of the month for which days with events want to be retrieved 
+	 *
+	 * @param date of the month for which days with events want to be retrieved
 	 * @return collection of dates
 	 */
 	public List<Date> getRacesMonth(Date date) {
@@ -143,7 +150,7 @@ public class DataAccess  {
 		try {
 			Date firstDayMonthDate = UtilDate.firstDayMonth(date);
 			Date lastDayMonthDate = UtilDate.lastDayMonth(date);
-			TypedQuery<Date> query = db.createQuery("SELECT DISTINCT rc.date FROM Race rc WHERE rc.date BETWEEN ?1 and ?2",Date.class);   
+			TypedQuery<Date> query = db.createQuery("SELECT DISTINCT rc.date FROM Race rc WHERE rc.date BETWEEN ?1 and ?2",Date.class);
 			query.setParameter(1, firstDayMonthDate);
 			query.setParameter(2, lastDayMonthDate);
 			List<Date> dates = query.getResultList();
@@ -156,7 +163,7 @@ public class DataAccess  {
 		}
 	 	return res;
 	}
-	
+
 	public Race getNextRace() {
 		Race nextRace = null;
 		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished==False", Race.class);
@@ -164,7 +171,7 @@ public class DataAccess  {
 		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())<0) nextRace = rc;
 		return nextRace;
 	}
-	
+
 	/**
 	 * This method calls the data base to create a new bet
 	 * @param raceHorse of the new Bet
@@ -184,15 +191,15 @@ public class DataAccess  {
 		System.out.println("DB>>> New Bet created and added to data base");
 		return newClient;
 	}
-	
+
 	/**
-	 * This method retrieves from the database the race of a given date 
-	 * 
+	 * This method retrieves from the database the race of a given date
+	 *
 	 * @param date in which race is retrieved
 	 * @return the race of the given date, null if there is no race
 	 */
-	public Race getRace(Date date) {	
-		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.date=?1",Race.class);   
+	public Race getRace(Date date) {
+		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.date=?1",Race.class);
 		query.setParameter(1, date);
 		List<Race> races = query.getResultList();
 		if(!races.isEmpty())
@@ -200,7 +207,7 @@ public class DataAccess  {
 		else
 			return null;
 	}
-	
+
 	/**
 	 * This method calls the data base to create a raceHorse and add it to the given race
 	 * @param winGain multiplier of the new RaceHorse
@@ -219,7 +226,7 @@ public class DataAccess  {
 		System.out.println("DB>>> New RaceHorse created and added to data base");
 		return raceHorse;
 	}
-	
+
 	/**
 	 * This method retrieves from the data base to get all raceHorses of a given race
 	 * @param race from which to take the raceHorses
@@ -229,16 +236,16 @@ public class DataAccess  {
 		Race r = db.find(race.getClass(), race);
 		return r.getRaceHorses();
 	}
-	
+
 	/**
 	 * This method retrieves from the data base to get all horses
 	 * @return List<Horse> all horses of the DB in a list
 	 */
 	public List<Horse> getHorses(){
-		TypedQuery<Horse> query = db.createQuery("SELECT h FROM Horse h",Horse.class);   
+		TypedQuery<Horse> query = db.createQuery("SELECT h FROM Horse h",Horse.class);
 		return query.getResultList();
 	}
-	
+
 	/**
 	 * This method calls the data base to create a new Race with the given date and numOfStreets
 	 * @param date of the race
@@ -253,7 +260,7 @@ public class DataAccess  {
 		System.out.println("DB>>> New Race created and added to data base");
 		return race;
 	}
-	
+
 	/**
 	 * This method calls the data base to create a new Client by the given username and password
 	 * @param userName the name of the new Client
@@ -272,7 +279,7 @@ public class DataAccess  {
 		}else
 			return false;
 	}
-	
+
 	/**
 	 * This method retrieves from the data base the Registered user of the given userName and password
 	 * @param userName Registered name
@@ -286,7 +293,7 @@ public class DataAccess  {
 		else
 			return null;
 	}
-	
+
 	/**
 	 * This method calls the data base to add a given amount of money to the given users current balance
 	 * @param client to add money
@@ -301,8 +308,8 @@ public class DataAccess  {
 		System.out.println(DB_HEADER + amount + "$ added to '" + client.getUserName() + "' client acount");
 		return c;
 	}
-	
-	
+
+
 	/**
 	 * This method calls the data base to rest a given amount of money from the given users current balance
 	 * @param client to rest money
@@ -317,7 +324,7 @@ public class DataAccess  {
 		System.out.println(DB_HEADER + amount + "$ rested from '" + client.getUserName() + "' client acount");
 		return c;
 	}
-	
+
 	/**
 	 * This method calls the data base to add a given amount of money to the given users current balance
 	 * @param client to add money
@@ -331,7 +338,7 @@ public class DataAccess  {
 		db.getTransaction().commit();
 		System.out.println(DB_HEADER + points + " Points added to " + horse.getName() + " horse history points");
 	}
-	
+
 	/**
 	 * This method calls the data base to set given race state to finish and set all client bets to null
 	 * @param race that has finished
@@ -350,7 +357,7 @@ public class DataAccess  {
 		System.out.println("DB>>> Race finish state changed to True");
 		return r;
 	}
-	
+
 	/**
 	 * This method calls the data base to remove the given client acount
 	 * @param client client to remove
@@ -362,5 +369,5 @@ public class DataAccess  {
 		db.getTransaction().commit();
 		System.out.println("DB>>> Client acount removed: " + cl.getUserName());
 	}
-	
+
 }

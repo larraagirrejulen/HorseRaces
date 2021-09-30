@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 public class RaceHorse{
 
 	//-----ATRIBUTES-----//
-	
+
 	@Id @GeneratedValue
 	private int key;
 	@OneToOne
@@ -26,10 +26,10 @@ public class RaceHorse{
 	private List<Bet> bets;
 	private int street;
 	private double winGain;
-	
-	
+
+
 	//-----CONSTRUCTOR-----//
-	
+
 	public RaceHorse(int street, double winGain, Race race, Horse horse) {
 		this.street = street;
 		this.winGain = winGain;
@@ -37,10 +37,10 @@ public class RaceHorse{
 		this.race = race;
 		this.bets = new ArrayList<>();
 	}
-	
-	
+
+
 	//-----GET/SET-----//
-	
+
 	public List<Bet> getBets() {
 		return bets;
 	}
@@ -80,7 +80,7 @@ public class RaceHorse{
 	public void setWinGain(double winGain) {
 		this.winGain = winGain;
 	}
-	
+
 	public int getKey() {
 		return key;
 	}
@@ -88,10 +88,10 @@ public class RaceHorse{
 	public void setKey(int key) {
 		this.key = key;
 	}
-	
-	
+
+
 	//-----MORE METHODS-----//
-	
+
 	/**
 	 * This method adds the given bet to the bets list
 	 * @param bet to add to the list
@@ -99,28 +99,28 @@ public class RaceHorse{
 	public void addBet(Bet bet) {
 		this.bets.add(bet);
 	}
-	
+
 	/**
 	 * Returns a string with objects attributes information prepared to print
 	 */
+	@Override
 	public String toString() {
 		return " " +  street + "-" + horse.getName() + " | " + "WinGain: " + winGain + " | " + "Cavalry: " + horse.getCavalryOrigin();
 	}
-	
+
 	/**
 	 * This method compares this RaceHorse with the given object and returns true if they are same
 	 */
 	@Override
 	public boolean equals(Object o) {
-		if(o==null)return false;
-		if(this.getClass()!=o.getClass())return false;
+		if((o==null) || (this.getClass()!=o.getClass()))return false;
 		RaceHorse rh = (RaceHorse) o;
 		return this.horse.equals(rh.getHorse());
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return this.horse.hashCode();
 	}
-	
+
 }

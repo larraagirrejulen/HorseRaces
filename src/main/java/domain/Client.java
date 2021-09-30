@@ -8,22 +8,22 @@ import javax.persistence.OneToOne;
 public class Client extends Registered{
 
 	//-----ATTRIBUTES-----//
-	
+
 	private double wallet;
 	@OneToOne(cascade=CascadeType.ALL)
 	private Bet bet;
-	
-	
+
+
 	//-----CONSTRUCTOR-----//
-	
+
 	public Client(String userName, String password) {
 		super(userName, password);
 		this.wallet = 0.0;
 	}
 
-	
+
 	//-----GET/SET-----//
-	
+
 	public double getWallet() {
 		return wallet;
 	}
@@ -39,10 +39,10 @@ public class Client extends Registered{
 	public void setBet(Bet bet) {
 		this.bet = bet;
 	}
-	
-	
+
+
 	//-----MORE METHODS-----//
-	
+
 	/**
 	 * Adds the given amount of money to the wallet
 	 * @param amount of money to add
@@ -50,7 +50,7 @@ public class Client extends Registered{
 	public void addMoney(double amount) {
 		this.wallet = this.wallet + amount;
 	}
-	
+
 	/**
 	 * Rests the given amount of money from the wallet
 	 * @param amount of money to rest

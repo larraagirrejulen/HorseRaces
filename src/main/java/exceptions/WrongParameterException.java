@@ -6,7 +6,7 @@ public class WrongParameterException extends Exception{
 	public WrongParameterException() {
 		super();
 	}
-	
+
 	public WrongParameterException(String s) {
 		super(s);
 	}

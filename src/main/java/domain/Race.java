@@ -1,6 +1,9 @@
 package domain;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +16,7 @@ import javax.persistence.OneToOne;
 public class Race{
 
 	//-----ATRIBUTES-----//
-	
+
 	@Id @GeneratedValue
 	private int key;
 	private Date date;
@@ -23,10 +26,10 @@ public class Race{
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private List<RaceHorse> raceHorses;
 	private boolean finished;
-	
-	
+
+
 	//-----CONSTRUCTOR-----//
-	
+
 	public Race(Date date, int numOfStreets, StartTime st) {
 		this.date = date;
 		this.numOfStreets = numOfStreets;
@@ -34,10 +37,10 @@ public class Race{
 		this.startTime = st;
 		this.finished = false;
 	}
-	
-	
+
+
 	//-----GET/SET-----//
-	
+
 	public boolean getFinished() {
 		return finished;
 	}
@@ -45,7 +48,7 @@ public class Race{
 	public void setFinished(boolean finished) {
 		this.finished = finished;
 	}
-	
+
 	public StartTime getStartTime() {
 		return startTime;
 	}
@@ -89,18 +92,18 @@ public class Race{
 	public void setRaceHorses(ArrayList<RaceHorse> raceHorses) {
 		this.raceHorses = raceHorses;
 	}
-	
+
 	public int getSize() {
 		return raceHorses.size();
 	}
-	
+
 	public boolean doesRaceHorseExist(RaceHorse rh) {
 		return getRaceHorses().contains(rh);
 	}
-	
-	
+
+
 	//-----MORE METHODS-----//
-	
+
 	/**
 	 * Method to add the given RaceHorse to the raceHorses list
 	 * @param raceHorse to add to the list
@@ -113,7 +116,7 @@ public class Race{
 		}else
 			return false;
 	}
-	
+
 	/**
 	 * Method to remove the given RaceHorse from the raceHorses list
 	 * @param raceHorse to remove
@@ -121,20 +124,18 @@ public class Race{
 	public void removeRaceHorse(RaceHorse raceHorse) {
 		raceHorses.remove(raceHorse);
 	}
-	
+
 	/**
 	 * This method compares this Race with the given object and returns true if they are same
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Race other = (Race) obj;
 		return key != other.key;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return this.date.hashCode();
