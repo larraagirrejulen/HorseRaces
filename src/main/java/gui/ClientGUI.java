@@ -69,12 +69,9 @@ public class ClientGUI extends JFrame {
 		btnViewRaces.setForeground(Color.WHITE);
 		btnViewRaces.setFont(new Font(FONT, Font.PLAIN, 11));
 		btnViewRaces.setBackground(new Color(0, 0, 51));
-		btnViewRaces.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ViewRacesClientGUI gui = new ViewRacesClientGUI(frame, client, language);
-				gui.setVisible(true);
+		btnViewRaces.addActionListener(input -> {
+				new ViewRacesClientGUI(frame, client, language).setVisible(true);
 				frame.dispose();
-			}
 		});
 		btnViewRaces.setBounds(250, 150, 200, 35);
 		contentPane.add(btnViewRaces);
