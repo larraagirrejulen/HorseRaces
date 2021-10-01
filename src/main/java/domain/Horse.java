@@ -97,7 +97,7 @@ public class Horse{
 	public boolean equals(Object o) {
 		if((o==null) || (this.getClass()!=o.getClass()))return false;
 		Horse h = (Horse) o;
-		return this.name==h.getName();
+		return this.name.equals(h.getName());
 	}
 
 	@Override

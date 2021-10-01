@@ -12,8 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import exceptions.RaceFullException;
-
 @Entity
 public class Race{
 
@@ -139,7 +137,7 @@ public class Race{
 		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Race other = (Race) obj;
-		return key != other.key;
+		return key == other.key;
 	}
 
 	@Override

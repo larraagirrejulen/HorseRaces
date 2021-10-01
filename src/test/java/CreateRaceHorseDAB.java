@@ -18,7 +18,7 @@ import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 import test.TestDataAccess;
 
-public class CreateRaceHorseDAW {
+public class CreateRaceHorseDAB {
 
 	static DataAccess sut = new DataAccess(true);
 	static TestDataAccess testDA = new TestDataAccess();
@@ -27,6 +27,41 @@ public class CreateRaceHorseDAW {
 	
 	@Test
 	public void test1(){
+		try {
+			
+			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
+			StartTime st = new StartTime("10:30");
+			int numberOfStreets = 4;
+			double winGain = 1.5;
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date oneDate=null;
+			try {
+				oneDate = sdf.parse("05/10/2022");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}	
+			
+			testDA.open();
+			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
+			testDA.close();
+			
+			sut.open(false);
+			RaceHorse rh = sut.createRaceHorse(winGain, race, horse1);
+			
+			assertEquals(rh.getHorse(), horse1);
+			assertEquals(rh.getRace(), race);
+		}catch(Exception e){
+			e.printStackTrace();
+			fail();
+		}finally {
+			sut.close();
+		}
+	}
+	
+	@Test
+	public void test2(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
@@ -61,7 +96,7 @@ public class CreateRaceHorseDAW {
 	}
 
 	@Test
-	public void test2(){
+	public void test3(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
@@ -96,7 +131,7 @@ public class CreateRaceHorseDAW {
 	}
 	
 	@Test
-	public void test3(){
+	public void test4(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
@@ -131,7 +166,7 @@ public class CreateRaceHorseDAW {
 	}
 	
 	@Test
-	public void test4(){
+	public void test5(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
@@ -165,7 +200,7 @@ public class CreateRaceHorseDAW {
 	}
 	
 	@Test
-	public void test5(){
+	public void test6(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
@@ -201,7 +236,7 @@ public class CreateRaceHorseDAW {
 	}
 	
 	@Test
-	public void test6(){
+	public void test7(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
@@ -237,7 +272,7 @@ public class CreateRaceHorseDAW {
 	}
 	
 	@Test
-	public void test7(){
+	public void test8(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
@@ -273,38 +308,5 @@ public class CreateRaceHorseDAW {
 		}
 	}
 	
-	@Test
-	public void test8(){
-		try {
-			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
-			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
-			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
-			testDA.close();
-			
-			sut.open(false);
-			RaceHorse rh = sut.createRaceHorse(winGain, race, horse1);
-			
-			assertEquals(rh.getHorse(), horse1);
-			assertEquals(rh.getRace(), race);
-		}catch(Exception e){
-			e.printStackTrace();
-			fail();
-		}finally {
-			sut.close();
-		}
-	}
+	
 }
