@@ -30,8 +30,8 @@ public class RaceHorse{
 
 	//-----CONSTRUCTOR-----//
 
-	public RaceHorse(int street, double winGain, Race race, Horse horse) {
-		this.street = street;
+	public RaceHorse(double winGain, Race race, Horse horse) {
+		this.street = race.getSize()+1;
 		this.winGain = winGain;
 		this.horse = horse;
 		this.race = race;

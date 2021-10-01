@@ -12,6 +12,9 @@ import domain.Race;
 import domain.RaceHorse;
 import domain.Registered;
 import domain.StartTime;
+import exceptions.HorseDoesntExist;
+import exceptions.RaceDoesntExist;
+import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 
@@ -114,7 +117,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @return RaceHorse
 	 */
     @Override
-	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) throws RaceHorseAlreadyExist, WrongParameterException{
+	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) throws RaceHorseAlreadyExist, WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist{
 		dbManager.open(false);
 		RaceHorse raceHorse = dbManager.createRaceHorse(winGain, race, horse);
 		dbManager.close();

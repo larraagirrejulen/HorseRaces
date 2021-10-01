@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import exceptions.RaceFullException;
+
 @Entity
 public class Race{
 
@@ -100,6 +102,10 @@ public class Race{
 	public boolean doesRaceHorseExist(RaceHorse rh) {
 		return getRaceHorses().contains(rh);
 	}
+	
+	public boolean isFull() {
+		return this.raceHorses.size()==this.numOfStreets;
+	}
 
 
 	//-----MORE METHODS-----//
@@ -109,7 +115,7 @@ public class Race{
 	 * @param raceHorse to add to the list
 	 * @return true if it is added or false if the list is full
 	 */
-	public boolean addRaceHorse(RaceHorse raceHorse) {
+	public boolean addRaceHorse(RaceHorse raceHorse){
 		if(raceHorses.size()<this.numOfStreets) {
 			raceHorses.add(raceHorse);
 			return true;

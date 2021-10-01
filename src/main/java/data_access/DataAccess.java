@@ -22,6 +22,9 @@ import domain.Race;
 import domain.RaceHorse;
 import domain.Registered;
 import domain.StartTime;
+import exceptions.HorseDoesntExist;
+import exceptions.RaceDoesntExist;
+import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 
@@ -88,16 +91,16 @@ public class DataAccess  {
 			db.persist(race1);
 			System.out.println("DB>>> Races created");
 
-			RaceHorse raceHorse0 = new RaceHorse(race.getSize()+1, 1.4, race, h4);
+			RaceHorse raceHorse0 = new RaceHorse(1.4, race, h4);
 			race.addRaceHorse(raceHorse0);
 			race1.addRaceHorse(raceHorse0);
-			RaceHorse raceHorse1 = new RaceHorse(race.getSize()+1, 1.3, race, h3);
+			RaceHorse raceHorse1 = new RaceHorse(1.3, race, h3);
 			race.addRaceHorse(raceHorse1);
 			race1.addRaceHorse(raceHorse1);
-			RaceHorse raceHorse2 = new RaceHorse(race.getSize()+1, 2, race, h2);
+			RaceHorse raceHorse2 = new RaceHorse(2, race, h2);
 			race.addRaceHorse(raceHorse2);
 			race1.addRaceHorse(raceHorse2);
-			RaceHorse raceHorse3 = new RaceHorse(race.getSize()+1, 1.7, race, h7);
+			RaceHorse raceHorse3 = new RaceHorse(1.7, race, h7);
 			race.addRaceHorse(raceHorse3);
 			race1.addRaceHorse(raceHorse3);
 			System.out.println("DB>>> Race horses created");
@@ -215,13 +218,22 @@ public class DataAccess  {
 	 * @param horse of the new RaceHorse
 	 * @return RaceHorse
 	 */
-	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) throws RaceHorseAlreadyExist, WrongParameterException{
+	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) 
+			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist{
+		
 		if(race==null || horse==null || winGain<1) throw new WrongParameterException();
+		
 		Race newRace = db.find(race.getClass(), race.getKey());
-		RaceHorse raceHorse = new RaceHorse(race.getSize()+1, winGain, newRace, horse);
+		if(newRace==null) throw new RaceDoesntExist();
+		
+		Horse newHorse = db.find(horse.getClass(), horse.getKey());
+		if(newHorse==null) throw new HorseDoesntExist();
+		
+		RaceHorse raceHorse = new RaceHorse(winGain, newRace, newHorse);
 		if(newRace.getRaceHorses().contains(raceHorse)) throw new RaceHorseAlreadyExist();
+		
 		db.getTransaction().begin();
-		newRace.addRaceHorse(raceHorse);
+		if(!newRace.addRaceHorse(raceHorse)) throw new RaceFullException();
 		db.getTransaction().commit();
 		System.out.println("DB>>> New RaceHorse created and added to data base");
 		return raceHorse;
