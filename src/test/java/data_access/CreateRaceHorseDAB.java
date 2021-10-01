@@ -1,3 +1,5 @@
+package data_access;
+
 import static org.junit.Assert.*;
 
 import java.text.ParseException;
@@ -6,13 +8,13 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import data_access.DataAccess;
 import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;
 import domain.StartTime;
 import exceptions.HorseDoesntExist;
 import exceptions.RaceDoesntExist;
+import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
@@ -254,6 +256,42 @@ public class CreateRaceHorseDAB {
 			
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race.setFinished(true);
+			testDA.close();
+			
+			sut.open(false);
+			sut.createRaceHorse(winGain, race, horse);
+			
+			fail();
+			
+		}catch(RaceFinished  e) {
+			assertTrue(true);
+		}catch(Exception e){
+			fail();
+		}finally {
+			sut.close();
+		}
+	}
+	
+	@Test
+	public void test8(){
+		try {
+			
+			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
+			StartTime st = new StartTime("10:30");
+			int numberOfStreets = 4;
+			double winGain = 1.5;
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date oneDate=null;
+			try {
+				oneDate = sdf.parse("05/10/2022");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}	
+			
+			testDA.open();
+			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
 			sut.open(false);
@@ -272,7 +310,7 @@ public class CreateRaceHorseDAB {
 	}
 	
 	@Test
-	public void test8(){
+	public void test9(){
 		try {
 			
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);

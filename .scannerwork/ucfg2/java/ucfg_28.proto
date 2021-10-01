@@ -1,61 +1,29 @@
 
-,domain.RaceHorse#equals(Ljava/lang/Object;)ZZ
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javas s("startingBlock*Å
-2Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javat9 t(>"d
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javat2 t(?
-""*ü
-3Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javat t(ÆÃ
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javat t("
-%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
-domain.RaceHorse2
-getClass()ÉÆ
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javat$ t(0
-%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
-
-ojava.lang.Object2
-getClass()*
-2
-1*§
-startingBlockZ
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javas s( ¢
-Ÿ
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javar r(
-
-%3"
-__annotate*
-java.lang.Override*
-
-ojava.lang.ObjectŒ
-‰
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javas s(
-ojava.lang.Object"__annotation*
-
-%3*
-2
-3*
-1Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javau u(–
-“
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javau u(
-rhdomain.RaceHorse"__id*
-
-ojava.lang.Object¯¬
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javav v((
-%2""domain.RaceHorse#getHorse()LHorse;*
-
-rhdomain.RaceHorse2
-getHorse()"d
-Z
-PC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/RaceHorse.javav v(*
-"":
-ojava.lang.ObjectB
-domain.RaceHorse
+Fdata_access.DataAccess#register(Ljava/lang/String;Ljava/lang/String;)Zb
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java› ›("2"1*ÿ
+2b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.javaž ž(!
+
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java¢ ¢(
+%0java.io.PrintStream"__id*
+""”‘
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java¢ ¢(H
+
+%1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*31
+/DB>>> New Client created and added to data base2println(Ljava/lang/String;)"l
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java£ £(
+""*Õ
+1b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java¥
+ ¥("l
+b
+VC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/data_access/DataAccess.java¥ ¥(
+"":
+userNamejava.lang.String:
+passwordjava.lang.StringB
+data_access.DataAccess

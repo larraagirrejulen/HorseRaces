@@ -1,3 +1,5 @@
+package data_access;
+
 import static org.junit.Assert.*;
 
 import java.text.ParseException;
@@ -6,7 +8,6 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import data_access.DataAccess;
 import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;

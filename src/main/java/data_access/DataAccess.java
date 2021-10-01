@@ -24,6 +24,7 @@ import domain.Registered;
 import domain.StartTime;
 import exceptions.HorseDoesntExist;
 import exceptions.RaceDoesntExist;
+import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
@@ -219,7 +220,7 @@ public class DataAccess  {
 	 * @return RaceHorse
 	 */
 	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) 
-			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist{
+			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist, RaceFinished{
 		
 		if(race==null || horse==null || winGain<1) throw new WrongParameterException();
 		
