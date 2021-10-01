@@ -6,7 +6,7 @@ public class HorseDoesntExist extends Exception{
 	public HorseDoesntExist() {
 		super();
 	}
-	
+
 	public HorseDoesntExist(String s) {
 		super(s);
 	}
