@@ -250,9 +250,7 @@ public class CreateRaceHorseDAB {
 			Date oneDate=null;
 			try {
 				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
+			} catch (ParseException e) {}	
 			
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
