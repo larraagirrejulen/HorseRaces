@@ -218,20 +218,20 @@ public class DataAccess  {
 	 * @param horse of the new RaceHorse
 	 * @return RaceHorse
 	 */
-	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse)
+	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) 
 			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist{
-
+		
 		if(race==null || horse==null || winGain<1) throw new WrongParameterException();
-
+		
 		Race newRace = db.find(race.getClass(), race.getKey());
 		if(newRace==null) throw new RaceDoesntExist();
-
+		
 		Horse newHorse = db.find(horse.getClass(), horse.getKey());
 		if(newHorse==null) throw new HorseDoesntExist();
-
+		
 		RaceHorse raceHorse = new RaceHorse(winGain, newRace, newHorse);
 		if(newRace.getRaceHorses().contains(raceHorse)) throw new RaceHorseAlreadyExist();
-
+		
 		db.getTransaction().begin();
 		if(!newRace.addRaceHorse(raceHorse)) throw new RaceFullException();
 		db.getTransaction().commit();

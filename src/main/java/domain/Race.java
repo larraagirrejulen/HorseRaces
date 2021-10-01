@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import exceptions.RaceFullException;
+
 @Entity
 public class Race{
 
@@ -100,7 +102,7 @@ public class Race{
 	public boolean doesRaceHorseExist(RaceHorse rh) {
 		return getRaceHorses().contains(rh);
 	}
-
+	
 	public boolean isFull() {
 		return this.raceHorses.size()==this.numOfStreets;
 	}

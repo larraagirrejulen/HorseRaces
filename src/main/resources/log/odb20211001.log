@@ -1344,3 +1344,59 @@ New type java.util.ArrayList<domain.RaceHorse>
 [2021-10-01 16:04:49 #18 type.registry] 
 New type java.util.ArrayList<domain.Bet>
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-01 16:30:24 #1 store] 
+Database 'C:\Users\Julen\OneDrive\WorkSpace\HorseRaces\src\main\resources\horseRaces.temp' is opened by 16172@DESKTOP-HIV4AM9
+
+[2021-10-01 16:30:24 #2 type.registry] 
+New type domain.Race
+
+[2021-10-01 16:30:24 #3 type] 
+Type domain.Race is not enhanced.
+
+[2021-10-01 16:30:24 #4 type.registry] 
+New type domain.RaceHorse
+
+[2021-10-01 16:30:24 #5 type.registry] 
+New type domain.StartTime
+
+[2021-10-01 16:30:24 #6 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-10-01 16:30:24 #7 type.registry] 
+New type domain.Bet
+
+[2021-10-01 16:30:24 #8 type.registry] 
+New type domain.Horse
+
+[2021-10-01 16:30:24 #9 type] 
+Type domain.StartTime is not enhanced.
+
+[2021-10-01 16:30:24 #10 type] 
+Type domain.Bet is not enhanced.
+
+[2021-10-01 16:30:24 #11 type.registry] 
+New type domain.Registered
+
+[2021-10-01 16:30:24 #12 type.registry] 
+New type domain.Client
+
+[2021-10-01 16:30:24 #13 type] 
+Type domain.Horse is not enhanced.
+
+[2021-10-01 16:30:24 #14 type] 
+Type domain.Registered is not enhanced.
+
+[2021-10-01 16:30:24 #15 type] 
+Type domain.Client is not enhanced.
+
+[2021-10-01 16:30:24 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2021-10-01 16:30:24 #17 type.registry] 
+New type java.util.ArrayList<domain.RaceHorse>
+
+[2021-10-01 16:30:24 #18 type.registry] 
+New type java.util.ArrayList<domain.Bet>
+

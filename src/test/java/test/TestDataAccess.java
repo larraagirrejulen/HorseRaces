@@ -26,18 +26,18 @@ public class TestDataAccess {
 		open();
 	}
 
-
+	
 	public void open(){
-
+		
 		System.out.println("Opening TestDataAccess instance ");
 
 		String fileName=c.getDbFilename();
-
+		
 		if (c.isDatabaseLocal()) {
 			  emf = Persistence.createEntityManagerFactory("objectdb:"+fileName);
 			  db = emf.createEntityManager();
 		} else {
-			Map<String, String> properties = new HashMap<>();
+			Map<String, String> properties = new HashMap<String, String>();
 			  properties.put("javax.persistence.jdbc.user", c.getUser());
 			  properties.put("javax.persistence.jdbc.password", c.getPassword());
 
@@ -45,7 +45,7 @@ public class TestDataAccess {
 
 			  db = emf.createEntityManager();
     	   }
-
+		
 	}
 	public void close(){
 		db.close();
@@ -60,10 +60,10 @@ public class TestDataAccess {
 			db.remove(r);
 			db.getTransaction().commit();
 			return true;
-		} else
+		} else 
 			return false;
     }
-
+	
 	public Horse addHorse(String name, String cavalry, int age, String gender, int totalPoints) {
 		db.getTransaction().begin();
 		Horse horse = new Horse(name, cavalry, age, gender, totalPoints);
@@ -71,7 +71,7 @@ public class TestDataAccess {
 		db.getTransaction().commit();
 		return horse;
 	}
-
+		
 	public Race addRaceWithRaceHorse(Date date, int numOfStreets, StartTime st, double winGain, Horse horse) {
 		System.out.println(">> DataAccessTest: addRace");
 		Race rc=null;
