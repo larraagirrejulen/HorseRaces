@@ -2921,7 +2921,10 @@ valueOf(I)/java.lang.Integer#valueOf(I)Ljava/lang/Integer;5
 -actionPerformed(Ljava/awt/event/ActionEvent;)3null#actionPerformed(Ljava/awt/event/ActionEvent;)VÉ
 Lgui/ClientGUI$4370;java.awt.event.ActionListenerjava.lang.Object
 <init>()null#<init>()Vd
--actionPerformed(Ljava/awt/event/ActionEvent;)3null#actionPerformed(Ljava/awt/event/ActionEvent;)VÌ
+-actionPerformed(Ljava/awt/event/ActionEvent;)3null#actionPerformed(Ljava/awt/event/ActionEvent;)V„
+CreateRaceHorseMockIntjava.lang.Object,
+<init>() CreateRaceHorseMockInt#<init>()V*
+test1()CreateRaceHorseMockInt#test1()VÌ
 domain.Registeredjava.lang.ObjectU
 setPassword(Ljava/lang/String;)2domain.Registered#setPassword(Ljava/lang/String;)VB
 getPassword()1domain.Registered#getPassword()Ljava/lang/String;o

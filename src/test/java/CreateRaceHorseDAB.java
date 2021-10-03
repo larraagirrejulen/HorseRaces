@@ -27,26 +27,27 @@ public class CreateRaceHorseDAB {
 	static TestDataAccess testDA = new TestDataAccess();
 	
 	private Race race;
+	private Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
+	private StartTime st = new StartTime("10:30");
+	private int numberOfStreets = 4;
+	private double winGain = 1.5;
+	
+	public Date createDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			return sdf.parse("05/10/2022");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	@Test
 	public void test1(){
 		try {
 			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
 			testDA.close();
 			
@@ -66,22 +67,8 @@ public class CreateRaceHorseDAB {
 	@Test
 	public void test2(){
 		try {
-			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 0.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
 			sut.createRaceHorse(winGain, null, horse);
@@ -93,30 +80,15 @@ public class CreateRaceHorseDAB {
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
-		}finally {
-			testDA.open();
 		}
 	}
 
 	@Test
 	public void test3(){
 		try {
-			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
+
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
 			sut.createRaceHorse(1.5, race, null);
@@ -128,8 +100,6 @@ public class CreateRaceHorseDAB {
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
-		}finally {
-			testDA.open();
 		}
 	}
 	
@@ -137,24 +107,11 @@ public class CreateRaceHorseDAB {
 	public void test4(){
 		try {
 			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 0.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
-			sut.createRaceHorse(winGain, race, horse);
+			sut.createRaceHorse(0.5, race, horse);
 			
 			fail();
 			
@@ -163,8 +120,6 @@ public class CreateRaceHorseDAB {
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
-		}finally {
-			testDA.open();
 		}
 	}
 	
@@ -172,20 +127,7 @@ public class CreateRaceHorseDAB {
 	public void test5(){
 		try {
 			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			
-			Race race = new Race(oneDate, numberOfStreets, st);
+			Race race = new Race(createDate(), numberOfStreets, st);
 			
 			sut.open(false);
 			sut.createRaceHorse(winGain, race, horse);
@@ -205,22 +147,8 @@ public class CreateRaceHorseDAB {
 	@Test
 	public void test6(){
 		try {
-			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
 			sut.open(false);
@@ -241,20 +169,8 @@ public class CreateRaceHorseDAB {
 	@Test
 	public void test7(){
 		try {
-			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {}	
-			
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			race.setFinished(true);
 			testDA.close();
 			
@@ -275,22 +191,9 @@ public class CreateRaceHorseDAB {
 	@Test
 	public void test8(){
 		try {
-			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 4;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
+
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
 			sut.open(false);
@@ -311,22 +214,9 @@ public class CreateRaceHorseDAB {
 	@Test
 	public void test9(){
 		try {
-			
-			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
-			StartTime st = new StartTime("10:30");
-			int numberOfStreets = 1;
-			double winGain = 1.5;
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;
-			try {
-				oneDate = sdf.parse("05/10/2022");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}	
-			
+
 			testDA.open();
-			race = testDA.addRaceWithRaceHorse(oneDate, numberOfStreets, st, winGain, horse);
+			race = testDA.addRaceWithRaceHorse(createDate(), 1, st, winGain, horse);
 			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
 			testDA.close();
 			

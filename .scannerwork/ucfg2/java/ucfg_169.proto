@@ -1,17 +1,16 @@
 
-9configuration.ConfigXML#getDbFilename()Ljava/lang/String;c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaŸ Ÿ("1*Ÿ
+@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;c
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java› ›(#"1*¦
 1c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java 	  (³
-°
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaœ	 œ(º
+·
 c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java 	  (
-%0java.lang.String"__id*+*)
-configuration.ConfigXML"
-
-dbFilename"
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaœ	 œ(
+%0java.lang.String"__id*2*0
+configuration.ConfigXML"
+businessLogicName"
 c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java   (
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaœ œ(
 
 %0java.lang.StringB
 configuration.ConfigXML
