@@ -1,10 +1,12 @@
 package business_logic;
 
 import static org.junit.Assert.*;
+import java.util.Date;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -23,34 +25,29 @@ import exceptions.WrongParameterException;
 @RunWith(MockitoJUnitRunner.class)
 public class CreateRaceHorseMockInt {
 	
-	DataAccess dataAccess=Mockito.mock(DataAccess.class);
-	Race mockedRace=Mockito.mock(Race.class);
+	//Race mockedRace=Mockito.mock(Race.class);
+	
+	@Mock
+	DataAccess horseRacesDAO;
 	
 	@InjectMocks
-	BLFacade sut = new BLFacadeImplementation(dataAccess);
+	BLFacade sut;
 	
 	@Test
 	public void test1(){
 		try {
-			
+			Race race = new Race(new Date(), 4, new StartTime("10:30"));
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
 			double winGain = 1.5;
 			
-			Mockito.doReturn(new RaceHorse(winGain, mockedRace, horse)).when(dataAccess).createRaceHorse(Mockito.any(Integer.class), Mockito.any(Race.class), Mockito.any(Horse.class));
+			Mockito.doReturn(new RaceHorse(winGain, race, horse)).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
 
-			RaceHorse rh = sut.createRaceHorse(winGain, mockedRace, horse);
+			RaceHorse rh = sut.createRaceHorse(winGain, race, horse);
 			
 			assertEquals(rh.getWinGain(), winGain);
-			assertEquals(rh.getRace(), mockedRace);
+			assertEquals(rh.getRace(), race);
 			assertEquals(rh.getHorse(), horse);
 			
-//			ArgumentCaptor<Double> winGainCaptor = ArgumentCaptor.forClass(Double.class);
-//			ArgumentCaptor<Race> raceCaptor = ArgumentCaptor.forClass(Race.class);
-//			ArgumentCaptor<Horse> horseCaptor = ArgumentCaptor.forClass(Horse.class);
-//			Mockito.verify(dataAccess,Mockito.times(1)).createRaceHorse(winGainCaptor.capture(), raceCaptor.capture(), horseCaptor.capture());
-//			assertEquals(raceCaptor.getValue(), mockedRace);
-//			assertEquals(horseCaptor.getValue(), horse);
-
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
