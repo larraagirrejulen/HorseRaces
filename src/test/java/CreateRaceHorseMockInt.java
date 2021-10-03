@@ -1,26 +1,20 @@
-package business_logic;
+
 
 import static org.junit.Assert.*;
 import java.util.Date;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import business_logic.BLFacadeImplementation;
 import data_access.DataAccess;
 import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;
 import domain.StartTime;
-import exceptions.HorseDoesntExist;
-import exceptions.RaceDoesntExist;
-import exceptions.RaceFinished;
-import exceptions.RaceFullException;
-import exceptions.RaceHorseAlreadyExist;
-import exceptions.WrongParameterException;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CreateRaceHorseMockInt {
@@ -31,7 +25,7 @@ public class CreateRaceHorseMockInt {
 	DataAccess horseRacesDAO;
 	
 	@InjectMocks
-	BLFacade sut;
+	BLFacadeImplementation sut;
 	
 	@Test
 	public void test1(){
