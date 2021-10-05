@@ -2715,7 +2715,7 @@ hashCode()domain.Horse#hashCode()I3
 getCavalryOrigin()1domain.Horse#getCavalryOrigin()Ljava/lang/String;í
 @<init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)Ndomain.Horse#<init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)V(
 getPoints()domain.Horse#getPoints()I"
-getKey()domain.Horse#getKey()I∏
+getKey()domain.Horse#getKey()I˘
 CreateRaceHorseDABjava.lang.Object&
 test7()CreateRaceHorseDAB#test7()V&
 test8()CreateRaceHorseDAB#test8()V&
@@ -2725,7 +2725,8 @@ hashCode()domain.Horse#hashCode()I3
 <init>()CreateRaceHorseDAB#<init>()V&
 test4()CreateRaceHorseDAB#test4()V&
 test1()CreateRaceHorseDAB#test1()V&
-test2()CreateRaceHorseDAB#test2()V&
+test2()CreateRaceHorseDAB#test2()V?
+createDate()/CreateRaceHorseDAB#createDate()Ljava/util/Date;&
 test9()CreateRaceHorseDAB#test9()Vï
 java.text.Formatjava.lang.Cloneablejava.lang.Objectjava.io.Serializable”
 KcreateAttributedCharacterIterator([Ljava/text/AttributedCharacterIterator;)Éjava.text.Format#createAttributedCharacterIterator([Ljava/text/AttributedCharacterIterator;)Ljava/text/AttributedCharacterIterator;¶
@@ -2901,7 +2902,7 @@ valueOf(I)/java.lang.Integer#valueOf(I)Ljava/lang/Integer;5
 toUnsignedString(I)7java.lang.Integer#toUnsignedString(I)Ljava/lang/String;J
 toStringUTF16(II)5java.lang.Integer#toStringUTF16(II)Ljava/lang/String;=
 compareUnsigned(II)&java.lang.Integer#compareUnsigned(II)I%
-max(II)java.lang.Integer#max(II)Iê
+max(II)java.lang.Integer#max(II)I—
 CreateRaceHorseDAWjava.lang.Object&
 test7()CreateRaceHorseDAW#test7()V&
 test8()CreateRaceHorseDAW#test8()V&
@@ -2911,7 +2912,8 @@ valueOf(I)/java.lang.Integer#valueOf(I)Ljava/lang/Integer;5
 <init>()CreateRaceHorseDAW#<init>()V&
 test4()CreateRaceHorseDAW#test4()V&
 test1()CreateRaceHorseDAW#test1()V&
-test2()CreateRaceHorseDAW#test2()V#
+test2()CreateRaceHorseDAW#test2()V?
+createDate()/CreateRaceHorseDAW#createDate()Ljava/util/Date;#
 gui.ClientGUIjavax.swing.JFrame…
 Lgui/ClientGUI$2886;java.awt.event.ActionListenerjava.lang.Object
 <init>()null#<init>()Vd

@@ -1,16 +1,16 @@
 
-@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaó ó(#"1*¶
+>configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;c
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaè è($"1*Ø
 1c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaò	 ò(∫
-∑
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaê	 ê(ª
+∏
 c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaò	 ò(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicPort"
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaê	 ê(
+%0configuration.ConfigXML"__id*,**
+configuration.ConfigXML"
+theInstance"Ü
 c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaò ò(
-
-%0java.lang.StringB
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaê ê(
+
+%0configuration.ConfigXMLB"
 configuration.ConfigXML

@@ -1,16 +1,16 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java› ›(#"1*¦
+@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;c
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java“ “(#"1*¦
 1c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaœ	 œ(º
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java”	 ”(º
 ·
 c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaœ	 œ(
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java”	 ”(
 %0java.lang.String"__id*2*0
 configuration.ConfigXML"
-businessLogicName"
+businessLogicNode"
 c
-WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.javaœ œ(
+WC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/configuration/ConfigXML.java” ”(
 
 %0java.lang.StringB
 configuration.ConfigXML

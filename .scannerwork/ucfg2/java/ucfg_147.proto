@@ -1,9 +1,16 @@
 
-domain.Race#getNumOfStreets()IU
-KC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Race.javaP P("1*»
+%domain.Race#getDate()Ljava/util/Date;U
+KC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Race.javaH H("1*ß
 1U
-KC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Race.javaQ	 Q("_
+KC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Race.javaI	 I(‘
+Ž
 U
-KC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Race.javaQ Q(
-""B
+KC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Race.javaI	 I(
+%0java.util.Date"__id**
+domain.Race"
+date"o
+U
+KC:/Users/Julen/OneDrive/WorkSpace/HorseRaces/src/main/java/domain/Race.javaI I(
+
+%0java.util.DateB
 domain.Race
