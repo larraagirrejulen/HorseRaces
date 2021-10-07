@@ -32,7 +32,8 @@ import exceptions.WrongParameterException;
 public class DataAccess  {
 
 	private static final String DB_HEADER = "DB>>> ";
-	private static final String GENDER = "female";
+	private static final String MALE = "male";
+	private static final String FEMALE = "female";
 	protected static EntityManager  db;
 	protected static EntityManagerFactory emf;
 	private ConfigXML config = ConfigXML.getInstance();
@@ -52,67 +53,78 @@ public class DataAccess  {
 	public void initializeDB(){
 		try {
 			db.getTransaction().begin();
-
-			Admin admin = new Admin("admin", "admin");
-			Client client = new Client("client", "client");
-			client.addMoney(20);
-			db.persist(admin);
-			db.persist(client);
-			System.out.println("DB>>> Admin and Client created");
-
-			Horse h1 = new Horse("Seattle Slew", "a", 9, "male", 11);
-			Horse h2 = new Horse("Man o' War", "a", 5, GENDER, 5);
-			Horse h3 = new Horse("Citation", "b", 8, GENDER, 9);
-			Horse h4 = new Horse("Red Rum", "c", 7, "male",2);
-			Horse h5 = new Horse("Seabiscuit", "d", 6, GENDER, 19);
-			Horse h6 = new Horse("Kelso", "d", 11, "male", 31);
-			Horse h7 = new Horse("Native Dancer", "e", 13, "male", 7);
-			Horse h8 = new Horse("Affirmed", "f", 9, GENDER, 6);
-			Horse h9 = new Horse("Count Fleet", "g", 12, GENDER, 13);
-			db.persist(h1);
-			db.persist(h2);
-			db.persist(h3);
-			db.persist(h4);
-			db.persist(h5);
-			db.persist(h6);
-			db.persist(h7);
-			db.persist(h8);
-			db.persist(h9);
-			System.out.println("DB>>> Horses created");
-
-			Calendar today = Calendar.getInstance();
-			int month=today.get(Calendar.MONTH);
-			int year=today.get(Calendar.YEAR);
-			if (month==12) { month=0; year+=1;}
-			else month+=1;
-
-			Race race = new Race(UtilDate.newDate(year,month,17), 4, new StartTime("10:30"));
-			Race race1 = new Race(UtilDate.newDate(year,month-2,17), 4, new StartTime("10:30"));
-			db.persist(race);
-			db.persist(race1);
-			System.out.println("DB>>> Races created");
-
-			RaceHorse raceHorse0 = new RaceHorse(1.4, race, h4);
-			race.addRaceHorse(raceHorse0);
-			race1.addRaceHorse(raceHorse0);
-			RaceHorse raceHorse1 = new RaceHorse(1.3, race, h3);
-			race.addRaceHorse(raceHorse1);
-			race1.addRaceHorse(raceHorse1);
-			RaceHorse raceHorse2 = new RaceHorse(2, race, h2);
-			race.addRaceHorse(raceHorse2);
-			race1.addRaceHorse(raceHorse2);
-			RaceHorse raceHorse3 = new RaceHorse(1.7, race, h7);
-			race.addRaceHorse(raceHorse3);
-			race1.addRaceHorse(raceHorse3);
-			System.out.println("DB>>> Race horses created");
-
+			initializeUsers();
+			ArrayList<Horse> horses = initializeHorses();
+			ArrayList<Race> races = initializeRaces();
+			initializeRaceHorses(horses, races);
 			db.getTransaction().commit();
-			System.out.println("DB initialized");
+			System.out.println(DB_HEADER + "initialized");
 		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
 
+	private void initializeRaceHorses(ArrayList<Horse> horses, ArrayList<Race> races) {
+		Race race = races.get(0);	
+		Race race1 = races.get(1);
+		
+		RaceHorse raceHorse0 = new RaceHorse(1.4, race, horses.get(4));
+		race.addRaceHorse(raceHorse0);
+		race1.addRaceHorse(raceHorse0);
+		RaceHorse raceHorse1 = new RaceHorse(1.3, race, horses.get(3));
+		race.addRaceHorse(raceHorse1);
+		race1.addRaceHorse(raceHorse1);
+		RaceHorse raceHorse2 = new RaceHorse(2, race, horses.get(2));
+		race.addRaceHorse(raceHorse2);
+		race1.addRaceHorse(raceHorse2);
+		RaceHorse raceHorse3 = new RaceHorse(1.7, race, horses.get(7));
+		race.addRaceHorse(raceHorse3);
+		race1.addRaceHorse(raceHorse3);
+		System.out.println(DB_HEADER + "Race horses created");
+	}
+
+	private ArrayList<Race> initializeRaces() {
+		Calendar today = Calendar.getInstance();
+		int month=today.get(Calendar.MONTH);
+		int year=today.get(Calendar.YEAR);
+		if (month==12) { month=0; year+=1;}
+		else month+=1;
+
+		ArrayList<Race> races = new ArrayList<>();
+		races.add(new Race(UtilDate.newDate(year,month,17), 4, new StartTime("10:30")));
+		races.add(new Race(UtilDate.newDate(year,month-2,17), 4, new StartTime("10:30")));
+		for(Race r: races) {	db.persist(r);	}
+		System.out.println(DB_HEADER + "Races created");
+		return races;
+	}
+
+	private ArrayList<Horse> initializeHorses() {
+		ArrayList<Horse> horses = new ArrayList<>();
+		horses.add(new Horse("Seattle Slew", "a", 9, MALE, 11));
+		horses.add(new Horse("Man o' War", "a", 5, FEMALE, 5));
+		horses.add(new Horse("Citation", "b", 8, FEMALE, 9));
+		horses.add(new Horse("Red Rum", "c", 7, MALE,2));
+		horses.add(new Horse("Seabiscuit", "d", 6, FEMALE, 19));
+		horses.add(new Horse("Kelso", "d", 11, MALE, 31));
+		horses.add(new Horse("Native Dancer", "e", 13, MALE, 7));
+		horses.add(new Horse("Affirmed", "f", 9, FEMALE, 6));
+		horses.add(new Horse("Count Fleet", "g", 12, FEMALE, 13));
+		for(Horse h: horses) { db.persist(h); }
+		System.out.println(DB_HEADER + "Horses created");
+		return horses;
+	}
+
+	private void initializeUsers() {
+		Admin admin = new Admin("admin", "admin");
+		Client client = new Client("client", "client");
+		client.addMoney(20);
+		db.persist(admin);
+		db.persist(client);
+		System.out.println(DB_HEADER + "Admin and Client created");
+	}
+
+	
+	
 	/**
 	 * Opens the data base initializing it depending on the initialize mode parameter
 	 * @param initializeMode boolean parameter
@@ -121,9 +133,9 @@ public class DataAccess  {
 		String fileName = config.getDbFilename();
 		if (initializeMode) {
 			fileName=fileName+";drop";
-			System.out.println("Previous DB deleted");
+			System.out.println(DB_HEADER + "Previous DB deleted");
 		}
-		System.out.println("DB opened");
+		System.out.println(DB_HEADER + "DB opened");
 		if (config.isDatabaseLocal()) {
 			emf = Persistence.createEntityManagerFactory("objectdb:"+fileName);
 		} else {
@@ -140,7 +152,7 @@ public class DataAccess  {
 	 */
 	public void close(){
 		db.close();
-		System.out.println("DB closed");
+		System.out.println(DB_HEADER + "DB closed");
 	}
 
 	/**
@@ -159,7 +171,7 @@ public class DataAccess  {
 			query.setParameter(2, lastDayMonthDate);
 			List<Date> dates = query.getResultList();
 		 	for (Date d:dates){
-		 		System.out.println(d.toString());
+		 		System.out.println(DB_HEADER + d.toString());
 		 		res.add(d);
 			}
 		}catch(Exception e) {
@@ -192,7 +204,7 @@ public class DataAccess  {
 		newClient.setBet(bet);
 		newClient.setWallet(client.getWallet()-amount);
 		db.getTransaction().commit();
-		System.out.println("DB>>> New Bet created and added to data base");
+		System.out.println(DB_HEADER + "New Bet created and added to data base");
 		return newClient;
 	}
 
@@ -224,11 +236,17 @@ public class DataAccess  {
 		
 		if(race==null || horse==null || winGain<1) throw new WrongParameterException();
 		
-		Race newRace = db.find(race.getClass(), race.getKey());
-		if(newRace==null) throw new RaceDoesntExist();
+		Race newRace = getRace(race);
+		Horse newHorse = getHorse(horse);
 		
-		Horse newHorse = db.find(horse.getClass(), horse.getKey());
-		if(newHorse==null) throw new HorseDoesntExist();
+		RaceHorse raceHorse = addRaceHorse(winGain, newRace, newHorse);
+		System.out.println(DB_HEADER + "New RaceHorse created and added to data base");
+		return raceHorse;
+	}
+
+	private RaceHorse addRaceHorse(double winGain, Race newRace, Horse newHorse)
+			throws RaceHorseAlreadyExist, RaceFullException, RaceFinished {
+		if(newRace.getFinished())throw new RaceFinished();
 		
 		RaceHorse raceHorse = new RaceHorse(winGain, newRace, newHorse);
 		if(newRace.getRaceHorses().contains(raceHorse)) throw new RaceHorseAlreadyExist();
@@ -236,18 +254,30 @@ public class DataAccess  {
 		db.getTransaction().begin();
 		if(!newRace.addRaceHorse(raceHorse)) throw new RaceFullException();
 		db.getTransaction().commit();
-		System.out.println("DB>>> New RaceHorse created and added to data base");
 		return raceHorse;
+	}
+
+	private Horse getHorse(Horse horse) throws HorseDoesntExist {
+		Horse newHorse = db.find(horse.getClass(), horse.getKey());
+		if(newHorse==null) throw new HorseDoesntExist();
+		return newHorse;
+	}
+
+	private Race getRace(Race race) throws RaceDoesntExist {
+		Race newRace = db.find(race.getClass(), race.getKey());
+		if(newRace==null) throw new RaceDoesntExist();
+		return newRace;
 	}
 
 	/**
 	 * This method retrieves from the data base to get all raceHorses of a given race
 	 * @param race from which to take the raceHorses
 	 * @return List<RaceHorse> raceHorses of the given race
+	 * @throws RaceDoesntExist 
 	 */
-	public List<RaceHorse> getRaceHorses(Race race){
-		Race r = db.find(race.getClass(), race);
-		return r.getRaceHorses();
+	public List<RaceHorse> getRaceHorses(Race race) throws RaceDoesntExist{
+		Race rc = getRace(race);
+		return rc.getRaceHorses();
 	}
 
 	/**
@@ -270,7 +300,7 @@ public class DataAccess  {
 		Race race = new Race(date, numOfStreets, startTime);
 		db.persist(race);
 		db.getTransaction().commit();
-		System.out.println("DB>>> New Race created and added to data base");
+		System.out.println(DB_HEADER + "New Race created and added to data base");
 		return race;
 	}
 
@@ -287,7 +317,7 @@ public class DataAccess  {
 			db.getTransaction().begin();
 			db.persist(b);
 			db.getTransaction().commit();
-			System.out.println("DB>>> New Client created and added to data base");
+			System.out.println(DB_HEADER + "New Client created and added to data base");
 			return true;
 		}else
 			return false;
@@ -367,7 +397,7 @@ public class DataAccess  {
 		}
 		r.setFinished(true);
 		db.getTransaction().commit();
-		System.out.println("DB>>> Race finish state changed to True");
+		System.out.println(DB_HEADER + "Race finish state changed to True");
 		return r;
 	}
 
@@ -380,7 +410,7 @@ public class DataAccess  {
 		Client cl = db.find(client.getClass(), client);
 		db.remove(cl);
 		db.getTransaction().commit();
-		System.out.println("DB>>> Client acount removed: " + cl.getUserName());
+		System.out.println(DB_HEADER + "Client acount removed: " + cl.getUserName());
 	}
 
 }

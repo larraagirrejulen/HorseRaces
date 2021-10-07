@@ -131,7 +131,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @return List<RaceHorse> raceHorses of the given race
 	 */
 	@Override
-	public List<RaceHorse> getRaceHorses(Race race){
+	public List<RaceHorse> getRaceHorses(Race race) throws RaceDoesntExist{
 		dbManager.open(false);
 		List<RaceHorse> raceHorses = dbManager.getRaceHorses(race);
 		dbManager.close();

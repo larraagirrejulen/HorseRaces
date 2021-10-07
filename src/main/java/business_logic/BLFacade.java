@@ -62,7 +62,7 @@ public interface BLFacade{
 	 * @param race from which to take the raceHorses
 	 * @return List<RaceHorse> raceHorses of the given race
 	 */
-	public List<RaceHorse> getRaceHorses(Race race);
+	public List<RaceHorse> getRaceHorses(Race race) throws RaceDoesntExist;
 
 	/**
 	 * This method retrieves from the data base to get all horses
