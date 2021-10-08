@@ -100,7 +100,7 @@ public class ConfigXML {
 
 
 
-			  dbFilename = getTagValue("dbFilename", config);
+			  getTagValue("dbFilename", config);
 
 				//Two possible values: true (no instance of RemoteServer needs to be launched) or false (RemoteServer needs to be run first)
 			  value= ((Element)config.getElementsByTagName("database").item(0)).getAttribute("local");

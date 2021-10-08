@@ -43,7 +43,7 @@ public class WalletGUI extends JFrame {
 		setBackground(Color.WHITE);
 
 		client1 = client;
-		facade = LoginGUI.getBusinessLogic();
+		LoginGUI.getBusinessLogic();
 
 		setBounds(800, 800, 550, 400);
 		contentPane = new JPanel();
@@ -119,9 +119,7 @@ public class WalletGUI extends JFrame {
 		btnAddMoney.setFont(new Font(FONT, Font.PLAIN, 11));
 		btnAddMoney.setBounds(188, 208, 179, 23);
 		contentPane.add(btnAddMoney);
-		btnAddMoney.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnAddMoney.addActionListener(input -> {
 				try {
 					double amount = Double.parseDouble(textField.getText());
 					if(amount>0) {
@@ -134,7 +132,6 @@ public class WalletGUI extends JFrame {
 					lblError.setForeground(Color.RED);
 					lblError.setText(ResourceBundle.getBundle(language).getString(INVALID_AMOUNT_LBL));
 				}
-			}
 		});
 
 
@@ -156,13 +153,10 @@ public class WalletGUI extends JFrame {
 		currentBalancelbl.setFont(new Font(FONT, Font.PLAIN, 10));
 		currentBalancelbl.setForeground(Color.WHITE);
 		currentBalancelbl.setBackground(new Color(0, 128, 128));
-		btnClose.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnClose.addActionListener(input -> {
 				clientFrame.setVisible(true);
 				clientFrame.setClient(client1);
 				frame.dispose();
-			}
 		});
 
 		addWindowListener(new WindowAdapter() {

@@ -35,8 +35,6 @@ public class ApplicationLauncher {
 
 			if (c.isBusinessLogicLocal()) {
 
-				//In this option, you can parameterize the DataAccess (e.g. a Mock DataAccess object)
-
 				DataAccess da= new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
 				appFacadeInterface=new BLFacadeImplementation(da);
 			}else { //If remote
@@ -44,8 +42,6 @@ public class ApplicationLauncher {
 
 				URL url = new URL(serviceName);
 
-		        //1st argument refers to wsdl document above
-				//2nd argument is service name, refer to wsdl document above
 		        QName qname = new QName("http://businessLogic/", "BLFacadeImplementationService");
 
 		        Service service = Service.create(url, qname);
