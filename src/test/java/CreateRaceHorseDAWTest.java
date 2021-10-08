@@ -20,7 +20,7 @@ import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 import test.TestDataAccess;
 
-public class CreateRaceHorseDAW {
+public class CreateRaceHorseDAWTest {
 
 	static DataAccess sut = new DataAccess(true);
 	static TestDataAccess testDA = new TestDataAccess();

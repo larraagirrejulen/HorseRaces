@@ -6,19 +6,24 @@
 
 <build>
     <plugins>
-	<plugin>
-		  <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
-          
-          <configuration>
-               <testFailureIgnore>true</testFailureIgnore>
-               <includes>
-                <include>*Int.java</include>
-                <include>*DAB.java</include>
-                <include>*DAW.java</include>
-               </includes>
-          </configuration>
+		<plugin>
+			<groupId>org.jacoco</groupId>
+         	<artifactId>jacoco-maven-plugin</artifactId>
+         	<version>0.8.6</version>
+         	<executions>
+	         	<execution>
+	         	<id>prepare-agent</id>
+	         	<goals>
+	         	<goal>prepare-agent</goal>
+	         	</goals>		
+	         	</execution>
+	         	<execution>
+	         	<id>report</id>
+	         	<goals>
+	         	<goal>report</goal>
+	         	</goals>		
+	         	</execution>
+         	</executions>	
         </plugin>
    </plugins>
 </build>
@@ -35,7 +40,10 @@
     <maven.compiler.source>11</maven.compiler.source>
     
     <sonar.organization>larraagirrejulen</sonar.organization>
-  	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.projectKey>HorseRaces</sonar.projectKey>
+    
+    <sonar.login>3c23d77da616edb765bc9d461ff32aa1d7303e7e</sonar.login>
 </properties>
 
 <!-- https://mvnrepository.com/artifact/junit/junit -->
