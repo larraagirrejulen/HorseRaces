@@ -40,7 +40,7 @@ public class WalletGUI extends JFrame {
 	public WalletGUI(Client client, ClientGUI clientFrame, String language) {
 		setLocation(new Point(610, 260));
 		setUndecorated(true);
-		setBackground(Color.WHITE); //aaaaa
+		setBackground(Color.WHITE);
 
 		client1 = client;
 		LoginGUI.getBusinessLogic();
