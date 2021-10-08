@@ -87,9 +87,7 @@ public class WalletGUI extends JFrame {
 		btnRestMoney.setBackground(new Color(0, 0, 51));
 		btnRestMoney.setBounds(188, 242, 179, 23);
 		contentPane.add(btnRestMoney);
-		btnRestMoney.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnRestMoney.addActionListener(input -> {
 				try {
 					double amount = Double.parseDouble(textField.getText());
 					if(amount>0 && amount<=client1.getWallet()) {
@@ -106,7 +104,6 @@ public class WalletGUI extends JFrame {
 					lblError.setText(ResourceBundle.getBundle(language).getString(INVALID_AMOUNT_LBL));
 				}
 
-			}
 		});
 
 
