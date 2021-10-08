@@ -15,13 +15,12 @@ import domain.RaceHorse;
 import domain.StartTime;
 import exceptions.HorseDoesntExist;
 import exceptions.RaceDoesntExist;
-import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 import test.TestDataAccess;
 
-public class CreateRaceHorseDAB {
+public class CreateRaceHorseDAWTest {
 
 	static DataAccess sut = new DataAccess(true);
 	static TestDataAccess testDA = new TestDataAccess();
@@ -48,27 +47,6 @@ public class CreateRaceHorseDAB {
 			
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
-			testDA.close();
-			
-			sut.open(false);
-			RaceHorse rh = sut.createRaceHorse(winGain, race, horse1);
-			
-			assertEquals(rh.getHorse(), horse1);
-			assertEquals(rh.getRace(), race);
-		}catch(Exception e){
-			e.printStackTrace();
-			fail();
-		}finally {
-			sut.close();
-		}
-	}
-	
-	@Test
-	public void test2(){
-		try {
-			testDA.open();
-			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
 			sut.createRaceHorse(winGain, null, horse);
@@ -84,14 +62,13 @@ public class CreateRaceHorseDAB {
 	}
 
 	@Test
-	public void test3(){
+	public void test2(){
 		try {
-
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
 			
-			sut.createRaceHorse(1.5, race, null);
+			sut.createRaceHorse(winGain, race, null);
 			
 			fail();
 			
@@ -104,7 +81,7 @@ public class CreateRaceHorseDAB {
 	}
 	
 	@Test
-	public void test4(){
+	public void test3(){
 		try {
 			
 			testDA.open();
@@ -124,9 +101,8 @@ public class CreateRaceHorseDAB {
 	}
 	
 	@Test
-	public void test5(){
+	public void test4(){
 		try {
-			
 			Race race = new Race(createDate(), numberOfStreets, st);
 			
 			sut.open(false);
@@ -145,8 +121,9 @@ public class CreateRaceHorseDAB {
 	}
 	
 	@Test
-	public void test6(){
+	public void test5(){
 		try {
+
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
@@ -167,31 +144,9 @@ public class CreateRaceHorseDAB {
 	}
 	
 	@Test
-	public void test7(){
+	public void test6(){
 		try {
-			testDA.open();
-			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			race.setFinished(true);
-			testDA.close();
 			
-			sut.open(false);
-			sut.createRaceHorse(winGain, race, horse);
-			
-			fail();
-			
-		}catch(RaceFinished  e) {
-			assertTrue(true);
-		}catch(Exception e){
-			fail();
-		}finally {
-			sut.close();
-		}
-	}
-	
-	@Test
-	public void test8(){
-		try {
-
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			testDA.close();
@@ -212,9 +167,9 @@ public class CreateRaceHorseDAB {
 	}
 	
 	@Test
-	public void test9(){
+	public void test7(){
 		try {
-
+			
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), 1, st, winGain, horse);
 			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
@@ -235,5 +190,25 @@ public class CreateRaceHorseDAB {
 		}
 	}
 	
-	
+	@Test
+	public void test8(){
+		try {
+			
+			testDA.open();
+			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
+			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
+			testDA.close();
+			
+			sut.open(false);
+			RaceHorse rh = sut.createRaceHorse(winGain, race, horse1);
+			
+			assertEquals(rh.getHorse(), horse1);
+			assertEquals(rh.getRace(), race);
+		}catch(Exception e){
+			e.printStackTrace();
+			fail();
+		}finally {
+			sut.close();
+		}
+	}
 }

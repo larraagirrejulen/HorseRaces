@@ -34,8 +34,8 @@ public class DataAccess  {
 	private static final String DB_HEADER = "DB>>> ";
 	private static final String MALE = "male";
 	private static final String FEMALE = "female";
-	protected static EntityManager  db;
-	protected static EntityManagerFactory emf;
+	protected EntityManager  db;
+	protected EntityManagerFactory emf;
 	private ConfigXML config = ConfigXML.getInstance();
 
 	/**

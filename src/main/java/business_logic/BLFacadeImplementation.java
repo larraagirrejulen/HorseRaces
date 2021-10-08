@@ -19,7 +19,7 @@ import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 
-public class BLFacadeImplementation  implements BLFacade {
+public class BLFacadeImplementation implements BLFacade {
 
 	DataAccess dbManager;
 
@@ -35,7 +35,6 @@ public class BLFacadeImplementation  implements BLFacade {
 			da.open(false);
 			da.initializeDB();
 			da.close();
-
 		}
 		dbManager=da;
 	}
