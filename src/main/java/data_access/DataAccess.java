@@ -163,19 +163,15 @@ public class DataAccess  {
 	 */
 	public List<Date> getRacesMonth(Date date) {
 		ArrayList<Date> res = new ArrayList<>();
-		try {
-			Date firstDayMonthDate = UtilDate.firstDayMonth(date);
-			Date lastDayMonthDate = UtilDate.lastDayMonth(date);
-			TypedQuery<Date> query = db.createQuery("SELECT DISTINCT rc.date FROM Race rc WHERE rc.date BETWEEN ?1 and ?2",Date.class);
-			query.setParameter(1, firstDayMonthDate);
-			query.setParameter(2, lastDayMonthDate);
-			List<Date> dates = query.getResultList();
-		 	for (Date d:dates){
-		 		System.out.println(DB_HEADER + d.toString());
-		 		res.add(d);
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
+		Date firstDayMonthDate = UtilDate.firstDayMonth(date);
+		Date lastDayMonthDate = UtilDate.lastDayMonth(date);
+		TypedQuery<Date> query = db.createQuery("SELECT DISTINCT rc.date FROM Race rc WHERE rc.date BETWEEN ?1 and ?2",Date.class);
+		query.setParameter(1, firstDayMonthDate);
+		query.setParameter(2, lastDayMonthDate);
+		List<Date> dates = query.getResultList();
+	 	for (Date d:dates){
+	 		System.out.println(DB_HEADER + d.toString());
+	 		res.add(d);
 		}
 	 	return res;
 	}

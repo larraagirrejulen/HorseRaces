@@ -82,13 +82,10 @@ public class ClientGUI extends JFrame {
 		btnAddRestMoney.setFont(new Font(FONT, Font.PLAIN, 10));
 		btnAddRestMoney.setForeground(Color.WHITE);
 		btnAddRestMoney.setBackground(new Color(0, 128, 128));
-		btnAddRestMoney.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnAddRestMoney.addActionListener(input -> {
 				WalletGUI gui = new WalletGUI(client, frame, language);
 				gui.setVisible(true);
 				frame.dispose();
-			}
 		});
 		btnAddRestMoney.setBounds(10, 42, 150, 20);
 		contentPane.add(btnAddRestMoney);
@@ -114,22 +111,16 @@ public class ClientGUI extends JFrame {
 		btnDeleteAcount.setForeground(Color.WHITE);
 		btnDeleteAcount.setFont(new Font(FONT, Font.PLAIN, 10));
 		btnDeleteAcount.setBackground(new Color(0, 128, 128));
-		btnDeleteAcount.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnDeleteAcount.addActionListener(input -> {
 				if(client.getWallet()==0 && client.getBet()==null) {
 					facade.deleteAcount(client);
 					mainFrame.setVisible(true);
 					frame.dispose();
 				}
-			}
 		});
-		btnLogout.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
+		btnLogout.addActionListener(input -> {
 				mainFrame.setVisible(true);
 				frame.dispose();
-			}
 		});
 	}
 }
