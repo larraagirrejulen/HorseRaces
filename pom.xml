@@ -13,6 +13,11 @@
           
           <configuration>
                <testFailureIgnore>true</testFailureIgnore>
+               <includes>
+                <include>*Int.java</include>
+                <include>*DAB.java</include>
+                <include>*DAW.java</include>
+               </includes>
           </configuration>
         </plugin>
    </plugins>

@@ -21,7 +21,7 @@ import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
 import test.TestDataAccess;
 
-public class CreateRaceHorseDABTest {
+public class CreateRaceHorseDAB {
 
 	static DataAccess sut = new DataAccess(true);
 	static TestDataAccess testDA = new TestDataAccess();
@@ -171,7 +171,7 @@ public class CreateRaceHorseDABTest {
 		try {
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			race.setFinished(true);
+			testDA.setFinished(race);
 			testDA.close();
 			
 			sut.open(false);
@@ -179,7 +179,7 @@ public class CreateRaceHorseDABTest {
 			
 			fail();
 			
-		}catch(RaceFinished  e) {
+		}catch(RaceFinished e) {
 			assertTrue(true);
 		}catch(Exception e){
 			fail();

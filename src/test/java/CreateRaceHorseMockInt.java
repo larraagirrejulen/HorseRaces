@@ -18,7 +18,7 @@ import domain.RaceHorse;
 import domain.StartTime;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CreateRaceHorseMockIntTest {
+public class CreateRaceHorseMockInt {
 	
 	//Race mockedRace=Mockito.mock(Race.class);
 	

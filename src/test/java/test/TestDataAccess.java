@@ -8,6 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.junit.internal.builders.AnnotatedBuilder;
+
 import configuration.ConfigXML;
 import domain.Horse;
 import domain.Race;
@@ -71,7 +73,15 @@ public class TestDataAccess {
 		db.getTransaction().commit();
 		return horse;
 	}
-		
+	
+	public void setFinished(Race race) {
+		db.getTransaction().begin();
+		Race newRace = db.find(Race.class, race.getKey());
+		newRace.setFinished(true);
+		db.persist(newRace);
+		db.getTransaction().commit();
+	}
+	
 	public Race addRaceWithRaceHorse(Date date, int numOfStreets, StartTime st, double winGain, Horse horse) {
 		System.out.println(">> DataAccessTest: addRace");
 		Race rc=null;
