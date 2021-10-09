@@ -42,8 +42,6 @@
     <sonar.organization>larraagirrejulen</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.projectKey>HorseRaces</sonar.projectKey>
-    
-    <sonar.login>3c23d77da616edb765bc9d461ff32aa1d7303e7e</sonar.login>
 </properties>
 
 <!-- https://mvnrepository.com/artifact/junit/junit -->
