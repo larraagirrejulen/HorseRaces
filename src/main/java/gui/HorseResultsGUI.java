@@ -69,13 +69,9 @@ public class HorseResultsGUI extends JFrame {
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(Color.WHITE);
-		try {
-			this.language = language;
-			this.adminFrame = adminFrame;
-			jbInit();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		this.language = language;
+		this.adminFrame = adminFrame;
+		jbInit();
 	}
 
 	private void jbInit() {
@@ -250,26 +246,18 @@ public class HorseResultsGUI extends JFrame {
 		btnRemoveHorse.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					RaceHorse rh=orderList.getSelectedValue();
-					horses.addElement(rh);
-					raceHorses.removeElement(rh);
-				}catch(Exception ex) {
-					ex.printStackTrace();
-				}
+				RaceHorse rh=orderList.getSelectedValue();
+				horses.addElement(rh);
+				raceHorses.removeElement(rh);
 			}
 		});
 		btnRemoveHorse.setVisible(false);
 				btnAddHorse.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						try {
-							RaceHorse rh=(RaceHorse)horses.getSelectedItem();
-							raceHorses.addElement(rh);
-							horses.removeElement(rh);
-						}catch(Exception ex) {
-							ex.printStackTrace();
-						}
+						RaceHorse rh=(RaceHorse)horses.getSelectedItem();
+						raceHorses.addElement(rh);
+						horses.removeElement(rh);
 					}
 				});
 				btnAddHorse.setVisible(false);

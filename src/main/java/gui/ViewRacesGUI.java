@@ -48,14 +48,10 @@ public class ViewRacesGUI extends JFrame {
 		getContentPane().setFont(new Font(FONT, Font.PLAIN, 11));
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(new Color(32, 178, 170));
-		try {
-			this.language=language;
-			loginFrame = loFrame;
-			nextRace = facade.getNextRace();
-			jbInit();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		this.language=language;
+		loginFrame = loFrame;
+		nextRace = facade.getNextRace();
+		jbInit();
 	}
 
 	private void jbInit(){

@@ -51,17 +51,13 @@ public class DataAccess  {
      * Initializes the data base with default objects
      */
 	public void initializeDB(){
-		try {
-			db.getTransaction().begin();
-			initializeUsers();
-			ArrayList<Horse> horses = initializeHorses();
-			ArrayList<Race> races = initializeRaces();
-			initializeRaceHorses(horses, races);
-			db.getTransaction().commit();
-			System.out.println(DB_HEADER + "initialized");
-		} catch (Exception e){
-			e.printStackTrace();
-		}
+		db.getTransaction().begin();
+		initializeUsers();
+		ArrayList<Horse> horses = initializeHorses();
+		ArrayList<Race> races = initializeRaces();
+		initializeRaceHorses(horses, races);
+		db.getTransaction().commit();
+		System.out.println(DB_HEADER + "initialized");
 	}
 
 	private void initializeRaceHorses(ArrayList<Horse> horses, ArrayList<Race> races) {

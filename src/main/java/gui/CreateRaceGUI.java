@@ -80,13 +80,9 @@ public class CreateRaceGUI extends JFrame {
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(Color.WHITE);
-		try {
-			this.language = language;
-			this.adminFrame = adminFrame;
-			jbInit();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		this.language = language;
+		this.adminFrame = adminFrame;
+		jbInit();
 	}
 
 	private void jbInit(){

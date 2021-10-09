@@ -54,15 +54,11 @@ public class ViewRacesClientGUI extends JFrame {
 		getContentPane().setFont(new Font(FONT, Font.PLAIN, 11));
 		getContentPane().setBackground(new Color(32, 178, 170));
 		setBackground(Color.WHITE);
-		try {
-			this.language=language;
-			this.client = client;
-			clientFrame = clFrame;
-			nextRace = facade.getNextRace();
-			jbInit();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		this.language=language;
+		this.client = client;
+		clientFrame = clFrame;
+		nextRace = facade.getNextRace();
+		jbInit();
 	}
 
 	private void jbInit() {
