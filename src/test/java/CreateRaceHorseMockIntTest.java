@@ -54,11 +54,12 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 1.5;
 			
 			Mockito.doThrow(new WrongParameterException()).when(horseRacesDAO).createRaceHorse(winGain, null, horse);
-			sut.createRaceHorse(winGain, null, horse);
-			fail();
-			
-		}catch(WrongParameterException e) {
-			assertTrue(true);
+			try{
+				sut.createRaceHorse(winGain, null, horse);
+				fail();
+			}catch(WrongParameterException e) {
+				assertTrue(true);
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
@@ -71,11 +72,12 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 1.5;
 			
 			Mockito.doThrow(new WrongParameterException()).when(horseRacesDAO).createRaceHorse(winGain, race, null);
-			sut.createRaceHorse(winGain, race, null);
-			fail();
-			
-		}catch(WrongParameterException e) {
-			assertTrue(true);
+			try {
+				sut.createRaceHorse(winGain, race, null);
+				fail();
+			}catch(WrongParameterException e){
+				assertTrue(true);
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
@@ -89,11 +91,12 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 0.5;
 			
 			Mockito.doThrow(new WrongParameterException()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
-			sut.createRaceHorse(winGain, race, horse);
-			fail();
-			
-		}catch(WrongParameterException e) {
-			assertTrue(true);
+			try{
+				sut.createRaceHorse(winGain, race, horse);
+				fail();
+			}catch(WrongParameterException e) {
+				assertTrue(true);
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
@@ -107,11 +110,13 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 1.5;
 			
 			Mockito.doThrow(new RaceDoesntExist()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
-			sut.createRaceHorse(winGain, race, horse);
-			fail();
+			try{
+				sut.createRaceHorse(winGain, race, horse);
+				fail();
+			}catch(RaceDoesntExist e) {
+				assertTrue(true);
+			}
 			
-		}catch(RaceDoesntExist e) {
-			assertTrue(true);
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
@@ -125,11 +130,12 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 1.5;
 			
 			Mockito.doThrow(new HorseDoesntExist()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
-			sut.createRaceHorse(winGain, race, horse);
-			fail();
-			
-		}catch(HorseDoesntExist e) {
-			assertTrue(true);
+			try{
+				sut.createRaceHorse(winGain, race, horse);
+				fail();
+			}catch(HorseDoesntExist e) {
+				assertTrue(true);
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
@@ -143,11 +149,12 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 1.5;
 			
 			Mockito.doThrow(new RaceFinished()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
-			sut.createRaceHorse(winGain, race, horse);
-			fail();
-			
-		}catch(RaceFinished e) {
-			assertTrue(true);
+			try{
+				sut.createRaceHorse(winGain, race, horse);
+				fail();
+			}catch(RaceFinished e) {
+				assertTrue(true);
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
@@ -161,11 +168,13 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 1.5;
 			
 			Mockito.doThrow(new RaceHorseAlreadyExist()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
-			sut.createRaceHorse(winGain, race, horse);
-			fail();
 			
-		}catch(RaceHorseAlreadyExist e) {
-			assertTrue(true);
+			try{
+				sut.createRaceHorse(winGain, race, horse);
+				fail();
+			}catch(RaceHorseAlreadyExist e) {
+				assertTrue(true);
+			}	
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
@@ -179,11 +188,12 @@ public class CreateRaceHorseMockIntTest {
 			double winGain = 1.5;
 			
 			Mockito.doThrow(new RaceFullException()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
-			sut.createRaceHorse(winGain, race, horse);
-			fail();
-			
-		}catch(RaceFullException e) {
-			assertTrue(true);
+			try {
+				sut.createRaceHorse(winGain, race, horse);
+				fail();
+			}catch(RaceFullException e) {
+				assertTrue(true);
+			}	
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
