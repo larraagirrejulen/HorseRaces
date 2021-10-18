@@ -1935,3 +1935,67 @@ Type domain.Race is not enhanced.
 [2021-10-18 17:25:22 #10 type] 
 Type domain.StartTime is not enhanced.
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-18 17:41:40 #1 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' has been recovered (tr. 768-800)
+
+[2021-10-18 17:41:40 #2 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' is opened by 11568@DESKTOP-D1B8POF
+
+[2021-10-18 17:41:40 #3 type] 
+Type domain.Registered is not enhanced.
+
+[2021-10-18 17:41:40 #4 type] 
+Type domain.Admin is not enhanced.
+
+[2021-10-18 17:41:40 #5 type] 
+Type domain.Client is not enhanced.
+
+[2021-10-18 17:41:40 #6 type] 
+Type domain.Bet is not enhanced.
+
+[2021-10-18 17:41:40 #7 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-10-18 17:41:40 #8 type] 
+Type domain.Horse is not enhanced.
+
+[2021-10-18 17:41:40 #9 type] 
+Type domain.Race is not enhanced.
+
+[2021-10-18 17:41:40 #10 type] 
+Type domain.StartTime is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-18 17:42:16 #1 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' has been recovered (tr. 801-815)
+
+[2021-10-18 17:42:16 #2 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' is opened by 11792@DESKTOP-D1B8POF
+
+[2021-10-18 17:42:16 #3 type] 
+Type domain.Registered is not enhanced.
+
+[2021-10-18 17:42:16 #4 type] 
+Type domain.Admin is not enhanced.
+
+[2021-10-18 17:42:16 #5 type] 
+Type domain.Client is not enhanced.
+
+[2021-10-18 17:42:16 #6 type] 
+Type domain.Bet is not enhanced.
+
+[2021-10-18 17:42:16 #7 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-10-18 17:42:16 #8 type] 
+Type domain.Horse is not enhanced.
+
+[2021-10-18 17:42:16 #9 type] 
+Type domain.Race is not enhanced.
+
+[2021-10-18 17:42:16 #10 type] 
+Type domain.StartTime is not enhanced.
+

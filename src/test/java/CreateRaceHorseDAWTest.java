@@ -189,6 +189,7 @@ public class CreateRaceHorseDAWTest {
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
 			horse1 = testDA.addHorse("a", "a", 1, "male", 1);
+			testDA.close();
 			
 			
 			sut.open(false);
@@ -202,7 +203,8 @@ public class CreateRaceHorseDAWTest {
 			fail();
 		}finally {
 			sut.close();
-			//testDA.removeRace(race);
+			testDA.open();
+			testDA.removeRace(race);
 			testDA.removeRaceHorse(raceHorse);
 			testDA.removeHorse(horse);
 			testDA.removeHorse(horse1);
