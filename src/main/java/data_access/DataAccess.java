@@ -239,13 +239,14 @@ public class DataAccess  {
 
 	private RaceHorse addRaceHorse(double winGain, Race newRace, Horse newHorse)
 			throws RaceHorseAlreadyExist, RaceFullException, RaceFinished {
+		db.getTransaction().begin();
 		if(newRace.getFinished())throw new RaceFinished();
 		
 		RaceHorse raceHorse = new RaceHorse(winGain, newRace, newHorse);
 		if(newRace.getRaceHorses().contains(raceHorse)) throw new RaceHorseAlreadyExist();
 		
-		db.getTransaction().begin();
 		if(!newRace.addRaceHorse(raceHorse)) throw new RaceFullException();
+		db.persist(raceHorse);
 		db.getTransaction().commit();
 		return raceHorse;
 	}

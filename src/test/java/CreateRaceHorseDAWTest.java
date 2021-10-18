@@ -26,7 +26,9 @@ public class CreateRaceHorseDAWTest {
 	static TestDataAccess testDA = new TestDataAccess();
 	
 	private Race race;
+	private RaceHorse raceHorse;
 	private Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
+	private Horse horse1;
 	private StartTime st = new StartTime("10:30");
 	private int numberOfStreets = 4;
 	private double winGain = 1.5;
@@ -45,12 +47,7 @@ public class CreateRaceHorseDAWTest {
 	public void test1(){
 		try {
 			
-			testDA.open();
-			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			testDA.close();
-			
 			sut.createRaceHorse(winGain, null, horse);
-			
 			fail();
 			
 		}catch(WrongParameterException e) {
@@ -64,12 +61,8 @@ public class CreateRaceHorseDAWTest {
 	@Test
 	public void test2(){
 		try {
-			testDA.open();
-			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			testDA.close();
 			
 			sut.createRaceHorse(winGain, race, null);
-			
 			fail();
 			
 		}catch(WrongParameterException e) {
@@ -84,12 +77,7 @@ public class CreateRaceHorseDAWTest {
 	public void test3(){
 		try {
 			
-			testDA.open();
-			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			testDA.close();
-			
 			sut.createRaceHorse(0.5, race, horse);
-			
 			fail();
 			
 		}catch(WrongParameterException e) {
@@ -126,7 +114,6 @@ public class CreateRaceHorseDAWTest {
 
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			testDA.close();
 			
 			sut.open(false);
 			sut.createRaceHorse(winGain, race, new Horse("a", "a", 1, "male", 1));
@@ -140,6 +127,8 @@ public class CreateRaceHorseDAWTest {
 			fail();
 		}finally {
 			sut.close();
+			testDA.removeRace(race);
+			testDA.close();
 		}
 	}
 	
@@ -149,7 +138,6 @@ public class CreateRaceHorseDAWTest {
 			
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			testDA.close();
 			
 			sut.open(false);
 			sut.createRaceHorse(winGain, race, horse);
@@ -163,6 +151,8 @@ public class CreateRaceHorseDAWTest {
 			fail();
 		}finally {
 			sut.close();
+			testDA.removeRace(race);
+			testDA.close();
 		}
 	}
 	
@@ -173,7 +163,6 @@ public class CreateRaceHorseDAWTest {
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), 1, st, winGain, horse);
 			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
-			testDA.close();
 			
 			sut.open(false);
 			sut.createRaceHorse(winGain, race, horse1);
@@ -187,6 +176,9 @@ public class CreateRaceHorseDAWTest {
 			fail();
 		}finally {
 			sut.close();
+			testDA.removeHorse(horse);
+			testDA.removeRace(race);
+			testDA.close();
 		}
 	}
 	
@@ -196,19 +188,26 @@ public class CreateRaceHorseDAWTest {
 			
 			testDA.open();
 			race = testDA.addRaceWithRaceHorse(createDate(), numberOfStreets, st, winGain, horse);
-			Horse horse1 = testDA.addHorse("a", "a", 1, "male", 1);
-			testDA.close();
+			horse1 = testDA.addHorse("a", "a", 1, "male", 1);
+			
 			
 			sut.open(false);
-			RaceHorse rh = sut.createRaceHorse(winGain, race, horse1);
+			raceHorse = sut.createRaceHorse(winGain, race, horse1);		
 			
-			assertEquals(rh.getHorse(), horse1);
-			assertEquals(rh.getRace(), race);
+			assertEquals(raceHorse.getHorse(), horse1);
+			assertEquals(raceHorse.getRace(), race);
+			
 		}catch(Exception e){
 			e.printStackTrace();
 			fail();
 		}finally {
 			sut.close();
+			//testDA.removeRace(race);
+			testDA.removeRaceHorse(raceHorse);
+			testDA.removeHorse(horse);
+			testDA.removeHorse(horse1);
+			testDA.close();
 		}
+			
 	}
 }

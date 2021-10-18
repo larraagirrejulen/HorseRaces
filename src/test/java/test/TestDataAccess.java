@@ -8,8 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.junit.internal.builders.AnnotatedBuilder;
-
 import configuration.ConfigXML;
 import domain.Horse;
 import domain.Race;
@@ -66,6 +64,30 @@ public class TestDataAccess {
 			return false;
     }
 	
+	public boolean removeHorse(Horse horse) {
+		System.out.println(">> DataAccessTest: removeRace");
+		Horse h = db.find(Horse.class, horse.getKey());
+		if (h!=null) {
+			db.getTransaction().begin();
+			db.remove(h);
+			db.getTransaction().commit();
+			return true;
+		} else 
+			return false;
+    }
+	
+	public boolean removeRaceHorse(RaceHorse raceHorse) {
+		System.out.println(">> DataAccessTest: removeRace");
+		RaceHorse rh = db.find(RaceHorse.class, raceHorse.getKey());
+		if (rh!=null) {
+			db.getTransaction().begin();
+			db.remove(rh);
+			db.getTransaction().commit();
+			return true;
+		} else 
+			return false;
+    }
+	
 	public Horse addHorse(String name, String cavalry, int age, String gender, int totalPoints) {
 		db.getTransaction().begin();
 		Horse horse = new Horse(name, cavalry, age, gender, totalPoints);
@@ -92,6 +114,7 @@ public class TestDataAccess {
 			    rc.addRaceHorse(rh);
 				db.persist(rc);
 				db.persist(horse);
+				db.persist(rh);
 				db.getTransaction().commit();
 			}
 			catch (Exception e){
