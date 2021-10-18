@@ -87,6 +87,7 @@ public class DataAccess  {
 		ArrayList<Race> races = new ArrayList<>();
 		races.add(new Race(UtilDate.newDate(year,month,17), 4, new StartTime("10:30")));
 		races.add(new Race(UtilDate.newDate(year,month-2,17), 4, new StartTime("10:30")));
+		races.get(1).setFinished(true);
 		for(Race r: races) {	db.persist(r);	}
 		System.out.println(DB_HEADER + "Races created");
 		return races;
@@ -175,6 +176,8 @@ public class DataAccess  {
 		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished==False", Race.class);
 		List<Race> races = query.getResultList();
 		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())>0) nextRace = rc;
+		
+		
 		return nextRace;
 	}
 
