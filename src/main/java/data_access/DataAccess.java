@@ -174,7 +174,7 @@ public class DataAccess  {
 		Race nextRace = null;
 		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished==False", Race.class);
 		List<Race> races = query.getResultList();
-		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())<0) nextRace = rc;
+		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())>0) nextRace = rc;
 		return nextRace;
 	}
 

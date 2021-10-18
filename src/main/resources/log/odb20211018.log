@@ -1,0 +1,90 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-18 10:20:38 #1 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' has been recovered (tr. 75-96)
+
+[2021-10-18 10:20:38 #2 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' is opened by 6156@DESKTOP-D1B8POF
+
+[2021-10-18 10:20:38 #3 type] 
+Type domain.Registered is not enhanced.
+
+[2021-10-18 10:20:38 #4 type] 
+Type domain.Admin is not enhanced.
+
+[2021-10-18 10:20:38 #5 type] 
+Type domain.Client is not enhanced.
+
+[2021-10-18 10:20:38 #6 type] 
+Type domain.Bet is not enhanced.
+
+[2021-10-18 10:20:38 #7 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-10-18 10:20:38 #8 type] 
+Type domain.Horse is not enhanced.
+
+[2021-10-18 10:20:38 #9 type] 
+Type domain.Race is not enhanced.
+
+[2021-10-18 10:20:38 #10 type] 
+Type domain.StartTime is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-18 10:22:13 #1 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' is opened by 4176@DESKTOP-D1B8POF
+
+[2021-10-18 10:22:13 #2 type] 
+Type domain.Registered is not enhanced.
+
+[2021-10-18 10:22:13 #3 type] 
+Type domain.Admin is not enhanced.
+
+[2021-10-18 10:22:13 #4 type] 
+Type domain.Client is not enhanced.
+
+[2021-10-18 10:22:13 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2021-10-18 10:22:13 #6 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-10-18 10:22:13 #7 type] 
+Type domain.Horse is not enhanced.
+
+[2021-10-18 10:22:13 #8 type] 
+Type domain.Race is not enhanced.
+
+[2021-10-18 10:22:13 #9 type] 
+Type domain.StartTime is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-18 10:26:16 #1 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' is opened by 5704@DESKTOP-D1B8POF
+
+[2021-10-18 10:26:16 #2 type] 
+Type domain.Registered is not enhanced.
+
+[2021-10-18 10:26:16 #3 type] 
+Type domain.Admin is not enhanced.
+
+[2021-10-18 10:26:16 #4 type] 
+Type domain.Client is not enhanced.
+
+[2021-10-18 10:26:16 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2021-10-18 10:26:16 #6 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-10-18 10:26:16 #7 type] 
+Type domain.Horse is not enhanced.
+
+[2021-10-18 10:26:16 #8 type] 
+Type domain.Race is not enhanced.
+
+[2021-10-18 10:26:16 #9 type] 
+Type domain.StartTime is not enhanced.
+
