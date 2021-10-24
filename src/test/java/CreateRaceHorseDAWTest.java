@@ -13,8 +13,7 @@ import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;
 import domain.StartTime;
-import exceptions.HorseDoesntExist;
-import exceptions.RaceDoesntExist;
+import exceptions.ObjectDoesntExistException;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
@@ -98,7 +97,7 @@ public class CreateRaceHorseDAWTest {
 			
 			fail();
 			
-		}catch(RaceDoesntExist e) {
+		}catch(ObjectDoesntExistException e) {
 			assertTrue(true);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -120,7 +119,7 @@ public class CreateRaceHorseDAWTest {
 			
 			fail();
 			
-		}catch(HorseDoesntExist e) {
+		}catch(ObjectDoesntExistException e) {
 			assertTrue(true);
 		}catch(Exception e){
 			e.printStackTrace();

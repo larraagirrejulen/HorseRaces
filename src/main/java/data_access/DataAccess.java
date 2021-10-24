@@ -22,8 +22,7 @@ import domain.Race;
 import domain.RaceHorse;
 import domain.Registered;
 import domain.StartTime;
-import exceptions.HorseDoesntExist;
-import exceptions.RaceDoesntExist;
+import exceptions.ObjectDoesntExistException;
 import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
@@ -225,12 +224,12 @@ public class DataAccess  {
 	 * @return RaceHorse
 	 */
 	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) 
-			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist, RaceFinished{
+			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, ObjectDoesntExistException, RaceFinished{
 		
 		if(race==null || horse==null || winGain<1) throw new WrongParameterException();
 		
-		Race newRace = getRace(race);
-		Horse newHorse = getHorse(horse);
+		Race newRace = (Race) getObject(race);
+		Horse newHorse = (Horse) getObject(horse);
 		
 		RaceHorse raceHorse = addRaceHorse(winGain, newRace, newHorse);
 		System.out.println(DB_HEADER + "New RaceHorse created and added to data base");
@@ -250,27 +249,20 @@ public class DataAccess  {
 		db.getTransaction().commit();
 		return raceHorse;
 	}
-
-	private Horse getHorse(Horse horse) throws HorseDoesntExist {
-		Horse newHorse = db.find(horse.getClass(), horse.getKey());
-		if(newHorse==null) throw new HorseDoesntExist();
-		return newHorse;
-	}
-
-	private Race getRace(Race race) throws RaceDoesntExist {
-		Race newRace = db.find(race.getClass(), race.getKey());
-		if(newRace==null) throw new RaceDoesntExist();
-		return newRace;
+	
+	private Object getObject(Object obj) throws ObjectDoesntExistException{
+		Object newObj = db.find(obj.getClass(), obj);
+		if(newObj == null) throw new ObjectDoesntExistException();
+		return newObj;
 	}
 
 	/**
 	 * This method retrieves from the data base to get all raceHorses of a given race
 	 * @param race from which to take the raceHorses
 	 * @return List<RaceHorse> raceHorses of the given race
-	 * @throws RaceDoesntExist 
 	 */
-	public List<RaceHorse> getRaceHorses(Race race) throws RaceDoesntExist{
-		Race rc = getRace(race);
+	public List<RaceHorse> getRaceHorses(Race race) throws ObjectDoesntExistException{
+		Race rc = (Race) getObject(race);
 		return rc.getRaceHorses();
 	}
 

@@ -14,8 +14,7 @@ import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;
 import domain.StartTime;
-import exceptions.HorseDoesntExist;
-import exceptions.RaceDoesntExist;
+import exceptions.ObjectDoesntExistException;
 import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
@@ -109,11 +108,11 @@ public class CreateRaceHorseMockIntTest {
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
 			double winGain = 1.5;
 			
-			Mockito.doThrow(new RaceDoesntExist()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
+			Mockito.doThrow(new ObjectDoesntExistException()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
 			try{
 				sut.createRaceHorse(winGain, race, horse);
 				fail();
-			}catch(RaceDoesntExist e) {
+			}catch(ObjectDoesntExistException e) {
 				assertTrue(true);
 			}
 			
@@ -129,11 +128,11 @@ public class CreateRaceHorseMockIntTest {
 			Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
 			double winGain = 1.5;
 			
-			Mockito.doThrow(new HorseDoesntExist()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
+			Mockito.doThrow(new ObjectDoesntExistException()).when(horseRacesDAO).createRaceHorse(winGain, race, horse);
 			try{
 				sut.createRaceHorse(winGain, race, horse);
 				fail();
-			}catch(HorseDoesntExist e) {
+			}catch(ObjectDoesntExistException e) {
 				assertTrue(true);
 			}
 		}catch(Exception e){

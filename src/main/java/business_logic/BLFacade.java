@@ -9,8 +9,7 @@ import domain.Race;
 import domain.RaceHorse;
 import domain.Registered;
 import domain.StartTime;
-import exceptions.HorseDoesntExist;
-import exceptions.RaceDoesntExist;
+import exceptions.ObjectDoesntExistException;
 import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
@@ -55,14 +54,14 @@ public interface BLFacade{
 	 * @param horse of the new RaceHorse
 	 * @return RaceHorse
 	 */
-	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) throws RaceHorseAlreadyExist, WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist, RaceFinished;
+	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) throws RaceHorseAlreadyExist, WrongParameterException, RaceFullException, ObjectDoesntExistException, RaceFinished;
 
 	/**
 	 * This method retrieves from the data base to get all raceHorses of a given race
 	 * @param race from which to take the raceHorses
 	 * @return List<RaceHorse> raceHorses of the given race
 	 */
-	public List<RaceHorse> getRaceHorses(Race race) throws RaceDoesntExist;
+	public List<RaceHorse> getRaceHorses(Race race) throws ObjectDoesntExistException;
 
 	/**
 	 * This method retrieves from the data base to get all horses

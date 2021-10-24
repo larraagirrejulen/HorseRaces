@@ -13,8 +13,7 @@ import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;
 import domain.StartTime;
-import exceptions.HorseDoesntExist;
-import exceptions.RaceDoesntExist;
+import exceptions.ObjectDoesntExistException;
 import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
@@ -128,7 +127,7 @@ public class CreateRaceHorseDABTest {
 			
 			fail();
 			
-		}catch(RaceDoesntExist e) {
+		}catch(ObjectDoesntExistException e) {
 			assertTrue(true);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -149,7 +148,7 @@ public class CreateRaceHorseDABTest {
 			
 			fail();
 			
-		}catch(HorseDoesntExist e) {
+		}catch(ObjectDoesntExistException e) {
 			assertTrue(true);
 		}catch(Exception e){
 			e.printStackTrace();

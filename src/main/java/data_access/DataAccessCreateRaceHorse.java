@@ -1,7 +1,5 @@
 package data_access;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,15 +8,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
-import configuration.UtilDate;
-import domain.Admin;
-import domain.Client;
 import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;
-import domain.StartTime;
-import exceptions.HorseDoesntExist;
-import exceptions.RaceDoesntExist;
+import exceptions.ObjectDoesntExistException;
 import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
@@ -26,8 +19,6 @@ import exceptions.WrongParameterException;
 
 public class DataAccessCreateRaceHorse {
 	private static final String DB_HEADER = "DB>>> ";
-	private static final String MALE = "male";
-	private static final String FEMALE = "female";
 	protected EntityManager  db;
 	protected EntityManagerFactory emf;
 	private ConfigXML config = ConfigXML.getInstance();
@@ -79,12 +70,12 @@ public class DataAccessCreateRaceHorse {
 	 * @return RaceHorse
 	 */
 	public RaceHorse createRaceHorse(double winGain, Race race, Horse horse) 
-			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, RaceDoesntExist, HorseDoesntExist, RaceFinished{
+			throws RaceHorseAlreadyExist,WrongParameterException, RaceFullException, ObjectDoesntExistException, RaceFinished{
 		
 		if(race==null || horse==null || winGain<1) throw new WrongParameterException();
 		
-		Race newRace = getRace(race);
-		Horse newHorse = getHorse(horse);
+		Race newRace = (Race) getObject(race);
+		Horse newHorse = (Horse) getObject(horse);
 		
 		RaceHorse raceHorse = addRaceHorse(winGain, newRace, newHorse);
 		System.out.println(DB_HEADER + "New RaceHorse created and added to data base");
@@ -105,15 +96,9 @@ public class DataAccessCreateRaceHorse {
 		return raceHorse;
 	}
 
-	private Horse getHorse(Horse horse) throws HorseDoesntExist {
-		Horse newHorse = db.find(horse.getClass(), horse.getKey());
-		if(newHorse==null) throw new HorseDoesntExist();
-		return newHorse;
-	}
-
-	private Race getRace(Race race) throws RaceDoesntExist {
-		Race newRace = db.find(race.getClass(), race.getKey());
-		if(newRace==null) throw new RaceDoesntExist();
-		return newRace;
+	private Object getObject(Object obj) throws ObjectDoesntExistException{
+		Object newObj = db.find(obj.getClass(), obj);
+		if(newObj == null) throw new ObjectDoesntExistException();
+		return newObj;
 	}
 }
