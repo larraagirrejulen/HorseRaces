@@ -2,8 +2,6 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ResourceBundle;
@@ -38,13 +36,10 @@ public class AdminGUI extends JFrame {
 		btnCreateRace.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnCreateRace.setForeground(Color.WHITE);
 		btnCreateRace.setBackground(new Color(0, 0, 51));
-		btnCreateRace.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnCreateRace.addActionListener(input -> {
 				JFrame gui = new CreateRaceGUI(frame, language);
 				gui.setVisible(true);
 				frame.dispose();
-			}
 		});
 		btnCreateRace.setBounds(154, 137, 200, 35);
 		contentPane.add(btnCreateRace);
@@ -56,13 +51,10 @@ public class AdminGUI extends JFrame {
 		btnSetResults.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnSetResults.setForeground(Color.WHITE);
 		btnSetResults.setBackground(new Color(0, 0, 51));
-		btnSetResults.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnSetResults.addActionListener(input -> {
 				JFrame gui = new HorseResultsGUI(frame, language);
 				gui.setVisible(true);
 				frame.dispose();
-			}
 		});
 		btnSetResults.setBounds(154, 229, 200, 35);
 		contentPane.add(btnSetResults);
@@ -77,12 +69,9 @@ public class AdminGUI extends JFrame {
 		btnLogout.setForeground(Color.WHITE);
 		btnLogout.setBackground(new Color(0, 128, 128));
 		btnLogout.setFont(new Font("Verdana", Font.PLAIN, 10));
-		btnLogout.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnLogout.addActionListener(input -> {
 				mainFrame.setVisible(true);
 				frame.dispose();
-			}
 		});
 
 		addWindowListener(new WindowAdapter() {

@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
@@ -42,7 +40,6 @@ import domain.RaceHorse;
 public class HorseResultsGUI extends JFrame {
 
 	private BLFacade facade = LoginGUI.getBusinessLogic();
-	private AdminGUI adminFrame;
 	private String language;
 	private HorseResultsGUI frame = this;
 	private static final String FONT = "Verdana";
@@ -70,11 +67,7 @@ public class HorseResultsGUI extends JFrame {
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(Color.WHITE);
 		this.language = language;
-		this.adminFrame = adminFrame;
-		jbInit();
-	}
 
-	private void jbInit() {
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
 		this.setTitle(ResourceBundle.getBundle(language).getString("RaceResults"));
@@ -217,9 +210,7 @@ public class HorseResultsGUI extends JFrame {
 
 		datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
 		paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
-		btnConfirm.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnConfirm.addActionListener(input -> {
 				double betAmount;
 				if(horses.getSize()==0) {
 					int points = raceHorses.getSize();
@@ -240,35 +231,25 @@ public class HorseResultsGUI extends JFrame {
 					lblError.setForeground(Color.RED);
 					lblError.setText(ResourceBundle.getBundle(language).getString("AllHorses"));
 				}
-			}
 		});
 		btnConfirm.setVisible(false);
-		btnRemoveHorse.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		btnRemoveHorse.addActionListener(input -> {
 				RaceHorse rh=orderList.getSelectedValue();
 				horses.addElement(rh);
 				raceHorses.removeElement(rh);
-			}
 		});
 		btnRemoveHorse.setVisible(false);
-				btnAddHorse.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
+				btnAddHorse.addActionListener(input -> {
 						RaceHorse rh=(RaceHorse)horses.getSelectedItem();
 						raceHorses.addElement(rh);
 						horses.removeElement(rh);
-					}
 				});
 				btnAddHorse.setVisible(false);
 				horseList.setVisible(false);
 				orderList.setVisible(false);
-		jButtonClose.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		jButtonClose.addActionListener(input -> {
 				adminFrame.setVisible(true);
 				frame.dispose();
-			}
 		});
 
 		addWindowListener(new WindowAdapter() {

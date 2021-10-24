@@ -46,7 +46,6 @@ import domain.StartTime;
 public class CreateRaceGUI extends JFrame {
 
 	private BLFacade facade = LoginGUI.getBusinessLogic();
-	private AdminGUI adminFrame;
 	private String language;
 	private CreateRaceGUI frame = this;
 	private static final String FONT = "Verdana";
@@ -58,7 +57,6 @@ public class CreateRaceGUI extends JFrame {
 	private JLabel lblError;
 	private JScrollPane scrollPaneEvents = new JScrollPane();
 	private JButton jButtonCreate;
-	private JButton jButtonClose;
 	private JButton btnAddHorses;
 	private JTextField numerOfStreets;
 	private JTextField winGainStartTime;
@@ -74,18 +72,12 @@ public class CreateRaceGUI extends JFrame {
 	private Race selectedRace;
 	private DateFormat dateformat1;
 	private ArrayList<Date> datesWithRacesCurrentMonth = new ArrayList<>();
-	private JPanel panel;
 
 	public CreateRaceGUI(AdminGUI adminFrame, String language) {
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(Color.WHITE);
 		this.language = language;
-		this.adminFrame = adminFrame;
-		jbInit();
-	}
-
-	private void jbInit(){
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
@@ -93,7 +85,7 @@ public class CreateRaceGUI extends JFrame {
 
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 
-		panel = new JPanel();
+		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		panel.setBackground(new Color(32, 178, 170));
 		panel.setBounds(0, 0, 700, 500);
@@ -103,7 +95,7 @@ public class CreateRaceGUI extends JFrame {
 
 		//Button to close
 
-		jButtonClose = new JButton(ResourceBundle.getBundle(language).getString("Back"));
+		JButton jButtonClose = new JButton(ResourceBundle.getBundle(language).getString("Back"));
 		jButtonClose.setBorder(new LineBorder(new Color(0, 0, 0)));
 		jButtonClose.setFont(new Font(FONT, Font.PLAIN, 10));
 		jButtonClose.setBackground(new Color(0, 128, 128));
@@ -139,8 +131,6 @@ public class CreateRaceGUI extends JFrame {
 		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
 			@Override
 			public void propertyChange(PropertyChangeEvent propertychangeevent) {
-//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
-//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
 				if (propertychangeevent.getPropertyName().equals("locale")) {
 					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
 				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
@@ -153,8 +143,6 @@ public class CreateRaceGUI extends JFrame {
 					int monthAct = calendarAct.get(Calendar.MONTH);
 					if (monthAct!=monthAnt) {
 						if (monthAct==monthAnt+2) {
-							// Si en JCalendar estÃ¡ 30 de enero y se avanza al mes siguiente, devolverÃ­a 2 de marzo (se toma como equivalente a 30 de febrero)
-							// Con este cÃ³digo se dejarÃ¡ como 1 de febrero en el JCalendar
 							calendarAct.set(Calendar.MONTH, monthAnt+1);
 							calendarAct.set(Calendar.DAY_OF_MONTH, 1);
 						}
@@ -255,59 +243,50 @@ public class CreateRaceGUI extends JFrame {
 				lblNewLabel.setVisible(false);
 
 				horseList.setVisible(false);
-				btnAddHorses.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						try {
-							Horse horse = (Horse)horseList.getSelectedItem();
-							RaceHorse rh = facade.createRaceHorse(Double.parseDouble(winGainStartTime.getText()), selectedRace, horse);
-							raceHorses.addElement(rh);
-							horses.removeElement(rh.getHorse());
-							selectedRace = facade.getRace(UtilDate.trim(calendarAct.getTime()));
-							if(selectedRace.getSize()==selectedRace.getNumOfStreets()) {
-								btnAddHorses.setEnabled(false);
-							}else lblError.setText("");
-						}catch(Exception ex) {
-							lblError.setText(ResourceBundle.getBundle(language).getString(WRONG_INP_LBL));
-							lblError.setForeground(Color.RED);
-						}
+				btnAddHorses.addActionListener(input -> {
+					try {
+						Horse horse = (Horse)horseList.getSelectedItem();
+						RaceHorse rh = facade.createRaceHorse(Double.parseDouble(winGainStartTime.getText()), selectedRace, horse);
+						raceHorses.addElement(rh);
+						horses.removeElement(rh.getHorse());
+						selectedRace = facade.getRace(UtilDate.trim(calendarAct.getTime()));
+						if(selectedRace.getSize()==selectedRace.getNumOfStreets()) {
+							btnAddHorses.setEnabled(false);
+						}else lblError.setText("");
+					}catch(Exception ex) {
+						lblError.setText(ResourceBundle.getBundle(language).getString(WRONG_INP_LBL));
+						lblError.setForeground(Color.RED);
 					}
 				});
 				btnAddHorses.setVisible(false);
-				jButtonCreate.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						try {
-							Date date = UtilDate.trim(jCalendar.getDate());
-							int num = Integer.parseInt(numerOfStreets.getText());
-							StartTime st = new StartTime(winGainStartTime.getText());
-							if(num>1 && num<7 && st.getHour()!=null && st.getMinute()!=null) {
-								selectedRace = facade.createRace(date, num, st);
-								winGainStartTime.setText("");
-								race();
-								datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
-								paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
-								lblError.setText("");
-							}else {
-								lblError.setText(ResourceBundle.getBundle(language).getString(WRONG_INP_LBL));
-								lblError.setForeground(Color.RED);
-							}
-
-						}catch(Exception ex) {
+				jButtonCreate.addActionListener(input ->{
+					try {
+						Date date = UtilDate.trim(jCalendar.getDate());
+						int num = Integer.parseInt(numerOfStreets.getText());
+						StartTime st = new StartTime(winGainStartTime.getText());
+						if(num>1 && num<7 && st.getHour()!=null && st.getMinute()!=null) {
+							selectedRace = facade.createRace(date, num, st);
+							winGainStartTime.setText("");
+							race();
+							datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
+							paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
+							lblError.setText("");
+						}else {
 							lblError.setText(ResourceBundle.getBundle(language).getString(WRONG_INP_LBL));
 							lblError.setForeground(Color.RED);
 						}
+
+					}catch(Exception ex) {
+						lblError.setText(ResourceBundle.getBundle(language).getString(WRONG_INP_LBL));
+						lblError.setForeground(Color.RED);
 					}
 				});
 				jButtonCreate.setVisible(false);
 				numerOfStreets.setVisible(false);
 		raceHorsesList.setVisible(false);
-		jButtonClose.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				adminFrame.setVisible(true);
-				frame.dispose();
-			}
+		jButtonClose.addActionListener(input -> {
+			adminFrame.setVisible(true);
+			frame.dispose();
 		});
 
 		addWindowListener(new WindowAdapter() {
@@ -388,15 +367,6 @@ public class CreateRaceGUI extends JFrame {
 		for (Date d:datesWithRacesCurrentMonth){
 	 		calendar.setTime(d);
 	 		System.out.println(d);
-
-			// Obtain the component of the day in the panel of the DayChooser of the
-			// JCalendar.
-			// The component is located after the decorator buttons of "Sun", "Mon",... or
-			// "Lun", "Mar"...,
-			// the empty days before day 1 of month, and all the days previous to each day.
-			// That number of components is calculated with "offset" and is different in
-			// English and Spanish
-	 		// Component o=(Component) jCalendar.getDayChooser().getDayPanel().getComponent(i+offset);;
 			Component o =  jCalendar.getDayChooser().getDayPanel()
 					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);
 			o.setBackground(Color.CYAN);

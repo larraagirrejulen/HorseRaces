@@ -89,10 +89,6 @@ public class Race{
 		return raceHorses;
 	}
 
-	public void setRaceHorses(ArrayList<RaceHorse> raceHorses) {
-		this.raceHorses = raceHorses;
-	}
-
 	public int getSize() {
 		return raceHorses.size();
 	}

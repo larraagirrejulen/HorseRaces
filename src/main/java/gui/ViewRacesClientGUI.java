@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -33,20 +31,11 @@ public class ViewRacesClientGUI extends JFrame {
 	private ClientGUI clientFrame;
 	private String language;
 	private BLFacade facade = LoginGUI.getBusinessLogic();
-	private ViewRacesClientGUI frame = this;
 	private static final String FONT = "Verdana";
 
-	private JLabel lblMoneyBet;
-	private JLabel lblError;
 	private JScrollPane scrollPaneEvents = new JScrollPane();
-	private JButton jButtonClose;
-	private JButton btnBetForHorse;
-	private JButton btnCheckStats;
 	private Race nextRace;
-	private JTextField moneyBet;
 	private Client client;
-	private JLabel lblCash;
-	private JList<RaceHorse> raceHorsesList;
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
 
 	public ViewRacesClientGUI(ClientGUI clFrame, Client client, String language) {
@@ -75,7 +64,7 @@ public class ViewRacesClientGUI extends JFrame {
 		panel.setLayout(null);
 
 
-		lblCash = new JLabel(ResourceBundle.getBundle(language).getString("Balance") + this.client.getWallet() + " $");
+		JLabel lblCash = new JLabel(ResourceBundle.getBundle(language).getString("Balance") + this.client.getWallet() + " $");
 		lblCash.setOpaque(true);
 		lblCash.setBorder(null);
 		lblCash.setHorizontalAlignment(SwingConstants.CENTER);
@@ -95,7 +84,7 @@ public class ViewRacesClientGUI extends JFrame {
 		lblRace.setBounds(206, 87, 280, 20);
 		panel.add(lblRace);
 
-		lblMoneyBet = new JLabel(ResourceBundle.getBundle(language).getString("BetMoney"));
+		JLabel lblMoneyBet = new JLabel(ResourceBundle.getBundle(language).getString("BetMoney"));
 		lblMoneyBet.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMoneyBet.setBounds(206, 336, 280, 13);
 		panel.add(lblMoneyBet);
@@ -103,7 +92,7 @@ public class ViewRacesClientGUI extends JFrame {
 		lblMoneyBet.setForeground(new Color(0, 0, 51));
 		lblMoneyBet.setFont(new Font(FONT, Font.PLAIN, 11));
 
-		moneyBet = new JTextField();
+		JTextField moneyBet = new JTextField();
 		moneyBet.setHorizontalAlignment(SwingConstants.CENTER);
 		moneyBet.setBorder(new MatteBorder(0, 0, 3, 0,  new Color(0, 0, 51)));
 		moneyBet.setBounds(232, 354, 230, 25);
@@ -116,7 +105,7 @@ public class ViewRacesClientGUI extends JFrame {
 
 		//Button to bet for the selected horse
 
-		btnBetForHorse = new JButton(ResourceBundle.getBundle(language).getString("BetHorse"));
+		JButton btnBetForHorse = new JButton(ResourceBundle.getBundle(language).getString("BetHorse"));
 		btnBetForHorse.setBorder(new LineBorder(new Color(0, 0, 51)));
 		btnBetForHorse.setBounds(232, 418, 230, 35);
 		panel.add(btnBetForHorse);
@@ -124,7 +113,7 @@ public class ViewRacesClientGUI extends JFrame {
 		btnBetForHorse.setForeground(Color.WHITE);
 		btnBetForHorse.setBackground(new Color(0, 0, 51));
 
-		raceHorsesList = new JList<>();
+		JList<RaceHorse> raceHorsesList = new JList<>();
 		raceHorsesList.setBorder(new MatteBorder(0, 0, 3, 0,  new Color(0, 0, 51)));
 		raceHorsesList.setBounds(206, 118, 280, 150);
 		panel.add(raceHorsesList);
@@ -143,52 +132,46 @@ public class ViewRacesClientGUI extends JFrame {
 
 		//Button to check selected horses stats
 
-		btnCheckStats = new JButton(ResourceBundle.getBundle(language).getString("CheckStats"));
+		JButton btnCheckStats = new JButton(ResourceBundle.getBundle(language).getString("CheckStats"));
 		btnCheckStats.setBorder(new LineBorder(new Color(0, 0, 51)));
 		btnCheckStats.setBounds(232, 279, 230, 35);
 		panel.add(btnCheckStats);
 		btnCheckStats.setForeground(Color.WHITE);
 		btnCheckStats.setBackground(new Color(0, 128, 128));
 		btnCheckStats.setFont(new Font(FONT, Font.PLAIN, 11));
-		btnCheckStats.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				RaceHorse rh = raceHorsesList.getSelectedValue();
-				if(rh!=null) {
-					HorseStatsGUI gui = new HorseStatsGUI(rh, language);
-					gui.setVisible(true);
-				}
+		btnCheckStats.addActionListener(input -> {
+			RaceHorse rh = raceHorsesList.getSelectedValue();
+			if(rh!=null) {
+				HorseStatsGUI gui = new HorseStatsGUI(rh, language);
+				gui.setVisible(true);
 			}
 		});
 
-		lblError = new JLabel("");
+		JLabel lblError = new JLabel("");
 		lblError.setBounds(206, 390, 280, 20);
 		panel.add(lblError);
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font(FONT, Font.ITALIC, 10));
 		lblError.setBackground(Color.WHITE);
-		btnBetForHorse.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				try {
-					RaceHorse rh = raceHorsesList.getSelectedValue();
-					double amount = Double.parseDouble(moneyBet.getText());
-					if(amount>0 && rh!=null && client.getBet()==null && client.getWallet()>=amount) {
-						if(nextRace.getDate().compareTo(new Date())>0){
-							client = facade.betForHorse(rh, client, amount);
-							lblCash.setText(ResourceBundle.getBundle(language).getString("Balance") + client.getWallet() + " $");
-							lblError.setText(ResourceBundle.getBundle(language).getString("Bet"));
-							lblError.setForeground(Color.BLACK);
-						}
-					}else {
-						lblError.setText(ResourceBundle.getBundle(language).getString("CantBet"));
-						lblError.setForeground(Color.RED);
+		btnBetForHorse.addActionListener(input -> {
+			try {
+				RaceHorse rh = raceHorsesList.getSelectedValue();
+				double amount = Double.parseDouble(moneyBet.getText());
+				if(amount>0 && rh!=null && client.getBet()==null && client.getWallet()>=amount) {
+					if(nextRace.getDate().compareTo(new Date())>0){
+						client = facade.betForHorse(rh, client, amount);
+						lblCash.setText(ResourceBundle.getBundle(language).getString("Balance") + client.getWallet() + " $");
+						lblError.setText(ResourceBundle.getBundle(language).getString("Bet"));
+						lblError.setForeground(Color.BLACK);
 					}
-				}catch(Exception ex) {
-					System.out.println(ex.getMessage());
-					lblError.setText(ResourceBundle.getBundle(language).getString("WrongInput"));
+				}else {
+					lblError.setText(ResourceBundle.getBundle(language).getString("CantBet"));
 					lblError.setForeground(Color.RED);
 				}
+			}catch(Exception ex) {
+				System.out.println(ex.getMessage());
+				lblError.setText(ResourceBundle.getBundle(language).getString("WrongInput"));
+				lblError.setForeground(Color.RED);
 			}
 		});
 
@@ -200,19 +183,15 @@ public class ViewRacesClientGUI extends JFrame {
 
 		//Button to close current window
 
-		jButtonClose = new JButton(ResourceBundle.getBundle(language).getString("Back"));
+		JButton jButtonClose = new JButton(ResourceBundle.getBundle(language).getString("Back"));
 		jButtonClose.setBorder(new LineBorder(new Color(0, 0, 51)));
 		jButtonClose.setForeground(Color.WHITE);
 		jButtonClose.setBackground(new Color(0, 128, 128));
 		jButtonClose.setFont(new Font(FONT, Font.PLAIN, 10));
 		jButtonClose.setBounds(610, 11, 80, 20);
-		jButtonClose.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				clientFrame.setClient(client);
-				clientFrame.setVisible(true);
-				frame.dispose();
-			}
+		jButtonClose.addActionListener(input -> {
+			clientFrame.setClient(client);
+			clientFrame.setVisible(true);
 		});
 		panel.add(jButtonClose);
 	}

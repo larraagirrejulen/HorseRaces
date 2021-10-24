@@ -3,8 +3,6 @@ package gui;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ResourceBundle;
 
 import javax.swing.JButton;
@@ -23,15 +21,13 @@ import business_logic.BLFacade;
 public class RegisterGUI extends JFrame {
 
 	private static final String FONT = "Verdana";
-	private static BLFacade facade;
+	private static BLFacade facade = LoginGUI.getBusinessLogic();
 	private RegisterGUI nireFrame = this;
 
 	public RegisterGUI(LoginGUI mainFrame, String language) {
 		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);
-
-		facade = LoginGUI.getBusinessLogic();
 
 		setBounds(100, 100, 700, 500);
 		JPanel contentPane = new JPanel();
@@ -104,32 +100,29 @@ public class RegisterGUI extends JFrame {
 		registerButton.setFont(new Font(FONT, Font.PLAIN, 11));
 		registerButton.setBounds(250, 357, 200, 35);
 		contentPane.add(registerButton);
-		registerButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				String password = new String(pwdPassword.getPassword());
-				String password2 = new String(pwdRepeatPassword.getPassword());
-				if(password.equals(password2)) {
-					boolean correct = facade.register(userNameField.getText(), password);
-					if(!correct) {
-						lblError.setText(ResourceBundle.getBundle(language).getString("AlreadyExists"));
-						lblError.setForeground(new Color(255, 0, 0));
-						lblError.setVisible(true);
-					}
-					else {
-						lblError.setText(ResourceBundle.getBundle(language).getString("Registered"));
-						lblError.setForeground(new Color(10, 10, 10));
-						lblError.setVisible(true);
-						userNameField.setText("");
-						pwdPassword.setText("");
-						pwdRepeatPassword.setText("");
-					}
-				}
-				else {
-					lblError.setText(ResourceBundle.getBundle(language).getString("PasswordNoMach"));
+		registerButton.addActionListener(input -> {
+			String password = new String(pwdPassword.getPassword());
+			String password2 = new String(pwdRepeatPassword.getPassword());
+			if(password.equals(password2)) {
+				boolean correct = facade.register(userNameField.getText(), password);
+				if(!correct) {
+					lblError.setText(ResourceBundle.getBundle(language).getString("AlreadyExists"));
 					lblError.setForeground(new Color(255, 0, 0));
 					lblError.setVisible(true);
 				}
+				else {
+					lblError.setText(ResourceBundle.getBundle(language).getString("Registered"));
+					lblError.setForeground(new Color(10, 10, 10));
+					lblError.setVisible(true);
+					userNameField.setText("");
+					pwdPassword.setText("");
+					pwdRepeatPassword.setText("");
+				}
+			}
+			else {
+				lblError.setText(ResourceBundle.getBundle(language).getString("PasswordNoMach"));
+				lblError.setForeground(new Color(255, 0, 0));
+				lblError.setVisible(true);
 			}
 		});
 
@@ -143,12 +136,9 @@ public class RegisterGUI extends JFrame {
 		btnClose.setBackground(new Color(0, 128, 128));
 		btnClose.setForeground(Color.WHITE);
 		btnClose.setFont(new Font(FONT, Font.PLAIN, 10));
-		btnClose.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
+		btnClose.addActionListener(input -> {
 				mainFrame.setVisible(true);
 				nireFrame.dispose();
-			}
 		});
 
 	}

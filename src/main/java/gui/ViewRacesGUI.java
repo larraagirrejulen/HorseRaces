@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -31,15 +29,9 @@ public class ViewRacesGUI extends JFrame {
 	private ViewRacesGUI frame = this;
 	private BLFacade facade = LoginGUI.getBusinessLogic();
 	private static final String FONT = "Verdana";
-
-	private JLabel jLabelRaceDate;
-	private JLabel lblRace;
-	private JButton btnCheckStats;
-	private JButton jButtonClose;
-	private JList<RaceHorse> raceHorsesList;
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
 
-	private Race nextRace = null;
+	private Race nextRace;
 
 
 	public ViewRacesGUI(LoginGUI loFrame, String language) {
@@ -65,7 +57,7 @@ public class ViewRacesGUI extends JFrame {
 		getContentPane().add(panel);
 		panel.setLayout(null);
 
-		raceHorsesList = new JList<>();
+		JList<RaceHorse> raceHorsesList = new JList<>();
 		raceHorsesList.setBorder(new MatteBorder(0, 0, 3, 0, new Color(0, 0, 51)));
 		raceHorsesList.setBounds(206, 179, 280, 150);
 		panel.add(raceHorsesList);
@@ -74,7 +66,7 @@ public class ViewRacesGUI extends JFrame {
 		raceHorsesList.setBackground(new Color(0, 128, 128));
 		raceHorsesList.setModel(raceHorses);
 
-		lblRace = new JLabel("");
+		JLabel lblRace = new JLabel("");
 		lblRace.setBorder(null);
 		lblRace.setOpaque(true);
 		lblRace.setBounds(206, 148, 280, 20);
@@ -84,7 +76,7 @@ public class ViewRacesGUI extends JFrame {
 		lblRace.setForeground(new Color(255, 255, 255));
 		lblRace.setBackground(new Color(0, 128, 128));
 
-		jLabelRaceDate = new JLabel(ResourceBundle.getBundle(language).getString("UpcomingRace"));
+		JLabel jLabelRaceDate = new JLabel(ResourceBundle.getBundle(language).getString("UpcomingRace"));
 		jLabelRaceDate.setHorizontalAlignment(SwingConstants.CENTER);
 		jLabelRaceDate.setBounds(262, 112, 171, 20);
 		panel.add(jLabelRaceDate);
@@ -99,21 +91,18 @@ public class ViewRacesGUI extends JFrame {
 
 		//Button to check selected horses stats
 
-		btnCheckStats = new JButton(ResourceBundle.getBundle(language).getString("CheckStats"));
+		JButton btnCheckStats = new JButton(ResourceBundle.getBundle(language).getString("CheckStats"));
 		btnCheckStats.setBorder(new LineBorder(new Color(0, 0, 51)));
 		btnCheckStats.setBounds(232, 340, 230, 35);
 		panel.add(btnCheckStats);
 		btnCheckStats.setForeground(Color.WHITE);
 		btnCheckStats.setBackground(new Color(0, 0, 51));
 		btnCheckStats.setFont(new Font(FONT, Font.PLAIN, 11));
-		btnCheckStats.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				RaceHorse rh = raceHorsesList.getSelectedValue();
-				if(rh!=null) {
-					HorseStatsGUI gui = new HorseStatsGUI(rh, language);
-					gui.setVisible(true);
-				}
+		btnCheckStats.addActionListener(input -> {
+			RaceHorse rh = raceHorsesList.getSelectedValue();
+			if(rh!=null) {
+				HorseStatsGUI gui = new HorseStatsGUI(rh, language);
+				gui.setVisible(true);
 			}
 		});
 
@@ -121,19 +110,16 @@ public class ViewRacesGUI extends JFrame {
 
 		//Button to close current window
 
-		jButtonClose = new JButton(ResourceBundle.getBundle(language).getString("Back"));
+		JButton jButtonClose = new JButton(ResourceBundle.getBundle(language).getString("Back"));
 		jButtonClose.setBorder(new LineBorder(new Color(0, 0, 51)));
 		jButtonClose.setBounds(610, 11, 80, 20);
 		panel.add(jButtonClose);
 		jButtonClose.setFont(new Font(FONT, Font.PLAIN, 10));
 		jButtonClose.setBackground(new Color(0, 128, 128));
 		jButtonClose.setForeground(Color.WHITE);
-		jButtonClose.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				loginFrame.setVisible(true);
-				frame.dispose();
-			}
+		jButtonClose.addActionListener(input -> {
+			loginFrame.setVisible(true);
+			frame.dispose();
 		});
 
 	}
