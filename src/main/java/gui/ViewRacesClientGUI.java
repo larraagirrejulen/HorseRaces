@@ -30,12 +30,12 @@ public class ViewRacesClientGUI extends JFrame {
 
 	private ClientGUI clientFrame;
 	private String language;
-	private BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = LoginGUI.getBusinessLogic();
 	private static final String FONT = "Verdana";
 
 	private JScrollPane scrollPaneEvents = new JScrollPane();
-	private Race nextRace;
-	private Client client;
+	private transient Race nextRace;
+	private transient Client client;
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
 
 	public ViewRacesClientGUI(ClientGUI clFrame, Client client, String language) {

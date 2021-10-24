@@ -6,8 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,7 +37,7 @@ import domain.RaceHorse;
 @SuppressWarnings("serial")
 public class HorseResultsGUI extends JFrame {
 
-	private BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = LoginGUI.getBusinessLogic();
 	private String language;
 	private HorseResultsGUI frame = this;
 	private static final String FONT = "Verdana";
@@ -55,7 +53,7 @@ public class HorseResultsGUI extends JFrame {
 	private JList<RaceHorse> orderList;
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
 
-	private Race selectedRace;
+	private transient Race selectedRace;
 	private JButton btnAddHorse;
 	private JButton btnConfirm;
 	private JButton btnRemoveHorse;
@@ -176,35 +174,32 @@ public class HorseResultsGUI extends JFrame {
 		jCalendar.getMonthChooser().getComboBox().setBackground(new Color(255, 255, 255));
 		jCalendar.setBounds(57, 105, 225, 150);
 		panel.add(jCalendar);
-		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
-			@Override
-			public void propertyChange(PropertyChangeEvent propertychangeevent) {
-				if (propertychangeevent.getPropertyName().equals("locale"))
-					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
-				else if (propertychangeevent.getPropertyName().equals("calendar")) {
-					calendarAnt = (Calendar) propertychangeevent.getOldValue();
-					calendarAct = (Calendar) propertychangeevent.getNewValue();
-					System.out.println("calendarAnt: "+calendarAnt.getTime());
-					System.out.println("calendarAct: "+calendarAct.getTime());
-					dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
-					int monthAnt = calendarAnt.get(Calendar.MONTH);
-					int monthAct = calendarAct.get(Calendar.MONTH);
-					if (monthAct!=monthAnt) {
-						if (monthAct==monthAnt+2) {
-							calendarAct.set(Calendar.MONTH, monthAnt+1);
-							calendarAct.set(Calendar.DAY_OF_MONTH, 1);
-						}
-						jCalendar.setCalendar(calendarAct);
-						datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
+		this.jCalendar.addPropertyChangeListener(propertychangeevent -> {
+			if (propertychangeevent.getPropertyName().equals("locale"))
+				jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
+			else if (propertychangeevent.getPropertyName().equals("calendar")) {
+				calendarAnt = (Calendar) propertychangeevent.getOldValue();
+				calendarAct = (Calendar) propertychangeevent.getNewValue();
+				System.out.println("calendarAnt: "+calendarAnt.getTime());
+				System.out.println("calendarAct: "+calendarAct.getTime());
+				dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
+				int monthAnt = calendarAnt.get(Calendar.MONTH);
+				int monthAct = calendarAct.get(Calendar.MONTH);
+				if (monthAct!=monthAnt) {
+					if (monthAct==monthAnt+2) {
+						calendarAct.set(Calendar.MONTH, monthAnt+1);
+						calendarAct.set(Calendar.DAY_OF_MONTH, 1);
 					}
-					paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
-					Date date = UtilDate.trim(calendarAct.getTime());
-					selectedRace = facade.getRace(date);
-					if (selectedRace == null || selectedRace.getFinished())
-						noRace();
-					else
-						race();
+					jCalendar.setCalendar(calendarAct);
+					datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
 				}
+				paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
+				Date date = UtilDate.trim(calendarAct.getTime());
+				selectedRace = facade.getRace(date);
+				if (selectedRace == null || selectedRace.getFinished())
+					noRace();
+				else
+					race();
 			}
 		});
 

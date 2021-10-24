@@ -31,7 +31,7 @@ public class WalletGUI extends JFrame {
 	private JButton btnAddMoney;
 	private JButton btnRestMoney;
 	private JTextField textField;
-	private Client client1;
+	private transient Client client1;
 	private JLabel currentBalancelbl;
 	private JLabel lblError;
 
@@ -86,21 +86,21 @@ public class WalletGUI extends JFrame {
 		btnRestMoney.setBounds(188, 242, 179, 23);
 		contentPane.add(btnRestMoney);
 		btnRestMoney.addActionListener(input -> {
-				try {
-					double amount = Double.parseDouble(textField.getText());
-					if(amount>0 && amount<=client1.getWallet()) {
-						client1 = facade.restMoney(client, amount);
-						currentBalancelbl.setText(ResourceBundle.getBundle(language).getString(BALANCE_LBL) + client1.getWallet() + " $");
-						lblError.setForeground(Color.BLACK);
-						lblError.setText(ResourceBundle.getBundle(language).getString("MoneyRested"));
-					}else {
-						lblError.setForeground(Color.RED);
-						lblError.setText(ResourceBundle.getBundle(language).getString(INVALID_AMOUNT_LBL));
-					}
-				}catch(java.lang.NumberFormatException ex) {
+			try {
+				double amount = Double.parseDouble(textField.getText());
+				if(amount>0 && amount<=client1.getWallet()) {
+					client1 = facade.restMoney(client, amount);
+					currentBalancelbl.setText(ResourceBundle.getBundle(language).getString(BALANCE_LBL) + client1.getWallet() + " $");
+					lblError.setForeground(Color.BLACK);
+					lblError.setText(ResourceBundle.getBundle(language).getString("MoneyRested"));
+				}else {
 					lblError.setForeground(Color.RED);
 					lblError.setText(ResourceBundle.getBundle(language).getString(INVALID_AMOUNT_LBL));
 				}
+			}catch(java.lang.NumberFormatException ex) {
+				lblError.setForeground(Color.RED);
+				lblError.setText(ResourceBundle.getBundle(language).getString(INVALID_AMOUNT_LBL));
+			}
 
 		});
 

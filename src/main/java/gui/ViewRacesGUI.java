@@ -27,11 +27,10 @@ public class ViewRacesGUI extends JFrame {
 	private LoginGUI loginFrame;
 	private String language;
 	private ViewRacesGUI frame = this;
-	private BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = LoginGUI.getBusinessLogic();
 	private static final String FONT = "Verdana";
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
-
-	private Race nextRace;
+	private transient Race nextRace;
 
 
 	public ViewRacesGUI(LoginGUI loFrame, String language) {

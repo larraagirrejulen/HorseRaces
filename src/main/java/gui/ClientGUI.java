@@ -21,17 +21,17 @@ public class ClientGUI extends JFrame {
 	private static final String FONT = "Verdana";
 	private JPanel contentPane;
 	private ClientGUI frame = this;
-	private Client client;
+	private transient Client client;
 	private JLabel lblCash;
 	private String language1;
-	private BLFacade facade = LoginGUI.getBusinessLogic();
-
+	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	
 	public void setClient(Client client) {
 		this.client = client;
 		lblCash.setText(ResourceBundle.getBundle(language1).getString("Balance") + this.client.getWallet() + " $");
 	}
 
-	public ClientGUI(Client cl,LoginGUI mainFrame, String language) {
+	public ClientGUI(Client cl, LoginGUI mainFrame, String language) {
 		setLocation(new Point(610, 260));
 		setUndecorated(true);
 
