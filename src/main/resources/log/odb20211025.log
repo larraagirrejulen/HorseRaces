@@ -1,0 +1,32 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-25 07:06:07 #1 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' has been recovered (tr. 1209-1256)
+
+[2021-10-25 07:06:07 #2 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' is opened by 7352@DESKTOP-D1B8POF
+
+[2021-10-25 07:06:07 #3 type] 
+Type domain.Registered is not enhanced.
+
+[2021-10-25 07:06:07 #4 type] 
+Type domain.Admin is not enhanced.
+
+[2021-10-25 07:06:07 #5 type] 
+Type domain.Client is not enhanced.
+
+[2021-10-25 07:06:07 #6 type] 
+Type domain.Bet is not enhanced.
+
+[2021-10-25 07:06:07 #7 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-10-25 07:06:07 #8 type] 
+Type domain.Horse is not enhanced.
+
+[2021-10-25 07:06:07 #9 type] 
+Type domain.Race is not enhanced.
+
+[2021-10-25 07:06:07 #10 type] 
+Type domain.StartTime is not enhanced.
+

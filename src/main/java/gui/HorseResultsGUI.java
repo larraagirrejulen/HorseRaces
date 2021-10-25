@@ -180,26 +180,11 @@ public class HorseResultsGUI extends JFrame {
 			else if (propertychangeevent.getPropertyName().equals("calendar")) {
 				calendarAnt = (Calendar) propertychangeevent.getOldValue();
 				calendarAct = (Calendar) propertychangeevent.getNewValue();
-				System.out.println("calendarAnt: "+calendarAnt.getTime());
-				System.out.println("calendarAct: "+calendarAct.getTime());
 				dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
-				int monthAnt = calendarAnt.get(Calendar.MONTH);
-				int monthAct = calendarAct.get(Calendar.MONTH);
-				if (monthAct!=monthAnt) {
-					if (monthAct==monthAnt+2) {
-						calendarAct.set(Calendar.MONTH, monthAnt+1);
-						calendarAct.set(Calendar.DAY_OF_MONTH, 1);
-					}
-					jCalendar.setCalendar(calendarAct);
-					datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
-				}
+				setCalendarAndGetRaceDate();
 				paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
 				Date date = UtilDate.trim(calendarAct.getTime());
-				selectedRace = facade.getRace(date);
-				if (selectedRace == null || selectedRace.getFinished())
-					noRace();
-				else
-					race();
+				getRaceAndUpdateLabels(date);
 			}
 		});
 
@@ -253,6 +238,34 @@ public class HorseResultsGUI extends JFrame {
 				adminFrame.setVisible(true);
 			}
 		});
+	}
+
+
+	private void setCalendarAndGetRaceDate() {
+		int monthAnt = calendarAnt.get(Calendar.MONTH);
+		int monthAct = calendarAct.get(Calendar.MONTH);
+		if (monthAct!=monthAnt) {
+			if (monthAct==monthAnt+2) {
+				calendarAct.set(Calendar.MONTH, monthAnt+1);
+				calendarAct.set(Calendar.DAY_OF_MONTH, 1);
+			}
+			jCalendar.setCalendar(calendarAct);
+			datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
+		}
+	}
+
+
+	private void getRaceAndUpdateLabels(Date date) {
+		try {
+			selectedRace = facade.getRace(date);
+			if (selectedRace == null || selectedRace.getFinished())
+				noRace();
+			else
+				race();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 

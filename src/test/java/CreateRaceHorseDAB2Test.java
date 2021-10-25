@@ -11,7 +11,6 @@ import org.junit.Test;
 import data_access.DataAccessCreateRaceHorse;
 import domain.Horse;
 import domain.Race;
-import domain.RaceHorse;
 import domain.StartTime;
 import exceptions.ObjectDoesntExistException;
 import exceptions.RaceFinished;
@@ -26,7 +25,6 @@ public class CreateRaceHorseDAB2Test {
 	static TestDataAccess testDA = new TestDataAccess();
 	
 	private Race race;
-	private RaceHorse raceHorse;
 	private Horse horse1;
 	private Horse horse = new Horse("Julen", "Belauntza", 20, "male", 99);
 	private StartTime st = new StartTime("10:30");
