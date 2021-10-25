@@ -1,5 +1,6 @@
 package data_access;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,21 +28,24 @@ import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
+import logs.Log;
 
 public class DataAccess  {
 
-	private static final String DB_HEADER = "DB>>> ";
 	private static final String MALE = "male";
 	private static final String FEMALE = "female";
 	protected EntityManager  db;
 	protected EntityManagerFactory emf;
 	private ConfigXML config = ConfigXML.getInstance();
+	private Log log;
 
 	/**
 	 * Constructor with given initialize mode
 	 * @param initializeMode
+	 * @throws IOException 
 	 */
-    public DataAccess(boolean initializeMode)  {
+    public DataAccess(boolean initializeMode){
+    	log = new Log("src/main/resources/log/data_access/data_access.txt", this.getClass().getName());
 		open(initializeMode);
 		close();
 	}
@@ -54,7 +58,7 @@ public class DataAccess  {
 		ArrayList<Horse> horses = initializeHorses();
 		ArrayList<Race> races = initializeRaces();
 		initializeRaceHorses(horses, races);
-		System.out.println(DB_HEADER + "initialized");
+		log.addLine("DB Initialiced");
 	}
 
 	private void initializeRaceHorses(ArrayList<Horse> horses, ArrayList<Race> races) {
@@ -73,7 +77,7 @@ public class DataAccess  {
 		RaceHorse raceHorse3 = new RaceHorse(1.7, race, horses.get(7));
 		race.addRaceHorse(raceHorse3);
 		race1.addRaceHorse(raceHorse3);
-		System.out.println(DB_HEADER + "Race horses created");
+		log.addLine("RaceHorses initialiced");
 	}
 
 	private ArrayList<Race> initializeRaces() {
@@ -88,7 +92,7 @@ public class DataAccess  {
 		races.add(new Race(UtilDate.newDate(year,month-2,17), 4, new StartTime("10:30")));
 		races.get(1).setFinished(true);
 		for(Race r: races) {	db.persist(r);	}
-		System.out.println(DB_HEADER + "Races created");
+		log.addLine("Races initialiced");
 		return races;
 	}
 
@@ -104,7 +108,7 @@ public class DataAccess  {
 		horses.add(new Horse("Affirmed", "f", 9, FEMALE, 6));
 		horses.add(new Horse("Count Fleet", "g", 12, FEMALE, 13));
 		for(Horse h: horses) { db.persist(h); }
-		System.out.println(DB_HEADER + "Horses created");
+		log.addLine("Horses initialiced");
 		return horses;
 	}
 
@@ -114,7 +118,7 @@ public class DataAccess  {
 		client.addMoney(20);
 		db.persist(admin);
 		db.persist(client);
-		System.out.println(DB_HEADER + "Admin and Client created");
+		log.addLine("Admin and Client initialiced");
 	}
 
 	
@@ -127,9 +131,9 @@ public class DataAccess  {
 		String fileName = config.getDbFilename();
 		if (initializeMode) {
 			fileName=fileName+";drop";
-			System.out.println(DB_HEADER + "Previous DB deleted");
+			log.addLine("Previous DB deleted");
 		}
-		System.out.println(DB_HEADER + "DB opened");
+		log.addLine("DB opened");
 		if (config.isDatabaseLocal()) {
 			emf = Persistence.createEntityManagerFactory("objectdb:"+fileName);
 		} else {
@@ -146,7 +150,7 @@ public class DataAccess  {
 	 */
 	public void close(){
 		db.close();
-		System.out.println(DB_HEADER + "DB closed");
+		log.addLine("DB closed");
 	}
 
 	/**
@@ -164,7 +168,7 @@ public class DataAccess  {
 		query.setParameter(2, lastDayMonthDate);
 		List<Date> dates = query.getResultList();
 	 	for (Date d:dates){
-	 		System.out.println(DB_HEADER + d.toString());
+	 		log.addLine("Race date: " + d.toString());
 	 		res.add(d);
 		}
 	 	return res;
@@ -196,7 +200,7 @@ public class DataAccess  {
 		newClient.setBet(bet);
 		newClient.setWallet(client.getWallet()-amount);
 		db.getTransaction().commit();
-		System.out.println(DB_HEADER + "New Bet created and added to data base");
+		log.addLine("New Bet created");
 		return newClient;
 	}
 
@@ -232,7 +236,7 @@ public class DataAccess  {
 		Horse newHorse = (Horse) getObject(horse);
 		
 		RaceHorse raceHorse = addRaceHorse(winGain, newRace, newHorse);
-		System.out.println(DB_HEADER + "New RaceHorse created and added to data base");
+		log.addLine("New RaceHorse created");
 		return raceHorse;
 	}
 
@@ -286,7 +290,7 @@ public class DataAccess  {
 		Race race = new Race(date, numOfStreets, startTime);
 		db.persist(race);
 		db.getTransaction().commit();
-		System.out.println(DB_HEADER + "New Race created and added to data base");
+		log.addLine("New Race created");
 		return race;
 	}
 
@@ -303,7 +307,7 @@ public class DataAccess  {
 			db.getTransaction().begin();
 			db.persist(b);
 			db.getTransaction().commit();
-			System.out.println(DB_HEADER + "New Client created and added to data base");
+			log.addLine("New Client created");
 			return true;
 		}else
 			return false;
@@ -334,7 +338,7 @@ public class DataAccess  {
 		Client c = db.find(client.getClass(), client.getUserName());
 		c.addMoney(amount);
 		db.getTransaction().commit();
-		System.out.println(DB_HEADER + amount + "$ added to '" + client.getUserName() + "' client acount");
+		log.addLine(amount + "$ added to '" + client.getUserName() + "' client acount");
 		return c;
 	}
 
@@ -350,7 +354,7 @@ public class DataAccess  {
 		Client c = db.find(client.getClass(), client.getUserName());
 		c.restMoney(amount);
 		db.getTransaction().commit();
-		System.out.println(DB_HEADER + amount + "$ rested from '" + client.getUserName() + "' client acount");
+		log.addLine(amount + "$ rested from '" + client.getUserName() + "' client acount");
 		return c;
 	}
 
@@ -365,7 +369,7 @@ public class DataAccess  {
 		Horse h = db.find(horse.getClass(), horse.getKey());
 		h.setPoints(h.getPoints()+points);
 		db.getTransaction().commit();
-		System.out.println(DB_HEADER + points + " Points added to " + horse.getName() + " horse history points");
+		log.addLine(points + " Points added to " + horse.getName() + " horse history points");
 	}
 
 	/**
@@ -383,7 +387,7 @@ public class DataAccess  {
 		}
 		r.setFinished(true);
 		db.getTransaction().commit();
-		System.out.println(DB_HEADER + "Race finish state changed to True");
+		log.addLine("Race finish state changed to True");
 		return r;
 	}
 
@@ -396,7 +400,7 @@ public class DataAccess  {
 		Client cl = db.find(client.getClass(), client);
 		db.remove(cl);
 		db.getTransaction().commit();
-		System.out.println(DB_HEADER + "Client acount removed: " + cl.getUserName());
+		log.addLine("Client acount removed: " + cl.getUserName());
 	}
 
 }

@@ -1,0 +1,20 @@
+
+[25/10/2021 15:53:09] 
+
+----------------------------------
+
+[25/10/2021 15:53:09] Previous DB deleted
+[25/10/2021 15:53:09] DB opened
+[25/10/2021 15:53:09] DB closed
+[25/10/2021 15:53:09] DB opened
+[25/10/2021 15:53:09] Admin and Client initialiced
+[25/10/2021 15:53:09] Horses initialiced
+[25/10/2021 15:53:09] Races initialiced
+[25/10/2021 15:53:09] RaceHorses initialiced
+[25/10/2021 15:53:09] DB Initialiced
+[25/10/2021 15:53:09] DB closed
+[25/10/2021 15:53:15] DB opened
+[25/10/2021 15:53:15] DB closed
+[25/10/2021 15:53:25] DB opened
+[25/10/2021 15:53:25] New Client created
+[25/10/2021 15:53:25] DB closed
