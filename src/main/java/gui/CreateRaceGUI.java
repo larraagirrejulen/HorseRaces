@@ -277,8 +277,8 @@ public class CreateRaceGUI extends JFrame {
 				noRace();
 			else
 				race();
-		} catch (Exception e1) {
-			System.out.println(e1.getMessage());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 

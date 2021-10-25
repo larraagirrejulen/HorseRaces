@@ -263,7 +263,7 @@ public class HorseResultsGUI extends JFrame {
 			else
 				race();
 		}catch(Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		
 	}
