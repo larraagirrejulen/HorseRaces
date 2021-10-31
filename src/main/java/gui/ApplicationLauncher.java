@@ -11,6 +11,7 @@ import business_logic.BLFacade;
 import business_logic.BLFacadeImplementation;
 import configuration.ConfigXML;
 import data_access.DataAccess;
+import logs.Log;
 
 public class ApplicationLauncher {
 
@@ -18,12 +19,14 @@ public class ApplicationLauncher {
 	public static void main(String[] args) {
 
 		ConfigXML c=ConfigXML.getInstance();
+		
+		Log log = new Log("src/main/resources/log/launch/application_launcher.txt", "ApplicationLauncher");
 
-		System.out.println(c.getLocale());
+		log.addLine(c.getLocale());
 
 		Locale.setDefault(new Locale(c.getLocale()));
 
-		System.out.println("Locale: "+Locale.getDefault());
+		log.addLine("Locale: "+Locale.getDefault());
 
 		LoginGUI gui=new LoginGUI();
 		gui.setVisible(true);
@@ -51,7 +54,7 @@ public class ApplicationLauncher {
 			LoginGUI.setBussinessLogic(appFacadeInterface);
 
 		}catch (Exception e) {
-			System.out.println("Error in ApplicationLauncher: "+e.toString());
+			log.addLine("Error in ApplicationLauncher: "+e.toString());
 		}
 	}
 

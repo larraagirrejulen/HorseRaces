@@ -10,6 +10,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import logs.Log;
+
 /**
  * It provides the configuration data from the "resources/config.xml" XML file
  */
@@ -73,59 +75,60 @@ public class ConfigXML {
 
 	private ConfigXML(){
 
-		  try {
-			  DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		Log log = new Log("src/main/resources/log/launch/configxml.txt", "ConfigXML");
+		try { 
+				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			  dbFactory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
 			  dbFactory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 			  Document doc = dbFactory.newDocumentBuilder().parse(new File(configFile));
 			  doc.getDocumentElement().normalize();
-
+		
 			  NodeList list = doc.getElementsByTagName("config");
 			  Element config = (Element) list.item(0); // list.item(0) is a Node that is an Element
-
-
+		
+		
 				//Two possible values: true (no instance of RemoteServer needs to be launched) or false (RemoteServer needs to be run first)
 			  String value= ((Element)config.getElementsByTagName("businessLogic").item(0)).getAttribute("local");
 			  businessLogicLocal=value.equals("true");
-
+		
 			  businessLogicNode = getTagValue("businessLogicNode", config);
-
+		
 			  businessLogicPort = getTagValue("businessLogicPort", config);
-
+		
 			  businessLogicName = getTagValue("businessLogicName", config);
-
+		
 			  locale = getTagValue("locale", config);
-
-
-
-
-
+		
+		
+		
+		
+		
 			  getTagValue("dbFilename", config);
-
+		
 				//Two possible values: true (no instance of RemoteServer needs to be launched) or false (RemoteServer needs to be run first)
 			  value= ((Element)config.getElementsByTagName("database").item(0)).getAttribute("local");
 			  databaseLocal=value.equals("true");
-
-
+		
+		
 			  //Two possible values: "open" or "initialize"
 			  dataBaseOpenMode= getTagValue("dataBaseOpenMode", config);
-
-
+		
+		
 			  databaseNode = getTagValue("databaseNode", config);
-
+		
 			  databasePort=Integer.parseInt(getTagValue("databasePort", config));
-
+		
 			  user=getTagValue("user", config);
-
+		
 			  password=getTagValue("password", config);
-
-			  System.out.print("Read from config.xml: ");
-			  System.out.print("\t businessLogicLocal="+businessLogicLocal);
-			  System.out.print("\t databaseLocal="+databaseLocal);
-			  System.out.println("\t dataBaseOpenMode="+dataBaseOpenMode);
+		
+			  log.addLine("Read from config.xml: ");
+			  log.addLine("\t businessLogicLocal="+businessLogicLocal);
+			  log.addLine("\t databaseLocal="+databaseLocal);
+			  log.addLine("\t dataBaseOpenMode="+dataBaseOpenMode);
 
 		  } catch (Exception e) {
-			System.out.println("Error in ConfigXML.java: problems with "+ configFile);
+			  log.addLine("Error in ConfigXML.java: problems with "+ configFile);
 		  }
 
 	}

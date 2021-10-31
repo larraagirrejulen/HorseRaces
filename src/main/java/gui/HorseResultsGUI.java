@@ -33,6 +33,7 @@ import configuration.UtilDate;
 import domain.Bet;
 import domain.Race;
 import domain.RaceHorse;
+import logs.Log;
 
 @SuppressWarnings("serial")
 public class HorseResultsGUI extends JFrame {
@@ -41,6 +42,7 @@ public class HorseResultsGUI extends JFrame {
 	private String language;
 	private HorseResultsGUI frame = this;
 	private static final String FONT = "Verdana";
+	private transient Log log;
 
 	private JCalendar jCalendar = new JCalendar();
 	private Calendar calendarAct;
@@ -61,6 +63,7 @@ public class HorseResultsGUI extends JFrame {
 	private JLabel lblInOrder;
 
 	public HorseResultsGUI(AdminGUI adminFrame, String language) {
+		log = new Log("src/main/resources/log/gui/horse_results.txt", this.getClass().getName());
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(Color.WHITE);
@@ -182,14 +185,14 @@ public class HorseResultsGUI extends JFrame {
 				calendarAct = (Calendar) propertychangeevent.getNewValue();
 				dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
 				setCalendarAndGetRaceDate();
-				paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
+				paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth, log);
 				Date date = UtilDate.trim(calendarAct.getTime());
 				getRaceAndUpdateLabels(date);
 			}
 		});
 
 		datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
-		paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
+		paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth, log);
 		btnConfirm.addActionListener(input -> {
 				double betAmount;
 				if(horses.getSize()==0) {
@@ -263,7 +266,7 @@ public class HorseResultsGUI extends JFrame {
 			else
 				race();
 		}catch(Exception e) {
-			System.out.println(e.getMessage());
+			log.addLine(e.getMessage());
 		}
 		
 	}
@@ -310,7 +313,7 @@ public class HorseResultsGUI extends JFrame {
 		btnConfirm.setVisible(true);
 	}
 
-	public static void paintDaysWithRaces(JCalendar jCalendar,List<Date> datesWithRacesCurrentMonth) {
+	public static void paintDaysWithRaces(JCalendar jCalendar,List<Date> datesWithRacesCurrentMonth, Log log) {
 		Calendar calendar = jCalendar.getCalendar();
 		int month = calendar.get(Calendar.MONTH);
 		int today=calendar.get(Calendar.DAY_OF_MONTH);
@@ -325,7 +328,7 @@ public class HorseResultsGUI extends JFrame {
 
 		for (Date d:datesWithRacesCurrentMonth){
 	 		calendar.setTime(d);
-	 		System.out.println(d);
+	 		log.addLine(d.toString());
 
 			Component o =  jCalendar.getDayChooser().getDayPanel()
 					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);

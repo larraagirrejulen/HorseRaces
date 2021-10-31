@@ -27,7 +27,6 @@ public class BLFacadeImplementation implements BLFacade {
 	 * @param da given dataAccess
 	 */
     public BLFacadeImplementation(DataAccess da)  {
-		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
 		ConfigXML c=ConfigXML.getInstance();
 
 		if (c.getDataBaseOpenMode().equals("initialize")) {

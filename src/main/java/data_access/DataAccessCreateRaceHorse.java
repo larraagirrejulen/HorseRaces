@@ -16,18 +16,20 @@ import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
+import logs.Log;
 
 public class DataAccessCreateRaceHorse {
-	private static final String DB_HEADER = "DB>>> ";
 	protected EntityManager  db;
 	protected EntityManagerFactory emf;
 	private ConfigXML config = ConfigXML.getInstance();
+	private Log log;
 
 	/**
 	 * Constructor with given initialize mode
 	 * @param initializeMode
 	 */
     public DataAccessCreateRaceHorse(boolean initializeMode)  {
+    	log = new Log("src/main/resources/log/data_access/data_access_create_race_horse.txt", this.getClass().getName());
 		open(initializeMode);
 		close();
 	}	
@@ -40,9 +42,9 @@ public class DataAccessCreateRaceHorse {
 		String fileName = config.getDbFilename();
 		if (initializeMode) {
 			fileName=fileName+";drop";
-			System.out.println(DB_HEADER + "Previous DB deleted");
+			log.addLine("Previous DB deleted");
 		}
-		System.out.println(DB_HEADER + "DB opened");
+		log.addLine("DB opened");
 		if (config.isDatabaseLocal()) {
 			emf = Persistence.createEntityManagerFactory("objectdb:"+fileName);
 		} else {
@@ -59,7 +61,7 @@ public class DataAccessCreateRaceHorse {
 	 */
 	public void close(){
 		db.close();
-		System.out.println(DB_HEADER + "DB closed");
+		log.addLine("DB closed");
 	}
 	
 	/**
@@ -78,7 +80,7 @@ public class DataAccessCreateRaceHorse {
 		Horse newHorse = (Horse) getObject(horse);
 		
 		RaceHorse raceHorse = addRaceHorse(winGain, newRace, newHorse);
-		System.out.println(DB_HEADER + "New RaceHorse created and added to data base");
+		log.addLine("New RaceHorse created and added to data base");
 		return raceHorse;
 	}
 

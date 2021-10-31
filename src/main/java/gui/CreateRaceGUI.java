@@ -37,6 +37,7 @@ import domain.Horse;
 import domain.Race;
 import domain.RaceHorse;
 import domain.StartTime;
+import logs.Log;
 
 @SuppressWarnings("serial")
 public class CreateRaceGUI extends JFrame {
@@ -46,6 +47,7 @@ public class CreateRaceGUI extends JFrame {
 	private CreateRaceGUI frame = this;
 	private static final String FONT = "Verdana";
 	private static final String WRONG_INP_LBL = "Verdana";
+	private transient Log log;
 
 	private JLabel lblNewLabel;
 	private JLabel lbl;
@@ -70,6 +72,7 @@ public class CreateRaceGUI extends JFrame {
 	private ArrayList<Date> datesWithRacesCurrentMonth = new ArrayList<>();
 
 	public CreateRaceGUI(AdminGUI adminFrame, String language) {
+		log = new Log("src/main/resources/log/gui/create_race.txt", this.getClass().getName());
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(Color.WHITE);
@@ -132,14 +135,14 @@ public class CreateRaceGUI extends JFrame {
 				calendarAct = (Calendar) propertychangeevent.getNewValue();
 				dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
 				setCalendarAndGetRaceDate();
-				paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
+				paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth, log);
 				Date date = UtilDate.trim(calendarAct.getTime());
 				getRaceAndUpdateLabels(date);
 			}
 		});
 
 		datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
-		paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
+		paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth, log);
 
 		numerOfStreets = new JTextField();
 		numerOfStreets.setBorder(new MatteBorder(0, 0, 3, 0,  new Color(0, 0, 51)));
@@ -241,7 +244,7 @@ public class CreateRaceGUI extends JFrame {
 					winGainStartTime.setText("");
 					race();
 					datesWithRacesCurrentMonth=(ArrayList<Date>) facade.getRacesMonth(jCalendar.getDate());
-					paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth);
+					paintDaysWithRaces(jCalendar,datesWithRacesCurrentMonth, log);
 					lblError.setText("");
 				}else {
 					lblError.setText(ResourceBundle.getBundle(language).getString(WRONG_INP_LBL));
@@ -278,7 +281,7 @@ public class CreateRaceGUI extends JFrame {
 			else
 				race();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			log.addLine(e.getMessage());
 		}
 	}
 
@@ -347,7 +350,7 @@ public class CreateRaceGUI extends JFrame {
 		lbl.setText(ResourceBundle.getBundle(language).getString("WinGain"));
 	}
 
-	public static void paintDaysWithRaces(JCalendar jCalendar,List<Date> datesWithRacesCurrentMonth) {
+	public static void paintDaysWithRaces(JCalendar jCalendar,List<Date> datesWithRacesCurrentMonth, Log log) {
 		// For each day with events in current month, the background color for that day is changed.
 
 		Calendar calendar = jCalendar.getCalendar();
@@ -366,7 +369,7 @@ public class CreateRaceGUI extends JFrame {
 
 		for (Date d:datesWithRacesCurrentMonth){
 	 		calendar.setTime(d);
-	 		System.out.println(d);
+	 		log.addLine(d.toString());
 			Component o =  jCalendar.getDayChooser().getDayPanel()
 					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);
 			o.setBackground(Color.CYAN);

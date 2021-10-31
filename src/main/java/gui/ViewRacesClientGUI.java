@@ -24,6 +24,7 @@ import business_logic.BLFacade;
 import domain.Client;
 import domain.Race;
 import domain.RaceHorse;
+import logs.Log;
 
 @SuppressWarnings("serial")
 public class ViewRacesClientGUI extends JFrame {
@@ -32,6 +33,7 @@ public class ViewRacesClientGUI extends JFrame {
 	private String language;
 	private static BLFacade facade = LoginGUI.getBusinessLogic();
 	private static final String FONT = "Verdana";
+	private transient Log log;
 
 	private JScrollPane scrollPaneEvents = new JScrollPane();
 	private transient Race nextRace;
@@ -39,6 +41,7 @@ public class ViewRacesClientGUI extends JFrame {
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
 
 	public ViewRacesClientGUI(ClientGUI clFrame, Client client, String language) {
+		log = new Log("src/main/resources/log/gui/view_races_client.txt", this.getClass().getName());
 		setUndecorated(true);
 		getContentPane().setFont(new Font(FONT, Font.PLAIN, 11));
 		getContentPane().setBackground(new Color(32, 178, 170));
@@ -169,7 +172,7 @@ public class ViewRacesClientGUI extends JFrame {
 					lblError.setForeground(Color.RED);
 				}
 			}catch(Exception ex) {
-				System.out.println(ex.getMessage());
+				log.addLine(ex.getMessage());
 				lblError.setText(ResourceBundle.getBundle(language).getString("WrongInput"));
 				lblError.setForeground(Color.RED);
 			}
