@@ -21,15 +21,24 @@ import exceptions.WrongParameterException;
 public class BLFacadeImplementation implements BLFacade {
 
 	DataAccess dbManager;
+	ConfigXML c=ConfigXML.getInstance();
+	boolean openMode = c.getDataBaseOpenMode().equals("initialize");
 
+	public BLFacadeImplementation()  {		
+		
+		dbManager=new DataAccess(openMode);
+		if (openMode) {
+			dbManager.initializeDB();
+			dbManager.close();
+		}
+	}
+	
 	/**
 	 * Constructor that initializes or not the data base
 	 * @param da given dataAccess
 	 */
     public BLFacadeImplementation(DataAccess da)  {
-		ConfigXML c=ConfigXML.getInstance();
-
-		if (c.getDataBaseOpenMode().equals("initialize")) {
+    	if (openMode) {
 			da.open(false);
 			da.initializeDB();
 			da.close();

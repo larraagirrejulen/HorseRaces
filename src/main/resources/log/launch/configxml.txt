@@ -31,3 +31,19 @@
 [31/10/2021 07:24:47] 	 businessLogicLocal=true
 [31/10/2021 07:24:47] 	 databaseLocal=true
 [31/10/2021 07:24:47] 	 dataBaseOpenMode=initialize
+[31/10/2021 15:38:54] 
+
+----------------------------------
+
+[31/10/2021 15:38:54] Read from config.xml: 
+[31/10/2021 15:38:54] 	 businessLogicLocal=true
+[31/10/2021 15:38:54] 	 databaseLocal=true
+[31/10/2021 15:38:54] 	 dataBaseOpenMode=initialize
+[31/10/2021 15:45:24] 
+
+----------------------------------
+
+[31/10/2021 15:45:24] Read from config.xml: 
+[31/10/2021 15:45:24] 	 businessLogicLocal=true
+[31/10/2021 15:45:24] 	 databaseLocal=true
+[31/10/2021 15:45:24] 	 dataBaseOpenMode=initialize
