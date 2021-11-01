@@ -31,10 +31,10 @@ import domain.Client;
 import domain.Registered;
 
 @SuppressWarnings("serial")
-public class LoginGUI extends JFrame {
+public class MainGUI extends JFrame {
 
 	private static BLFacade appFacadeInterface;
-	private LoginGUI frame = this;
+	private MainGUI frame = this;
 	private String language = "Etiquetas_en";
 	private static final String FONT = "Verdana";
 	private static final String PSWLBL = "Verdana";
@@ -69,7 +69,7 @@ public class LoginGUI extends JFrame {
 		viewRacesButton.setText(ResourceBundle.getBundle(language).getString("UpcomingRace"));
 	}
 
-	public LoginGUI() {
+	public MainGUI() {
 		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);

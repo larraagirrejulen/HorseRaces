@@ -31,7 +31,7 @@ public class ViewRacesClientGUI extends JFrame {
 
 	private ClientGUI clientFrame;
 	private String language;
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private static final String FONT = "Verdana";
 	private transient Log log;
 
@@ -195,6 +195,7 @@ public class ViewRacesClientGUI extends JFrame {
 		jButtonClose.addActionListener(input -> {
 			clientFrame.setClient(client);
 			clientFrame.setVisible(true);
+			this.dispose();
 		});
 		panel.add(jButtonClose);
 	}

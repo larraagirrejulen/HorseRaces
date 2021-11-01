@@ -38,7 +38,7 @@ import logs.Log;
 @SuppressWarnings("serial")
 public class HorseResultsGUI extends JFrame {
 
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private String language;
 	private HorseResultsGUI frame = this;
 	private static final String FONT = "Verdana";

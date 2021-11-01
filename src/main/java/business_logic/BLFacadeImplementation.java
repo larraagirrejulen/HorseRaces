@@ -209,9 +209,9 @@ public class BLFacadeImplementation implements BLFacade {
 	@Override
 	public Client addMoney(Client client, double amount) {
     	dbManager.open(false);
-		Client c = dbManager.addMoney(client, amount);
+		Client newClient = dbManager.addMoney(client, amount);
 		dbManager.close();
-		return c;
+		return newClient;
 	}
 
 	/**
@@ -223,9 +223,9 @@ public class BLFacadeImplementation implements BLFacade {
 	@Override
 	public Client restMoney(Client client, double amount) {
     	dbManager.open(false);
-		Client c = dbManager.restMoney(client, amount);
+		Client newClient = dbManager.restMoney(client, amount);
 		dbManager.close();
-		return c;
+		return newClient;
 	}
 
 	/**

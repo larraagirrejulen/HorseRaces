@@ -21,10 +21,10 @@ import business_logic.BLFacade;
 public class RegisterGUI extends JFrame {
 
 	private static final String FONT = "Verdana";
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private RegisterGUI nireFrame = this;
 
-	public RegisterGUI(LoginGUI mainFrame, String language) {
+	public RegisterGUI(MainGUI mainFrame, String language) {
 		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);

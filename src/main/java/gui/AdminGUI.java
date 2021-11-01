@@ -17,7 +17,7 @@ public class AdminGUI extends JFrame {
 	private AdminGUI frame = this;
 	private JPanel contentPane;
 
-	public AdminGUI(LoginGUI mainFrame, String language) {
+	public AdminGUI(MainGUI mainFrame, String language) {
 		setUndecorated(true);
 
 		setBounds(800, 800, 500, 400);

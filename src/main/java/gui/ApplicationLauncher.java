@@ -22,7 +22,7 @@ public class ApplicationLauncher {
 
 		log.addLine("Locale: "+Locale.getDefault());
 
-		LoginGUI gui=new LoginGUI();
+		MainGUI gui=new MainGUI();
 		gui.setVisible(true);
 
 		try {
@@ -30,7 +30,7 @@ public class ApplicationLauncher {
 			
 			BLFacade appFacadeInterface = new BLFacadeFactory().createBLFacade(c);
 			
-			LoginGUI.setBussinessLogic(appFacadeInterface);
+			MainGUI.setBussinessLogic(appFacadeInterface);
 
 		}catch (Exception e) {
 			log.addLine("Error in ApplicationLauncher: "+e.toString());

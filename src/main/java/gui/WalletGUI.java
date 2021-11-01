@@ -41,7 +41,7 @@ public class WalletGUI extends JFrame {
 		setBackground(Color.WHITE);
 
 		client1 = client;
-		LoginGUI.getBusinessLogic();
+		MainGUI.getBusinessLogic();
 
 		setBounds(800, 800, 550, 400);
 		contentPane = new JPanel();

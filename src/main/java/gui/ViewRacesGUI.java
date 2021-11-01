@@ -24,23 +24,23 @@ import domain.RaceHorse;
 @SuppressWarnings("serial")
 public class ViewRacesGUI extends JFrame {
 
-	private LoginGUI loginFrame;
+	private MainGUI mainFrame;
 	private String language;
 	private ViewRacesGUI frame = this;
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private static final String FONT = "Verdana";
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
 	private transient Race nextRace;
 
 
-	public ViewRacesGUI(LoginGUI loFrame, String language) {
+	public ViewRacesGUI(MainGUI mainFrame, String language) {
 		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		getContentPane().setFont(new Font(FONT, Font.PLAIN, 11));
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(new Color(32, 178, 170));
 		this.language=language;
-		loginFrame = loFrame;
+		this.mainFrame = mainFrame;
 		nextRace = facade.getNextRace();
 		jbInit();
 	}
@@ -117,7 +117,7 @@ public class ViewRacesGUI extends JFrame {
 		jButtonClose.setBackground(new Color(0, 128, 128));
 		jButtonClose.setForeground(Color.WHITE);
 		jButtonClose.addActionListener(input -> {
-			loginFrame.setVisible(true);
+			mainFrame.setVisible(true);
 			frame.dispose();
 		});
 

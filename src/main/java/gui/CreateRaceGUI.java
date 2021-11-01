@@ -42,7 +42,7 @@ import logs.Log;
 @SuppressWarnings("serial")
 public class CreateRaceGUI extends JFrame {
 
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private String language;
 	private CreateRaceGUI frame = this;
 	private static final String FONT = "Verdana";

@@ -47,3 +47,35 @@
 [31/10/2021 15:45:24] 	 businessLogicLocal=true
 [31/10/2021 15:45:24] 	 databaseLocal=true
 [31/10/2021 15:45:24] 	 dataBaseOpenMode=initialize
+[01/11/2021 05:01:13] 
+
+----------------------------------
+
+[01/11/2021 05:01:13] Read from config.xml: 
+[01/11/2021 05:01:13] 	 businessLogicLocal=true
+[01/11/2021 05:01:13] 	 databaseLocal=true
+[01/11/2021 05:01:13] 	 dataBaseOpenMode=initialize
+[01/11/2021 05:01:45] 
+
+----------------------------------
+
+[01/11/2021 05:01:45] Read from config.xml: 
+[01/11/2021 05:01:45] 	 businessLogicLocal=true
+[01/11/2021 05:01:45] 	 databaseLocal=true
+[01/11/2021 05:01:45] 	 dataBaseOpenMode=initialize
+[01/11/2021 05:04:05] 
+
+----------------------------------
+
+[01/11/2021 05:04:05] Read from config.xml: 
+[01/11/2021 05:04:05] 	 businessLogicLocal=true
+[01/11/2021 05:04:05] 	 databaseLocal=true
+[01/11/2021 05:04:05] 	 dataBaseOpenMode=initialize
+[01/11/2021 05:06:49] 
+
+----------------------------------
+
+[01/11/2021 05:06:49] Read from config.xml: 
+[01/11/2021 05:06:49] 	 businessLogicLocal=true
+[01/11/2021 05:06:49] 	 databaseLocal=true
+[01/11/2021 05:06:49] 	 dataBaseOpenMode=initialize
