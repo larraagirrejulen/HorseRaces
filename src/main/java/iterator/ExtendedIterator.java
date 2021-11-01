@@ -2,7 +2,7 @@ package iterator;
 
 import java.util.Iterator;
 
-public interface ExtendedIterator extends Iterator<Object>{
+public interface ExtendedIterator<Object> extends Iterator<Object>{
 	
 	/**
 	 * Aurreko elementuan kokatu
