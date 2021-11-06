@@ -24,7 +24,7 @@ public class ApplicationLauncher {
 
 		MainGUI gui=new MainGUI();
 		gui.setVisible(true);
-
+		
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 			

@@ -28,6 +28,8 @@ import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
+import iterator.ExtendedIterator;
+import iterator.ExtendedIteratorRaces;
 import logs.Log;
 
 public class DataAccess  {
@@ -174,6 +176,15 @@ public class DataAccess  {
 	 	return res;
 	}
 
+	public ExtendedIterator<Race> getRaces(Date date){
+		Date firstDayMonthDate = UtilDate.newDate(2010, 12, 10);
+		Date lastDayMonthDate = UtilDate.lastDayMonth(date);
+		TypedQuery<Race> query = db.createQuery("SELECT FROM Race rc WHERE rc.date BETWEEN ?1 and ?2",Race.class);
+		query.setParameter(1, firstDayMonthDate);
+		query.setParameter(2, lastDayMonthDate);
+		return new ExtendedIteratorRaces(query.getResultList());
+	}
+	
 	public Race getNextRace() {
 		Race nextRace = null;
 		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished==False", Race.class);

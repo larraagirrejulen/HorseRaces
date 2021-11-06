@@ -17,6 +17,7 @@ import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
+import iterator.ExtendedIterator;
 
 public class BLFacadeImplementation implements BLFacade {
 
@@ -78,6 +79,13 @@ public class BLFacadeImplementation implements BLFacade {
 		ArrayList<Date>  dates=(ArrayList<Date>) dbManager.getRacesMonth(date);
 		dbManager.close();
 		return dates;
+	}
+	
+	public ExtendedIterator<Race> getRaces(Date date){
+		dbManager.open(false);
+		ExtendedIterator<Race> races = dbManager.getRaces(date);
+		dbManager.close();
+		return races;
 	}
 
 	@Override

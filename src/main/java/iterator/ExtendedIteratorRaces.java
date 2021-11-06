@@ -1,42 +1,50 @@
 package iterator;
 
+import java.util.List;
+
 import domain.Race;
 
 public class ExtendedIteratorRaces implements ExtendedIterator<Race>{
 
+	List<Race> races;
+	int position=0;
+
+	public ExtendedIteratorRaces (List<Race> races) {
+		this.races = races;
+	}
+	
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.position<races.size();
 	}
 
 	@Override
 	public Race next() {
-		// TODO Auto-generated method stub
-		return null;
+		Race race = races.get(this.position);
+		this.position++;
+		return race;
 	}
-
-	@Override
-	public Race previous() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public boolean hasPrevious() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.position >= 0;
+	}
+	
+	@Override
+	public Race previous() {
+		Race race = races.get(this.position);
+		this.position--;
+		return race;
+	}
+	
+	@Override
+	public void goLast() {
+		this.position = this.races.size()-1;
 	}
 
 	@Override
 	public void goFirst() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void goLast() {
-		// TODO Auto-generated method stub
+		this.position = 0;
 		
 	}
 

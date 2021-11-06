@@ -2,6 +2,7 @@ package iterator;
 
 import java.util.Iterator;
 
+@SuppressWarnings("hiding")
 public interface ExtendedIterator<Object> extends Iterator<Object>{
 	
 	/**
