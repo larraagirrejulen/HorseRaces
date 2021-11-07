@@ -351,3 +351,179 @@
 [07/11/2021 09:53:32] 	 businessLogicLocal=true
 [07/11/2021 09:53:32] 	 databaseLocal=true
 [07/11/2021 09:53:32] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:10:20] 
+
+----------------------------------
+
+[07/11/2021 10:10:20] Read from config.xml: 
+[07/11/2021 10:10:20] 	 businessLogicLocal=true
+[07/11/2021 10:10:20] 	 databaseLocal=true
+[07/11/2021 10:10:20] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:11:40] 
+
+----------------------------------
+
+[07/11/2021 10:11:40] Read from config.xml: 
+[07/11/2021 10:11:40] 	 businessLogicLocal=true
+[07/11/2021 10:11:40] 	 databaseLocal=true
+[07/11/2021 10:11:40] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:14:54] 
+
+----------------------------------
+
+[07/11/2021 10:14:54] Read from config.xml: 
+[07/11/2021 10:14:54] 	 businessLogicLocal=true
+[07/11/2021 10:14:54] 	 databaseLocal=true
+[07/11/2021 10:14:54] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:21:00] 
+
+----------------------------------
+
+[07/11/2021 10:21:00] Read from config.xml: 
+[07/11/2021 10:21:00] 	 businessLogicLocal=true
+[07/11/2021 10:21:00] 	 databaseLocal=true
+[07/11/2021 10:21:00] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:23:51] 
+
+----------------------------------
+
+[07/11/2021 10:23:51] Read from config.xml: 
+[07/11/2021 10:23:51] 	 businessLogicLocal=true
+[07/11/2021 10:23:51] 	 databaseLocal=true
+[07/11/2021 10:23:51] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:30:37] 
+
+----------------------------------
+
+[07/11/2021 10:30:37] Read from config.xml: 
+[07/11/2021 10:30:37] 	 businessLogicLocal=true
+[07/11/2021 10:30:37] 	 databaseLocal=true
+[07/11/2021 10:30:37] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:35:57] 
+
+----------------------------------
+
+[07/11/2021 13:35:57] Read from config.xml: 
+[07/11/2021 13:35:57] 	 businessLogicLocal=true
+[07/11/2021 13:35:57] 	 databaseLocal=true
+[07/11/2021 13:35:57] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:37:59] 
+
+----------------------------------
+
+[07/11/2021 13:37:59] Read from config.xml: 
+[07/11/2021 13:37:59] 	 businessLogicLocal=true
+[07/11/2021 13:37:59] 	 databaseLocal=true
+[07/11/2021 13:37:59] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:39:28] 
+
+----------------------------------
+
+[07/11/2021 13:39:28] Read from config.xml: 
+[07/11/2021 13:39:28] 	 businessLogicLocal=true
+[07/11/2021 13:39:28] 	 databaseLocal=true
+[07/11/2021 13:39:28] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:41:41] 
+
+----------------------------------
+
+[07/11/2021 13:41:41] Read from config.xml: 
+[07/11/2021 13:41:41] 	 businessLogicLocal=true
+[07/11/2021 13:41:41] 	 databaseLocal=true
+[07/11/2021 13:41:41] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:42:20] 
+
+----------------------------------
+
+[07/11/2021 13:42:20] Read from config.xml: 
+[07/11/2021 13:42:20] 	 businessLogicLocal=true
+[07/11/2021 13:42:20] 	 databaseLocal=true
+[07/11/2021 13:42:20] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:48:34] 
+
+----------------------------------
+
+[07/11/2021 13:48:34] Read from config.xml: 
+[07/11/2021 13:48:34] 	 businessLogicLocal=true
+[07/11/2021 13:48:34] 	 databaseLocal=true
+[07/11/2021 13:48:34] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:51:17] 
+
+----------------------------------
+
+[07/11/2021 13:51:17] Read from config.xml: 
+[07/11/2021 13:51:17] 	 businessLogicLocal=true
+[07/11/2021 13:51:17] 	 databaseLocal=true
+[07/11/2021 13:51:17] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:52:15] 
+
+----------------------------------
+
+[07/11/2021 13:52:15] Read from config.xml: 
+[07/11/2021 13:52:15] 	 businessLogicLocal=true
+[07/11/2021 13:52:15] 	 databaseLocal=true
+[07/11/2021 13:52:15] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:54:02] 
+
+----------------------------------
+
+[07/11/2021 13:54:02] Read from config.xml: 
+[07/11/2021 13:54:02] 	 businessLogicLocal=true
+[07/11/2021 13:54:02] 	 databaseLocal=true
+[07/11/2021 13:54:02] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:09:06] 
+
+----------------------------------
+
+[07/11/2021 14:09:06] Read from config.xml: 
+[07/11/2021 14:09:06] 	 businessLogicLocal=true
+[07/11/2021 14:09:06] 	 databaseLocal=true
+[07/11/2021 14:09:06] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:10:53] 
+
+----------------------------------
+
+[07/11/2021 14:10:53] Read from config.xml: 
+[07/11/2021 14:10:53] 	 businessLogicLocal=true
+[07/11/2021 14:10:53] 	 databaseLocal=true
+[07/11/2021 14:10:53] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:13:29] 
+
+----------------------------------
+
+[07/11/2021 14:13:29] Read from config.xml: 
+[07/11/2021 14:13:29] 	 businessLogicLocal=true
+[07/11/2021 14:13:29] 	 databaseLocal=true
+[07/11/2021 14:13:29] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:15:21] 
+
+----------------------------------
+
+[07/11/2021 14:15:21] Read from config.xml: 
+[07/11/2021 14:15:21] 	 businessLogicLocal=true
+[07/11/2021 14:15:21] 	 databaseLocal=true
+[07/11/2021 14:15:21] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:20:18] 
+
+----------------------------------
+
+[07/11/2021 14:20:18] Read from config.xml: 
+[07/11/2021 14:20:18] 	 businessLogicLocal=true
+[07/11/2021 14:20:18] 	 databaseLocal=true
+[07/11/2021 14:20:18] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:21:07] 
+
+----------------------------------
+
+[07/11/2021 14:21:07] Read from config.xml: 
+[07/11/2021 14:21:07] 	 businessLogicLocal=true
+[07/11/2021 14:21:07] 	 databaseLocal=true
+[07/11/2021 14:21:07] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:30:11] 
+
+----------------------------------
+
+[07/11/2021 14:30:11] Read from config.xml: 
+[07/11/2021 14:30:11] 	 businessLogicLocal=true
+[07/11/2021 14:30:11] 	 databaseLocal=true
+[07/11/2021 14:30:11] 	 dataBaseOpenMode=initialize

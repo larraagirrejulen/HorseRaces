@@ -61,8 +61,16 @@ public class DataAccess  {
 		ArrayList<Horse> horses = initializeHorses();
 		ArrayList<Race> races = initializeRaces();
 		initializeRaceHorses(horses, races);
+		initializeBets(races);
 		db.getTransaction().commit();
 		log.addLine("DB Initialiced");
+	}
+	
+	public void initializeBets(List<Race> races) {
+		Bet bet1 = new Bet(20, races.get(0).getRaceHorses().get(0), new Client("client", "client"));
+		Bet bet2 = new Bet(40, races.get(1).getRaceHorses().get(2), new Client("client", "client"));
+		db.persist(bet1);
+		db.persist(bet2);
 	}
 
 	private void initializeRaceHorses(ArrayList<Horse> horses, ArrayList<Race> races) {

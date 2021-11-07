@@ -1,5 +1,6 @@
 package adapter;
 
+import java.util.Date;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import business_logic.BLFacade;
@@ -9,6 +10,7 @@ import domain.Client;
 public class ClientBetAdapter extends AbstractTableModel {
 	
 	private transient List<Bet> bets;
+	private String[] colNames = {"Race streets", "Horse name", "Race date", "Amount bet"};
 	
 	public ClientBetAdapter(Client client, BLFacade blf) {
 		this.bets = blf.getClientBets(client);
@@ -16,28 +18,56 @@ public class ClientBetAdapter extends AbstractTableModel {
 	
 	@Override
 	public int getRowCount() {
-		return bets.size();
+		System.out.println("a");
+		if(bets == null) {
+			return 0;
+		}else {
+			return bets.size();
+		}
 	}
 
 	@Override
 	public int getColumnCount() {
-		return 4;
+		System.out.println("b");
+		return colNames.length;
 	}
+	
+	@Override 
+    public String getColumnName(int col) { 
+		System.out.println("c");
+        return colNames[col]; 
+    }
+	
+	@Override
+	public Class<?> getColumnClass(int col) {
+		System.out.println("d");
+	    if (col == 0) {
+	        return Integer.class;
+	    }else if(col == 1){
+	    	return String.class;
+	    }else if(col == 2){
+	  	    return Date.class;
+	    }else {
+	    	return Double.class;
+	    }
+   }
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
+		System.out.println("e");
 		Bet bet = bets.get(rowIndex);
+		Object returnObj = null;
 		if(columnIndex == 0) {
-			return bet.getRaceHorse().getRace().getNumOfStreets();
+			returnObj = Integer.valueOf(bet.getRaceHorse().getRace().getNumOfStreets());
 		}else if(columnIndex == 1) {
-			return bet.getRaceHorse().getHorse().getName();
+			returnObj = bet.getRaceHorse().getHorse().getName();
 		}else if(columnIndex == 2) {
-			return bet.getRaceHorse().getRace().getDate();
+			returnObj = bet.getRaceHorse().getRace().getDate();
 		}else if(columnIndex == 3) {
-			return bet.getAmount();
-		}else {
-			return null;
+			returnObj = Double.valueOf(bet.getAmount());
 		}
+		System.out.println(returnObj);
+		return returnObj;
 	}
 }
 
