@@ -70,6 +70,20 @@ public class ClientGUI extends JFrame {
 		});
 		btnViewRaces.setBounds(250, 150, 200, 35);
 		contentPane.add(btnViewRaces);
+		
+		
+		
+		JButton betHistory = new JButton("Bet History of " + this.client.getUserName());
+		betHistory.addActionListener(input -> {
+			new BetHistoryGUI(client, frame).setVisible(true);
+			frame.dispose();
+		});
+		betHistory.setForeground(Color.WHITE);
+		betHistory.setFont(new Font(FONT, Font.PLAIN, 11));
+		betHistory.setBorder(new LineBorder(new Color(0, 0, 51)));
+		betHistory.setBackground(new Color(0, 0, 51));
+		betHistory.setBounds(250, 220, 200, 35);
+		contentPane.add(betHistory);
 
 
 		//Button to add or rest money to the account

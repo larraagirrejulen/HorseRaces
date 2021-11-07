@@ -433,3 +433,32 @@ Type domain.Race is not enhanced.
 [2021-11-07 06:56:02 #9 type] 
 Type domain.StartTime is not enhanced.
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-11-07 07:09:28 #1 store] 
+Database 'C:\UNI\SI2\HorseRaces\null' is opened by 14364@DESKTOP-D1B8POF
+
+[2021-11-07 07:09:28 #2 type] 
+Type domain.Registered is not enhanced.
+
+[2021-11-07 07:09:28 #3 type] 
+Type domain.Admin is not enhanced.
+
+[2021-11-07 07:09:28 #4 type] 
+Type domain.Client is not enhanced.
+
+[2021-11-07 07:09:28 #5 type] 
+Type domain.Bet is not enhanced.
+
+[2021-11-07 07:09:28 #6 type] 
+Type domain.RaceHorse is not enhanced.
+
+[2021-11-07 07:09:28 #7 type] 
+Type domain.Horse is not enhanced.
+
+[2021-11-07 07:09:28 #8 type] 
+Type domain.Race is not enhanced.
+
+[2021-11-07 07:09:28 #9 type] 
+Type domain.StartTime is not enhanced.
+

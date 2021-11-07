@@ -754,3 +754,19 @@
 [07/11/2021 06:56:14] DB closed
 [07/11/2021 06:56:22] DB opened
 [07/11/2021 06:56:22] DB closed
+[07/11/2021 07:09:27] 
+
+----------------------------------
+
+[07/11/2021 07:09:27] Previous DB deleted
+[07/11/2021 07:09:27] DB opened
+[07/11/2021 07:09:28] DB closed
+[07/11/2021 07:09:28] DB opened
+[07/11/2021 07:09:28] Admin and Client initialiced
+[07/11/2021 07:09:28] Horses initialiced
+[07/11/2021 07:09:28] Races initialiced
+[07/11/2021 07:09:28] RaceHorses initialiced
+[07/11/2021 07:09:28] DB Initialiced
+[07/11/2021 07:09:28] DB closed
+[07/11/2021 07:09:32] DB opened
+[07/11/2021 07:09:32] DB closed

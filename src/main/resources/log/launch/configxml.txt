@@ -295,3 +295,11 @@
 [07/11/2021 06:56:02] 	 businessLogicLocal=true
 [07/11/2021 06:56:02] 	 databaseLocal=true
 [07/11/2021 06:56:02] 	 dataBaseOpenMode=initialize
+[07/11/2021 07:09:27] 
+
+----------------------------------
+
+[07/11/2021 07:09:27] Read from config.xml: 
+[07/11/2021 07:09:27] 	 businessLogicLocal=true
+[07/11/2021 07:09:27] 	 databaseLocal=true
+[07/11/2021 07:09:27] 	 dataBaseOpenMode=initialize
