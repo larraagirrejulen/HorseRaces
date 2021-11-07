@@ -28,6 +28,8 @@ import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
+import iterator.ExtendedIterator;
+import iterator.ExtendedIteratorRaces;
 import logs.Log;
 
 public class DataAccess  {
@@ -54,11 +56,21 @@ public class DataAccess  {
      * Initializes the data base with default objects
      */
 	public void initializeDB(){
+		db.getTransaction().begin();
 		initializeUsers();
 		ArrayList<Horse> horses = initializeHorses();
 		ArrayList<Race> races = initializeRaces();
 		initializeRaceHorses(horses, races);
+		initializeBets(races);
+		db.getTransaction().commit();
 		log.addLine("DB Initialiced");
+	}
+	
+	public void initializeBets(List<Race> races) {
+		Bet bet1 = new Bet(20, races.get(0).getRaceHorses().get(0), new Client("client", "client"));
+		Bet bet2 = new Bet(40, races.get(1).getRaceHorses().get(2), new Client("client", "client"));
+		db.persist(bet1);
+		db.persist(bet2);
 	}
 
 	private void initializeRaceHorses(ArrayList<Horse> horses, ArrayList<Race> races) {
@@ -77,6 +89,10 @@ public class DataAccess  {
 		RaceHorse raceHorse3 = new RaceHorse(1.7, race, horses.get(7));
 		race.addRaceHorse(raceHorse3);
 		race1.addRaceHorse(raceHorse3);
+		db.persist(raceHorse0);
+		db.persist(raceHorse1);
+		db.persist(raceHorse2);
+		db.persist(raceHorse3);
 		log.addLine("RaceHorses initialiced");
 	}
 
@@ -141,7 +157,7 @@ public class DataAccess  {
 			properties.put("javax.persistence.jdbc.user", config.getUser());
 			properties.put("javax.persistence.jdbc.password", config.getPassword());
 			emf = Persistence.createEntityManagerFactory("objectdb://"+  config.getDatabaseNode()+":"+ config.getDatabasePort()+"/"+fileName, properties);
-    	}
+		}
 		db = emf.createEntityManager();
 	}
 
@@ -174,11 +190,20 @@ public class DataAccess  {
 	 	return res;
 	}
 
+	public ExtendedIterator<Race> getRaces(Date date){
+		Date firstDayMonthDate = UtilDate.newDate(2010, 12, 10);
+		Date lastDayMonthDate = UtilDate.lastDayMonth(date);
+		TypedQuery<Race> query = db.createQuery("SELECT FROM Race rc WHERE rc.date BETWEEN ?1 and ?2",Race.class);
+		query.setParameter(1, firstDayMonthDate);
+		query.setParameter(2, lastDayMonthDate);
+		return new ExtendedIteratorRaces(query.getResultList());
+	}
+	
 	public Race getNextRace() {
 		Race nextRace = null;
-		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished==False", Race.class);
+		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished=False", Race.class);
 		List<Race> races = query.getResultList();
-		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())>0) nextRace = rc;
+		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())<0) nextRace = rc;
 		
 		
 		return nextRace;
@@ -401,6 +426,12 @@ public class DataAccess  {
 		db.remove(cl);
 		db.getTransaction().commit();
 		log.addLine("Client acount removed: " + cl.getUserName());
+	}
+	
+	public List<Bet> getClientBets(Client client){
+		TypedQuery<Bet> query = db.createQuery("SELECT FROM Bet b WHERE b.client = ?1",Bet.class);
+		query.setParameter(1, client);
+		return query.getResultList();
 	}
 
 }

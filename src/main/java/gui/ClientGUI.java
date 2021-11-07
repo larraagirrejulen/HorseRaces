@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Point;
 import java.util.ResourceBundle;
 
 import javax.swing.JButton;
@@ -24,20 +23,20 @@ public class ClientGUI extends JFrame {
 	private transient Client client;
 	private JLabel lblCash;
 	private String language1;
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	
 	public void setClient(Client client) {
 		this.client = client;
 		lblCash.setText(ResourceBundle.getBundle(language1).getString("Balance") + this.client.getWallet() + " $");
 	}
 
-	public ClientGUI(Client cl, LoginGUI mainFrame, String language) {
-		setLocation(new Point(610, 260));
+	public ClientGUI(Client cl, MainGUI mainFrame, String language) {
 		setUndecorated(true);
 
 		setBounds(100, 100, 700, 500);
 		setBackground(Color.WHITE);
 
+		this.setLocationRelativeTo(null);
 		this.language1=language;
 		this.client = cl;
 
@@ -71,6 +70,20 @@ public class ClientGUI extends JFrame {
 		});
 		btnViewRaces.setBounds(250, 150, 200, 35);
 		contentPane.add(btnViewRaces);
+		
+		
+		
+		JButton betHistory = new JButton("Bet History of " + this.client.getUserName());
+		betHistory.addActionListener(input -> {
+			new BetHistoryGUI(client, frame).setVisible(true);
+			frame.dispose();
+		});
+		betHistory.setForeground(Color.WHITE);
+		betHistory.setFont(new Font(FONT, Font.PLAIN, 11));
+		betHistory.setBorder(new LineBorder(new Color(0, 0, 51)));
+		betHistory.setBackground(new Color(0, 0, 51));
+		betHistory.setBounds(250, 220, 200, 35);
+		contentPane.add(betHistory);
 
 
 		//Button to add or rest money to the account

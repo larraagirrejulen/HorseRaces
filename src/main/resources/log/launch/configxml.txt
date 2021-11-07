@@ -1,33 +1,529 @@
 
-[31/10/2021 07:23:34] 
+[07/11/2021 08:34:53] 
 
 ----------------------------------
 
-[31/10/2021 07:23:34] Read from config.xml: 
-[31/10/2021 07:23:34] 	 businessLogicLocal=true
-[31/10/2021 07:23:34] 	 databaseLocal=true
-[31/10/2021 07:23:34] 	 dataBaseOpenMode=initialize
-[31/10/2021 07:23:43] 
+[07/11/2021 08:34:53] Read from config.xml: 
+[07/11/2021 08:34:53] 	 businessLogicLocal=true
+[07/11/2021 08:34:53] 	 databaseLocal=true
+[07/11/2021 08:34:53] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:35:17] 
 
 ----------------------------------
 
-[31/10/2021 07:23:43] Read from config.xml: 
-[31/10/2021 07:23:43] 	 businessLogicLocal=true
-[31/10/2021 07:23:43] 	 databaseLocal=true
-[31/10/2021 07:23:43] 	 dataBaseOpenMode=initialize
-[31/10/2021 07:24:34] 
+[07/11/2021 08:35:17] Read from config.xml: 
+[07/11/2021 08:35:17] 	 businessLogicLocal=true
+[07/11/2021 08:35:17] 	 databaseLocal=true
+[07/11/2021 08:35:17] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:39:57] 
 
 ----------------------------------
 
-[31/10/2021 07:24:34] Read from config.xml: 
-[31/10/2021 07:24:34] 	 businessLogicLocal=true
-[31/10/2021 07:24:34] 	 databaseLocal=true
-[31/10/2021 07:24:34] 	 dataBaseOpenMode=initialize
-[31/10/2021 07:24:46] 
+[07/11/2021 08:39:57] Read from config.xml: 
+[07/11/2021 08:39:57] 	 businessLogicLocal=true
+[07/11/2021 08:39:57] 	 databaseLocal=true
+[07/11/2021 08:39:57] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:42:24] 
 
 ----------------------------------
 
-[31/10/2021 07:24:47] Read from config.xml: 
-[31/10/2021 07:24:47] 	 businessLogicLocal=true
-[31/10/2021 07:24:47] 	 databaseLocal=true
-[31/10/2021 07:24:47] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:42:24] Read from config.xml: 
+[07/11/2021 08:42:24] 	 businessLogicLocal=true
+[07/11/2021 08:42:24] 	 databaseLocal=true
+[07/11/2021 08:42:24] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:42:47] 
+
+----------------------------------
+
+[07/11/2021 08:42:47] Read from config.xml: 
+[07/11/2021 08:42:47] 	 businessLogicLocal=true
+[07/11/2021 08:42:47] 	 databaseLocal=true
+[07/11/2021 08:42:47] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:44:44] 
+
+----------------------------------
+
+[07/11/2021 08:44:44] Read from config.xml: 
+[07/11/2021 08:44:44] 	 businessLogicLocal=true
+[07/11/2021 08:44:44] 	 databaseLocal=true
+[07/11/2021 08:44:44] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:47:31] 
+
+----------------------------------
+
+[07/11/2021 08:47:31] Read from config.xml: 
+[07/11/2021 08:47:31] 	 businessLogicLocal=true
+[07/11/2021 08:47:31] 	 databaseLocal=true
+[07/11/2021 08:47:31] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:48:40] 
+
+----------------------------------
+
+[07/11/2021 08:48:40] Read from config.xml: 
+[07/11/2021 08:48:40] 	 businessLogicLocal=true
+[07/11/2021 08:48:40] 	 databaseLocal=true
+[07/11/2021 08:48:40] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:57:44] 
+
+----------------------------------
+
+[07/11/2021 08:57:44] Read from config.xml: 
+[07/11/2021 08:57:44] 	 businessLogicLocal=true
+[07/11/2021 08:57:44] 	 databaseLocal=true
+[07/11/2021 08:57:44] 	 dataBaseOpenMode=initialize
+[07/11/2021 08:59:17] 
+
+----------------------------------
+
+[07/11/2021 08:59:17] Read from config.xml: 
+[07/11/2021 08:59:17] 	 businessLogicLocal=true
+[07/11/2021 08:59:17] 	 databaseLocal=true
+[07/11/2021 08:59:17] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:02:55] 
+
+----------------------------------
+
+[07/11/2021 09:02:56] Read from config.xml: 
+[07/11/2021 09:02:56] 	 businessLogicLocal=true
+[07/11/2021 09:02:56] 	 databaseLocal=true
+[07/11/2021 09:02:56] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:03:28] 
+
+----------------------------------
+
+[07/11/2021 09:03:28] Read from config.xml: 
+[07/11/2021 09:03:28] 	 businessLogicLocal=true
+[07/11/2021 09:03:28] 	 databaseLocal=true
+[07/11/2021 09:03:28] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:04:24] 
+
+----------------------------------
+
+[07/11/2021 09:04:24] Read from config.xml: 
+[07/11/2021 09:04:24] 	 businessLogicLocal=true
+[07/11/2021 09:04:24] 	 databaseLocal=true
+[07/11/2021 09:04:24] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:12:07] 
+
+----------------------------------
+
+[07/11/2021 09:12:07] Read from config.xml: 
+[07/11/2021 09:12:07] 	 businessLogicLocal=true
+[07/11/2021 09:12:07] 	 databaseLocal=true
+[07/11/2021 09:12:07] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:15:00] 
+
+----------------------------------
+
+[07/11/2021 09:15:00] Read from config.xml: 
+[07/11/2021 09:15:00] 	 businessLogicLocal=true
+[07/11/2021 09:15:00] 	 databaseLocal=true
+[07/11/2021 09:15:00] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:15:22] 
+
+----------------------------------
+
+[07/11/2021 09:15:22] Read from config.xml: 
+[07/11/2021 09:15:22] 	 businessLogicLocal=true
+[07/11/2021 09:15:22] 	 databaseLocal=true
+[07/11/2021 09:15:22] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:15:31] 
+
+----------------------------------
+
+[07/11/2021 09:15:31] Read from config.xml: 
+[07/11/2021 09:15:31] 	 businessLogicLocal=true
+[07/11/2021 09:15:31] 	 databaseLocal=true
+[07/11/2021 09:15:31] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:15:52] 
+
+----------------------------------
+
+[07/11/2021 09:15:52] Read from config.xml: 
+[07/11/2021 09:15:52] 	 businessLogicLocal=true
+[07/11/2021 09:15:52] 	 databaseLocal=true
+[07/11/2021 09:15:52] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:16:06] 
+
+----------------------------------
+
+[07/11/2021 09:16:06] Read from config.xml: 
+[07/11/2021 09:16:06] 	 businessLogicLocal=true
+[07/11/2021 09:16:06] 	 databaseLocal=true
+[07/11/2021 09:16:06] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:17:20] 
+
+----------------------------------
+
+[07/11/2021 09:17:20] Read from config.xml: 
+[07/11/2021 09:17:20] 	 businessLogicLocal=true
+[07/11/2021 09:17:20] 	 databaseLocal=true
+[07/11/2021 09:17:20] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:17:26] 
+
+----------------------------------
+
+[07/11/2021 09:17:26] Read from config.xml: 
+[07/11/2021 09:17:26] 	 businessLogicLocal=true
+[07/11/2021 09:17:26] 	 databaseLocal=true
+[07/11/2021 09:17:26] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:17:43] 
+
+----------------------------------
+
+[07/11/2021 09:17:43] Read from config.xml: 
+[07/11/2021 09:17:43] 	 businessLogicLocal=true
+[07/11/2021 09:17:43] 	 databaseLocal=true
+[07/11/2021 09:17:43] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:17:58] 
+
+----------------------------------
+
+[07/11/2021 09:17:58] Read from config.xml: 
+[07/11/2021 09:17:58] 	 businessLogicLocal=true
+[07/11/2021 09:17:58] 	 databaseLocal=true
+[07/11/2021 09:17:58] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:19:20] 
+
+----------------------------------
+
+[07/11/2021 09:19:20] Read from config.xml: 
+[07/11/2021 09:19:20] 	 businessLogicLocal=true
+[07/11/2021 09:19:20] 	 databaseLocal=true
+[07/11/2021 09:19:20] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:19:39] 
+
+----------------------------------
+
+[07/11/2021 09:19:39] Read from config.xml: 
+[07/11/2021 09:19:39] 	 businessLogicLocal=true
+[07/11/2021 09:19:39] 	 databaseLocal=true
+[07/11/2021 09:19:39] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:19:48] 
+
+----------------------------------
+
+[07/11/2021 09:19:48] Read from config.xml: 
+[07/11/2021 09:19:48] 	 businessLogicLocal=true
+[07/11/2021 09:19:48] 	 databaseLocal=true
+[07/11/2021 09:19:48] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:21:34] 
+
+----------------------------------
+
+[07/11/2021 09:21:34] Read from config.xml: 
+[07/11/2021 09:21:34] 	 businessLogicLocal=true
+[07/11/2021 09:21:34] 	 databaseLocal=true
+[07/11/2021 09:21:34] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:21:43] 
+
+----------------------------------
+
+[07/11/2021 09:21:43] Read from config.xml: 
+[07/11/2021 09:21:43] 	 businessLogicLocal=true
+[07/11/2021 09:21:43] 	 databaseLocal=true
+[07/11/2021 09:21:43] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:21:49] 
+
+----------------------------------
+
+[07/11/2021 09:21:49] Read from config.xml: 
+[07/11/2021 09:21:49] 	 businessLogicLocal=true
+[07/11/2021 09:21:49] 	 databaseLocal=true
+[07/11/2021 09:21:49] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:23:52] 
+
+----------------------------------
+
+[07/11/2021 09:23:52] Read from config.xml: 
+[07/11/2021 09:23:52] 	 businessLogicLocal=true
+[07/11/2021 09:23:52] 	 databaseLocal=true
+[07/11/2021 09:23:52] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:25:53] 
+
+----------------------------------
+
+[07/11/2021 09:25:53] Read from config.xml: 
+[07/11/2021 09:25:53] 	 businessLogicLocal=true
+[07/11/2021 09:25:53] 	 databaseLocal=true
+[07/11/2021 09:25:53] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:26:09] 
+
+----------------------------------
+
+[07/11/2021 09:26:09] Read from config.xml: 
+[07/11/2021 09:26:09] 	 businessLogicLocal=true
+[07/11/2021 09:26:09] 	 databaseLocal=true
+[07/11/2021 09:26:09] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:27:33] 
+
+----------------------------------
+
+[07/11/2021 09:27:33] Read from config.xml: 
+[07/11/2021 09:27:33] 	 businessLogicLocal=true
+[07/11/2021 09:27:33] 	 databaseLocal=true
+[07/11/2021 09:27:33] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:28:44] 
+
+----------------------------------
+
+[07/11/2021 09:28:45] Read from config.xml: 
+[07/11/2021 09:28:45] 	 businessLogicLocal=true
+[07/11/2021 09:28:45] 	 databaseLocal=true
+[07/11/2021 09:28:45] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:29:46] 
+
+----------------------------------
+
+[07/11/2021 09:29:46] Read from config.xml: 
+[07/11/2021 09:29:46] 	 businessLogicLocal=true
+[07/11/2021 09:29:46] 	 databaseLocal=true
+[07/11/2021 09:29:46] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:33:48] 
+
+----------------------------------
+
+[07/11/2021 09:33:48] Read from config.xml: 
+[07/11/2021 09:33:48] 	 businessLogicLocal=true
+[07/11/2021 09:33:48] 	 databaseLocal=true
+[07/11/2021 09:33:48] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:35:10] 
+
+----------------------------------
+
+[07/11/2021 09:35:10] Read from config.xml: 
+[07/11/2021 09:35:10] 	 businessLogicLocal=true
+[07/11/2021 09:35:10] 	 databaseLocal=true
+[07/11/2021 09:35:10] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:40:34] 
+
+----------------------------------
+
+[07/11/2021 09:40:34] Read from config.xml: 
+[07/11/2021 09:40:34] 	 businessLogicLocal=true
+[07/11/2021 09:40:34] 	 databaseLocal=true
+[07/11/2021 09:40:34] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:41:04] 
+
+----------------------------------
+
+[07/11/2021 09:41:04] Read from config.xml: 
+[07/11/2021 09:41:04] 	 businessLogicLocal=true
+[07/11/2021 09:41:04] 	 databaseLocal=true
+[07/11/2021 09:41:04] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:42:01] 
+
+----------------------------------
+
+[07/11/2021 09:42:01] Read from config.xml: 
+[07/11/2021 09:42:01] 	 businessLogicLocal=true
+[07/11/2021 09:42:01] 	 databaseLocal=true
+[07/11/2021 09:42:01] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:44:31] 
+
+----------------------------------
+
+[07/11/2021 09:44:31] Read from config.xml: 
+[07/11/2021 09:44:31] 	 businessLogicLocal=true
+[07/11/2021 09:44:31] 	 databaseLocal=true
+[07/11/2021 09:44:31] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:47:26] 
+
+----------------------------------
+
+[07/11/2021 09:47:26] Read from config.xml: 
+[07/11/2021 09:47:26] 	 businessLogicLocal=true
+[07/11/2021 09:47:26] 	 databaseLocal=true
+[07/11/2021 09:47:26] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:50:44] 
+
+----------------------------------
+
+[07/11/2021 09:50:44] Read from config.xml: 
+[07/11/2021 09:50:44] 	 businessLogicLocal=true
+[07/11/2021 09:50:44] 	 databaseLocal=true
+[07/11/2021 09:50:44] 	 dataBaseOpenMode=initialize
+[07/11/2021 09:53:32] 
+
+----------------------------------
+
+[07/11/2021 09:53:32] Read from config.xml: 
+[07/11/2021 09:53:32] 	 businessLogicLocal=true
+[07/11/2021 09:53:32] 	 databaseLocal=true
+[07/11/2021 09:53:32] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:10:20] 
+
+----------------------------------
+
+[07/11/2021 10:10:20] Read from config.xml: 
+[07/11/2021 10:10:20] 	 businessLogicLocal=true
+[07/11/2021 10:10:20] 	 databaseLocal=true
+[07/11/2021 10:10:20] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:11:40] 
+
+----------------------------------
+
+[07/11/2021 10:11:40] Read from config.xml: 
+[07/11/2021 10:11:40] 	 businessLogicLocal=true
+[07/11/2021 10:11:40] 	 databaseLocal=true
+[07/11/2021 10:11:40] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:14:54] 
+
+----------------------------------
+
+[07/11/2021 10:14:54] Read from config.xml: 
+[07/11/2021 10:14:54] 	 businessLogicLocal=true
+[07/11/2021 10:14:54] 	 databaseLocal=true
+[07/11/2021 10:14:54] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:21:00] 
+
+----------------------------------
+
+[07/11/2021 10:21:00] Read from config.xml: 
+[07/11/2021 10:21:00] 	 businessLogicLocal=true
+[07/11/2021 10:21:00] 	 databaseLocal=true
+[07/11/2021 10:21:00] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:23:51] 
+
+----------------------------------
+
+[07/11/2021 10:23:51] Read from config.xml: 
+[07/11/2021 10:23:51] 	 businessLogicLocal=true
+[07/11/2021 10:23:51] 	 databaseLocal=true
+[07/11/2021 10:23:51] 	 dataBaseOpenMode=initialize
+[07/11/2021 10:30:37] 
+
+----------------------------------
+
+[07/11/2021 10:30:37] Read from config.xml: 
+[07/11/2021 10:30:37] 	 businessLogicLocal=true
+[07/11/2021 10:30:37] 	 databaseLocal=true
+[07/11/2021 10:30:37] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:35:57] 
+
+----------------------------------
+
+[07/11/2021 13:35:57] Read from config.xml: 
+[07/11/2021 13:35:57] 	 businessLogicLocal=true
+[07/11/2021 13:35:57] 	 databaseLocal=true
+[07/11/2021 13:35:57] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:37:59] 
+
+----------------------------------
+
+[07/11/2021 13:37:59] Read from config.xml: 
+[07/11/2021 13:37:59] 	 businessLogicLocal=true
+[07/11/2021 13:37:59] 	 databaseLocal=true
+[07/11/2021 13:37:59] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:39:28] 
+
+----------------------------------
+
+[07/11/2021 13:39:28] Read from config.xml: 
+[07/11/2021 13:39:28] 	 businessLogicLocal=true
+[07/11/2021 13:39:28] 	 databaseLocal=true
+[07/11/2021 13:39:28] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:41:41] 
+
+----------------------------------
+
+[07/11/2021 13:41:41] Read from config.xml: 
+[07/11/2021 13:41:41] 	 businessLogicLocal=true
+[07/11/2021 13:41:41] 	 databaseLocal=true
+[07/11/2021 13:41:41] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:42:20] 
+
+----------------------------------
+
+[07/11/2021 13:42:20] Read from config.xml: 
+[07/11/2021 13:42:20] 	 businessLogicLocal=true
+[07/11/2021 13:42:20] 	 databaseLocal=true
+[07/11/2021 13:42:20] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:48:34] 
+
+----------------------------------
+
+[07/11/2021 13:48:34] Read from config.xml: 
+[07/11/2021 13:48:34] 	 businessLogicLocal=true
+[07/11/2021 13:48:34] 	 databaseLocal=true
+[07/11/2021 13:48:34] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:51:17] 
+
+----------------------------------
+
+[07/11/2021 13:51:17] Read from config.xml: 
+[07/11/2021 13:51:17] 	 businessLogicLocal=true
+[07/11/2021 13:51:17] 	 databaseLocal=true
+[07/11/2021 13:51:17] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:52:15] 
+
+----------------------------------
+
+[07/11/2021 13:52:15] Read from config.xml: 
+[07/11/2021 13:52:15] 	 businessLogicLocal=true
+[07/11/2021 13:52:15] 	 databaseLocal=true
+[07/11/2021 13:52:15] 	 dataBaseOpenMode=initialize
+[07/11/2021 13:54:02] 
+
+----------------------------------
+
+[07/11/2021 13:54:02] Read from config.xml: 
+[07/11/2021 13:54:02] 	 businessLogicLocal=true
+[07/11/2021 13:54:02] 	 databaseLocal=true
+[07/11/2021 13:54:02] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:09:06] 
+
+----------------------------------
+
+[07/11/2021 14:09:06] Read from config.xml: 
+[07/11/2021 14:09:06] 	 businessLogicLocal=true
+[07/11/2021 14:09:06] 	 databaseLocal=true
+[07/11/2021 14:09:06] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:10:53] 
+
+----------------------------------
+
+[07/11/2021 14:10:53] Read from config.xml: 
+[07/11/2021 14:10:53] 	 businessLogicLocal=true
+[07/11/2021 14:10:53] 	 databaseLocal=true
+[07/11/2021 14:10:53] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:13:29] 
+
+----------------------------------
+
+[07/11/2021 14:13:29] Read from config.xml: 
+[07/11/2021 14:13:29] 	 businessLogicLocal=true
+[07/11/2021 14:13:29] 	 databaseLocal=true
+[07/11/2021 14:13:29] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:15:21] 
+
+----------------------------------
+
+[07/11/2021 14:15:21] Read from config.xml: 
+[07/11/2021 14:15:21] 	 businessLogicLocal=true
+[07/11/2021 14:15:21] 	 databaseLocal=true
+[07/11/2021 14:15:21] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:20:18] 
+
+----------------------------------
+
+[07/11/2021 14:20:18] Read from config.xml: 
+[07/11/2021 14:20:18] 	 businessLogicLocal=true
+[07/11/2021 14:20:18] 	 databaseLocal=true
+[07/11/2021 14:20:18] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:21:07] 
+
+----------------------------------
+
+[07/11/2021 14:21:07] Read from config.xml: 
+[07/11/2021 14:21:07] 	 businessLogicLocal=true
+[07/11/2021 14:21:07] 	 databaseLocal=true
+[07/11/2021 14:21:07] 	 dataBaseOpenMode=initialize
+[07/11/2021 14:30:11] 
+
+----------------------------------
+
+[07/11/2021 14:30:11] Read from config.xml: 
+[07/11/2021 14:30:11] 	 businessLogicLocal=true
+[07/11/2021 14:30:11] 	 databaseLocal=true
+[07/11/2021 14:30:11] 	 dataBaseOpenMode=initialize

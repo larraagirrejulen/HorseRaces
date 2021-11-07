@@ -6,6 +6,7 @@ import java.util.List;
 
 import configuration.ConfigXML;
 import data_access.DataAccess;
+import domain.Bet;
 import domain.Client;
 import domain.Horse;
 import domain.Race;
@@ -17,19 +18,28 @@ import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
+import iterator.ExtendedIterator;
 
 public class BLFacadeImplementation implements BLFacade {
 
 	DataAccess dbManager;
+	boolean openMode = ConfigXML.getInstance().getDataBaseOpenMode().equals("initialize");
 
+	public BLFacadeImplementation()  {		
+		
+		dbManager=new DataAccess(openMode);
+		if (openMode) {
+			dbManager.initializeDB();
+			dbManager.close();
+		}
+	}
+	
 	/**
 	 * Constructor that initializes or not the data base
 	 * @param da given dataAccess
 	 */
     public BLFacadeImplementation(DataAccess da)  {
-		ConfigXML c=ConfigXML.getInstance();
-
-		if (c.getDataBaseOpenMode().equals("initialize")) {
+    	if (openMode) {
 			da.open(false);
 			da.initializeDB();
 			da.close();
@@ -69,6 +79,13 @@ public class BLFacadeImplementation implements BLFacade {
 		ArrayList<Date>  dates=(ArrayList<Date>) dbManager.getRacesMonth(date);
 		dbManager.close();
 		return dates;
+	}
+	
+	public ExtendedIterator<Race> getRaces(Date date){
+		dbManager.open(false);
+		ExtendedIterator<Race> races = dbManager.getRaces(date);
+		dbManager.close();
+		return races;
 	}
 
 	@Override
@@ -200,9 +217,9 @@ public class BLFacadeImplementation implements BLFacade {
 	@Override
 	public Client addMoney(Client client, double amount) {
     	dbManager.open(false);
-		Client c = dbManager.addMoney(client, amount);
+		Client newClient = dbManager.addMoney(client, amount);
 		dbManager.close();
-		return c;
+		return newClient;
 	}
 
 	/**
@@ -214,9 +231,9 @@ public class BLFacadeImplementation implements BLFacade {
 	@Override
 	public Client restMoney(Client client, double amount) {
     	dbManager.open(false);
-		Client c = dbManager.restMoney(client, amount);
+		Client newClient = dbManager.restMoney(client, amount);
 		dbManager.close();
-		return c;
+		return newClient;
 	}
 
 	/**
@@ -253,6 +270,14 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.open(false);
 		dbManager.deleteAcount(client);
 		dbManager.close();
+	}
+	
+	@Override
+	public List<Bet> getClientBets(Client client){
+		dbManager.open(false);
+		List<Bet> bets = dbManager.getClientBets(client);
+		dbManager.close();
+		return bets;
 	}
 
 }

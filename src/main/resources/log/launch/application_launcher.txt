@@ -1,13 +1,425 @@
 
-[31/10/2021 07:23:43] 
+[07/11/2021 08:34:53] 
 
 ----------------------------------
 
-[31/10/2021 07:23:43] en
-[31/10/2021 07:23:43] Locale: en
-[31/10/2021 07:24:47] 
+[07/11/2021 08:34:53] en
+[07/11/2021 08:34:53] Locale: en
+[07/11/2021 08:35:17] 
 
 ----------------------------------
 
-[31/10/2021 07:24:47] en
-[31/10/2021 07:24:47] Locale: en
+[07/11/2021 08:35:17] en
+[07/11/2021 08:35:17] Locale: en
+[07/11/2021 08:39:57] 
+
+----------------------------------
+
+[07/11/2021 08:39:57] en
+[07/11/2021 08:39:57] Locale: en
+[07/11/2021 08:42:24] 
+
+----------------------------------
+
+[07/11/2021 08:42:24] en
+[07/11/2021 08:42:24] Locale: en
+[07/11/2021 08:42:47] 
+
+----------------------------------
+
+[07/11/2021 08:42:47] en
+[07/11/2021 08:42:47] Locale: en
+[07/11/2021 08:44:44] 
+
+----------------------------------
+
+[07/11/2021 08:44:44] en
+[07/11/2021 08:44:44] Locale: en
+[07/11/2021 08:47:31] 
+
+----------------------------------
+
+[07/11/2021 08:47:31] en
+[07/11/2021 08:47:31] Locale: en
+[07/11/2021 08:48:40] 
+
+----------------------------------
+
+[07/11/2021 08:48:40] en
+[07/11/2021 08:48:40] Locale: en
+[07/11/2021 08:57:44] 
+
+----------------------------------
+
+[07/11/2021 08:57:44] en
+[07/11/2021 08:57:44] Locale: en
+[07/11/2021 08:59:17] 
+
+----------------------------------
+
+[07/11/2021 08:59:17] en
+[07/11/2021 08:59:17] Locale: en
+[07/11/2021 08:59:17] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:02:56] 
+
+----------------------------------
+
+[07/11/2021 09:02:56] en
+[07/11/2021 09:02:56] Locale: en
+[07/11/2021 09:02:56] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:03:28] 
+
+----------------------------------
+
+[07/11/2021 09:03:28] en
+[07/11/2021 09:03:28] Locale: en
+[07/11/2021 09:03:28] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:04:24] 
+
+----------------------------------
+
+[07/11/2021 09:04:24] en
+[07/11/2021 09:04:24] Locale: en
+[07/11/2021 09:04:24] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:12:07] 
+
+----------------------------------
+
+[07/11/2021 09:12:07] en
+[07/11/2021 09:12:07] Locale: en
+[07/11/2021 09:12:08] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:15:00] 
+
+----------------------------------
+
+[07/11/2021 09:15:00] en
+[07/11/2021 09:15:00] Locale: en
+[07/11/2021 09:15:00] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:15:22] 
+
+----------------------------------
+
+[07/11/2021 09:15:22] en
+[07/11/2021 09:15:22] Locale: en
+[07/11/2021 09:15:22] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:15:31] 
+
+----------------------------------
+
+[07/11/2021 09:15:31] en
+[07/11/2021 09:15:31] Locale: en
+[07/11/2021 09:15:31] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:15:52] 
+
+----------------------------------
+
+[07/11/2021 09:15:52] en
+[07/11/2021 09:15:52] Locale: en
+[07/11/2021 09:15:53] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:16:06] 
+
+----------------------------------
+
+[07/11/2021 09:16:06] en
+[07/11/2021 09:16:06] Locale: en
+[07/11/2021 09:16:07] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:17:20] 
+
+----------------------------------
+
+[07/11/2021 09:17:20] en
+[07/11/2021 09:17:20] Locale: en
+[07/11/2021 09:17:21] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:17:26] 
+
+----------------------------------
+
+[07/11/2021 09:17:26] en
+[07/11/2021 09:17:26] Locale: en
+[07/11/2021 09:17:27] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:17:43] 
+
+----------------------------------
+
+[07/11/2021 09:17:43] en
+[07/11/2021 09:17:43] Locale: en
+[07/11/2021 09:17:43] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:17:58] 
+
+----------------------------------
+
+[07/11/2021 09:17:58] en
+[07/11/2021 09:17:58] Locale: en
+[07/11/2021 09:17:58] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:19:20] 
+
+----------------------------------
+
+[07/11/2021 09:19:20] en
+[07/11/2021 09:19:20] Locale: en
+[07/11/2021 09:19:20] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:19:39] 
+
+----------------------------------
+
+[07/11/2021 09:19:39] en
+[07/11/2021 09:19:39] Locale: en
+[07/11/2021 09:19:39] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:19:48] 
+
+----------------------------------
+
+[07/11/2021 09:19:48] en
+[07/11/2021 09:19:48] Locale: en
+[07/11/2021 09:19:48] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:21:34] 
+
+----------------------------------
+
+[07/11/2021 09:21:34] en
+[07/11/2021 09:21:34] Locale: en
+[07/11/2021 09:21:34] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:21:43] 
+
+----------------------------------
+
+[07/11/2021 09:21:43] en
+[07/11/2021 09:21:43] Locale: en
+[07/11/2021 09:21:43] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:21:49] 
+
+----------------------------------
+
+[07/11/2021 09:21:49] en
+[07/11/2021 09:21:49] Locale: en
+[07/11/2021 09:21:49] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:23:52] 
+
+----------------------------------
+
+[07/11/2021 09:23:52] en
+[07/11/2021 09:23:52] Locale: en
+[07/11/2021 09:23:52] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:25:53] 
+
+----------------------------------
+
+[07/11/2021 09:25:53] en
+[07/11/2021 09:25:53] Locale: en
+[07/11/2021 09:25:53] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:26:09] 
+
+----------------------------------
+
+[07/11/2021 09:26:09] en
+[07/11/2021 09:26:09] Locale: en
+[07/11/2021 09:26:09] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:27:33] 
+
+----------------------------------
+
+[07/11/2021 09:27:33] en
+[07/11/2021 09:27:33] Locale: en
+[07/11/2021 09:27:33] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:28:45] 
+
+----------------------------------
+
+[07/11/2021 09:28:45] en
+[07/11/2021 09:28:45] Locale: en
+[07/11/2021 09:28:45] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:29:46] 
+
+----------------------------------
+
+[07/11/2021 09:29:46] en
+[07/11/2021 09:29:46] Locale: en
+[07/11/2021 09:29:47] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:33:48] 
+
+----------------------------------
+
+[07/11/2021 09:33:48] en
+[07/11/2021 09:33:48] Locale: en
+[07/11/2021 09:33:49] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:35:10] 
+
+----------------------------------
+
+[07/11/2021 09:35:10] en
+[07/11/2021 09:35:10] Locale: en
+[07/11/2021 09:35:10] Error in ApplicationLauncher: com.objectdb.o._RollbackException: Failed to commit transaction: Attempt to reuse an existing primary key value (domain.Admin:'admin')
+[07/11/2021 09:40:34] 
+
+----------------------------------
+
+[07/11/2021 09:40:34] en
+[07/11/2021 09:40:34] Locale: en
+[07/11/2021 09:41:04] 
+
+----------------------------------
+
+[07/11/2021 09:41:04] en
+[07/11/2021 09:41:04] Locale: en
+[07/11/2021 09:42:01] 
+
+----------------------------------
+
+[07/11/2021 09:42:01] en
+[07/11/2021 09:42:01] Locale: en
+[07/11/2021 09:44:31] 
+
+----------------------------------
+
+[07/11/2021 09:44:31] en
+[07/11/2021 09:44:31] Locale: en
+[07/11/2021 09:47:26] 
+
+----------------------------------
+
+[07/11/2021 09:47:26] en
+[07/11/2021 09:47:26] Locale: en
+[07/11/2021 09:50:44] 
+
+----------------------------------
+
+[07/11/2021 09:50:44] en
+[07/11/2021 09:50:44] Locale: en
+[07/11/2021 09:53:32] 
+
+----------------------------------
+
+[07/11/2021 09:53:32] en
+[07/11/2021 09:53:32] Locale: en
+[07/11/2021 10:10:20] 
+
+----------------------------------
+
+[07/11/2021 10:10:20] en
+[07/11/2021 10:10:20] Locale: en
+[07/11/2021 10:11:40] 
+
+----------------------------------
+
+[07/11/2021 10:11:40] en
+[07/11/2021 10:11:40] Locale: en
+[07/11/2021 10:14:54] 
+
+----------------------------------
+
+[07/11/2021 10:14:54] en
+[07/11/2021 10:14:54] Locale: en
+[07/11/2021 10:21:00] 
+
+----------------------------------
+
+[07/11/2021 10:21:00] en
+[07/11/2021 10:21:00] Locale: en
+[07/11/2021 10:23:51] 
+
+----------------------------------
+
+[07/11/2021 10:23:51] en
+[07/11/2021 10:23:51] Locale: en
+[07/11/2021 10:30:37] 
+
+----------------------------------
+
+[07/11/2021 10:30:37] en
+[07/11/2021 10:30:37] Locale: en
+[07/11/2021 13:35:57] 
+
+----------------------------------
+
+[07/11/2021 13:35:57] en
+[07/11/2021 13:35:57] Locale: en
+[07/11/2021 13:37:59] 
+
+----------------------------------
+
+[07/11/2021 13:37:59] en
+[07/11/2021 13:37:59] Locale: en
+[07/11/2021 13:39:28] 
+
+----------------------------------
+
+[07/11/2021 13:39:28] en
+[07/11/2021 13:39:28] Locale: en
+[07/11/2021 13:41:41] 
+
+----------------------------------
+
+[07/11/2021 13:41:41] en
+[07/11/2021 13:41:41] Locale: en
+[07/11/2021 13:42:20] 
+
+----------------------------------
+
+[07/11/2021 13:42:20] en
+[07/11/2021 13:42:20] Locale: en
+[07/11/2021 13:48:34] 
+
+----------------------------------
+
+[07/11/2021 13:48:34] en
+[07/11/2021 13:48:34] Locale: en
+[07/11/2021 13:51:17] 
+
+----------------------------------
+
+[07/11/2021 13:51:17] en
+[07/11/2021 13:51:17] Locale: en
+[07/11/2021 13:52:15] 
+
+----------------------------------
+
+[07/11/2021 13:52:15] en
+[07/11/2021 13:52:15] Locale: en
+[07/11/2021 13:54:02] 
+
+----------------------------------
+
+[07/11/2021 13:54:02] en
+[07/11/2021 13:54:02] Locale: en
+[07/11/2021 14:09:06] 
+
+----------------------------------
+
+[07/11/2021 14:09:06] en
+[07/11/2021 14:09:06] Locale: en
+[07/11/2021 14:10:53] 
+
+----------------------------------
+
+[07/11/2021 14:10:53] en
+[07/11/2021 14:10:53] Locale: en
+[07/11/2021 14:13:29] 
+
+----------------------------------
+
+[07/11/2021 14:13:29] en
+[07/11/2021 14:13:29] Locale: en
+[07/11/2021 14:15:21] 
+
+----------------------------------
+
+[07/11/2021 14:15:21] en
+[07/11/2021 14:15:21] Locale: en
+[07/11/2021 14:20:18] 
+
+----------------------------------
+
+[07/11/2021 14:20:18] en
+[07/11/2021 14:20:18] Locale: en
+[07/11/2021 14:21:07] 
+
+----------------------------------
+
+[07/11/2021 14:21:07] en
+[07/11/2021 14:21:07] Locale: en
+[07/11/2021 14:30:11] 
+
+----------------------------------
+
+[07/11/2021 14:30:11] en
+[07/11/2021 14:30:11] Locale: en

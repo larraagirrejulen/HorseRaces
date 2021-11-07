@@ -26,7 +26,7 @@ public class WalletGUI extends JFrame {
 	private static final String INVALID_AMOUNT_LBL = "InvalidAmount";
 	private static final String FONT = "Verdana";
 	private WalletGUI frame = this;
-	private static BLFacade facade;
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private JPanel contentPane;
 	private JButton btnAddMoney;
 	private JButton btnRestMoney;
@@ -36,12 +36,11 @@ public class WalletGUI extends JFrame {
 	private JLabel lblError;
 
 	public WalletGUI(Client client, ClientGUI clientFrame, String language) {
-		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 
 		client1 = client;
-		LoginGUI.getBusinessLogic();
+		MainGUI.getBusinessLogic();
 
 		setBounds(800, 800, 550, 400);
 		contentPane = new JPanel();
@@ -139,6 +138,8 @@ public class WalletGUI extends JFrame {
 		btnClose.setFont(new Font(FONT, Font.PLAIN, 10));
 		btnClose.setBackground(new Color(0, 128, 128));
 		btnClose.setForeground(Color.WHITE);
+		
+		this.setLocationRelativeTo(null);
 
 		currentBalancelbl = new JLabel(ResourceBundle.getBundle(language).getString(BALANCE_LBL) + client.getWallet() + " $");
 		currentBalancelbl.setOpaque(true);

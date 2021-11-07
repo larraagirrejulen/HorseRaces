@@ -17,31 +17,27 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
-import business_logic.BLFacade;
 import domain.Race;
 import domain.RaceHorse;
 
 @SuppressWarnings("serial")
 public class ViewRacesGUI extends JFrame {
 
-	private LoginGUI loginFrame;
 	private String language;
 	private ViewRacesGUI frame = this;
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
 	private static final String FONT = "Verdana";
 	private DefaultListModel<RaceHorse> raceHorses = new DefaultListModel<>();
 	private transient Race nextRace;
 
 
-	public ViewRacesGUI(LoginGUI loFrame, String language) {
-		setLocation(new Point(610, 260));
+	public ViewRacesGUI(String language) {
+		setLocation(new Point(100, 100));
 		setUndecorated(true);
 		getContentPane().setFont(new Font(FONT, Font.PLAIN, 11));
 		setBackground(Color.WHITE);
 		getContentPane().setBackground(new Color(32, 178, 170));
 		this.language=language;
-		loginFrame = loFrame;
-		nextRace = facade.getNextRace();
+		nextRace = MainGUI.getBusinessLogic().getNextRace();
 		jbInit();
 	}
 
@@ -49,6 +45,7 @@ public class ViewRacesGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
+		this.setLocationRelativeTo(null);
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		panel.setBackground(new Color(32, 178, 170));
@@ -117,7 +114,7 @@ public class ViewRacesGUI extends JFrame {
 		jButtonClose.setBackground(new Color(0, 128, 128));
 		jButtonClose.setForeground(Color.WHITE);
 		jButtonClose.addActionListener(input -> {
-			loginFrame.setVisible(true);
+			MainGUI.getInstance().setVisible(true);
 			frame.dispose();
 		});
 

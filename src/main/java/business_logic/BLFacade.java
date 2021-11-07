@@ -3,6 +3,7 @@ package business_logic;
 import java.util.Date;
 import java.util.List;
 
+import domain.Bet;
 import domain.Client;
 import domain.Horse;
 import domain.Race;
@@ -14,6 +15,7 @@ import exceptions.RaceFinished;
 import exceptions.RaceFullException;
 import exceptions.RaceHorseAlreadyExist;
 import exceptions.WrongParameterException;
+import iterator.ExtendedIterator;
 
 public interface BLFacade{
 
@@ -46,6 +48,8 @@ public interface BLFacade{
 	public List<Date> getRacesMonth(Date date);
 
 	public Race getNextRace();
+	
+	public ExtendedIterator<Race> getRaces(Date date);
 
 	/**
 	 * This method calls the data base to create a raceHorse and add it to the given race
@@ -135,5 +139,7 @@ public interface BLFacade{
 	 * @param client client to remove
 	 */
 	public void deleteAcount(Client client);
+	
+	public List<Bet> getClientBets(Client client);
 
 }

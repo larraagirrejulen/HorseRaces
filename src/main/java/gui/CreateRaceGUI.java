@@ -42,7 +42,7 @@ import logs.Log;
 @SuppressWarnings("serial")
 public class CreateRaceGUI extends JFrame {
 
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private String language;
 	private CreateRaceGUI frame = this;
 	private static final String FONT = "Verdana";
@@ -81,6 +81,7 @@ public class CreateRaceGUI extends JFrame {
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
 		this.setTitle(ResourceBundle.getBundle(language).getString("CreateNewRace"));
+		this.setLocationRelativeTo(null);
 
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 

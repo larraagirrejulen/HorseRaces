@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.Point;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
@@ -31,10 +30,10 @@ import domain.Client;
 import domain.Registered;
 
 @SuppressWarnings("serial")
-public class LoginGUI extends JFrame {
+public class MainGUI extends JFrame {
 
 	private static BLFacade appFacadeInterface;
-	private LoginGUI frame = this;
+	private static MainGUI frame = new MainGUI();
 	private String language = "Etiquetas_en";
 	private static final String FONT = "Verdana";
 	private static final String PSWLBL = "Verdana";
@@ -47,6 +46,9 @@ public class LoginGUI extends JFrame {
 	private JButton viewRacesButton;
 	private DefaultComboBoxModel<String> selectedLanguage = new DefaultComboBoxModel<>();
 
+	public static MainGUI getInstance() {
+		return frame;
+	}
 
 	public static BLFacade getBusinessLogic(){
 		return appFacadeInterface;
@@ -68,9 +70,8 @@ public class LoginGUI extends JFrame {
 		registerButton.setText(ResourceBundle.getBundle(language).getString("Register"));
 		viewRacesButton.setText(ResourceBundle.getBundle(language).getString("UpcomingRace"));
 	}
-
-	public LoginGUI() {
-		setLocation(new Point(610, 260));
+	
+	public MainGUI() {
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 
@@ -81,6 +82,7 @@ public class LoginGUI extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 
 		JComboBox<String> comboBox = new JComboBox<>();
 		comboBox.setForeground(new Color(255, 255, 255));
@@ -208,7 +210,7 @@ public class LoginGUI extends JFrame {
 		lblNewLabel1.setBounds(302, 46, 133, 127);
 		contentPane.add(lblNewLabel1);
 
-		viewRacesButton.addActionListener(input -> {new ViewRacesGUI(frame, language).setVisible(true); frame.dispose();});
+		viewRacesButton.addActionListener(input -> {new ViewRacesGUI(language).setVisible(true); frame.dispose();});
 
 		registerButton.addActionListener(input -> {frame.setVisible(false); new RegisterGUI(frame, language).setVisible(true);});
 

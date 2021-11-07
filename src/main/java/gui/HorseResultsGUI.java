@@ -38,7 +38,7 @@ import logs.Log;
 @SuppressWarnings("serial")
 public class HorseResultsGUI extends JFrame {
 
-	private static BLFacade facade = LoginGUI.getBusinessLogic();
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private String language;
 	private HorseResultsGUI frame = this;
 	private static final String FONT = "Verdana";
@@ -72,6 +72,7 @@ public class HorseResultsGUI extends JFrame {
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
 		this.setTitle(ResourceBundle.getBundle(language).getString("RaceResults"));
+		this.setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 128, 128), 3));
