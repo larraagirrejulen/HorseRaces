@@ -482,3 +482,275 @@
 [06/11/2021 16:20:00] DB closed
 [06/11/2021 16:20:00] DB opened
 [06/11/2021 16:20:00] DB closed
+[07/11/2021 06:41:59] 
+
+----------------------------------
+
+[07/11/2021 06:41:59] Previous DB deleted
+[07/11/2021 06:41:59] DB opened
+[07/11/2021 06:41:59] DB closed
+[07/11/2021 06:41:59] DB opened
+[07/11/2021 06:41:59] Admin and Client initialiced
+[07/11/2021 06:41:59] Horses initialiced
+[07/11/2021 06:41:59] Races initialiced
+[07/11/2021 06:41:59] RaceHorses initialiced
+[07/11/2021 06:41:59] DB Initialiced
+[07/11/2021 06:41:59] DB closed
+[07/11/2021 06:44:04] 
+
+----------------------------------
+
+[07/11/2021 06:44:04] Previous DB deleted
+[07/11/2021 06:44:04] DB opened
+[07/11/2021 06:44:05] DB closed
+[07/11/2021 06:44:05] DB opened
+[07/11/2021 06:44:05] Admin and Client initialiced
+[07/11/2021 06:44:05] Horses initialiced
+[07/11/2021 06:44:05] Races initialiced
+[07/11/2021 06:44:05] RaceHorses initialiced
+[07/11/2021 06:44:05] DB Initialiced
+[07/11/2021 06:44:05] DB closed
+[07/11/2021 06:44:11] 
+
+----------------------------------
+
+[07/11/2021 06:44:11] Previous DB deleted
+[07/11/2021 06:44:11] DB opened
+[07/11/2021 06:44:11] DB closed
+[07/11/2021 06:44:11] DB opened
+[07/11/2021 06:44:11] Admin and Client initialiced
+[07/11/2021 06:44:11] Horses initialiced
+[07/11/2021 06:44:11] Races initialiced
+[07/11/2021 06:44:11] RaceHorses initialiced
+[07/11/2021 06:44:11] DB Initialiced
+[07/11/2021 06:44:11] DB closed
+[07/11/2021 06:44:13] DB opened
+[07/11/2021 06:44:13] DB closed
+[07/11/2021 06:44:47] 
+
+----------------------------------
+
+[07/11/2021 06:44:47] Previous DB deleted
+[07/11/2021 06:44:47] DB opened
+[07/11/2021 06:44:47] DB closed
+[07/11/2021 06:44:47] DB opened
+[07/11/2021 06:44:47] Admin and Client initialiced
+[07/11/2021 06:44:47] Horses initialiced
+[07/11/2021 06:44:47] Races initialiced
+[07/11/2021 06:44:47] RaceHorses initialiced
+[07/11/2021 06:44:47] DB Initialiced
+[07/11/2021 06:44:47] DB closed
+[07/11/2021 06:44:48] DB opened
+[07/11/2021 06:44:48] DB closed
+[07/11/2021 06:44:53] DB opened
+[07/11/2021 06:44:53] DB closed
+[07/11/2021 06:45:05] 
+
+----------------------------------
+
+[07/11/2021 06:45:05] Previous DB deleted
+[07/11/2021 06:45:05] DB opened
+[07/11/2021 06:45:05] DB closed
+[07/11/2021 06:45:05] DB opened
+[07/11/2021 06:45:05] Admin and Client initialiced
+[07/11/2021 06:45:05] Horses initialiced
+[07/11/2021 06:45:05] Races initialiced
+[07/11/2021 06:45:05] RaceHorses initialiced
+[07/11/2021 06:45:05] DB Initialiced
+[07/11/2021 06:45:05] DB closed
+[07/11/2021 06:45:06] DB opened
+[07/11/2021 06:45:06] DB closed
+[07/11/2021 06:45:31] 
+
+----------------------------------
+
+[07/11/2021 06:45:31] Previous DB deleted
+[07/11/2021 06:45:31] DB opened
+[07/11/2021 06:45:32] DB closed
+[07/11/2021 06:45:32] DB opened
+[07/11/2021 06:45:32] Admin and Client initialiced
+[07/11/2021 06:45:32] Horses initialiced
+[07/11/2021 06:45:32] Races initialiced
+[07/11/2021 06:45:32] RaceHorses initialiced
+[07/11/2021 06:45:32] DB Initialiced
+[07/11/2021 06:45:32] DB closed
+[07/11/2021 06:45:32] DB opened
+[07/11/2021 06:45:32] DB closed
+[07/11/2021 06:45:35] DB opened
+[07/11/2021 06:45:35] DB closed
+[07/11/2021 06:45:51] 
+
+----------------------------------
+
+[07/11/2021 06:45:51] Previous DB deleted
+[07/11/2021 06:45:51] DB opened
+[07/11/2021 06:45:51] DB closed
+[07/11/2021 06:45:51] DB opened
+[07/11/2021 06:45:51] Admin and Client initialiced
+[07/11/2021 06:45:51] Horses initialiced
+[07/11/2021 06:45:51] Races initialiced
+[07/11/2021 06:45:51] RaceHorses initialiced
+[07/11/2021 06:45:51] DB Initialiced
+[07/11/2021 06:45:51] DB closed
+[07/11/2021 06:45:52] DB opened
+[07/11/2021 06:45:52] DB closed
+[07/11/2021 06:45:55] DB opened
+[07/11/2021 06:45:55] DB closed
+[07/11/2021 06:45:59] DB opened
+[07/11/2021 06:45:59] DB closed
+[07/11/2021 06:46:11] DB opened
+[07/11/2021 06:46:11] DB closed
+[07/11/2021 06:47:07] 
+
+----------------------------------
+
+[07/11/2021 06:47:07] Previous DB deleted
+[07/11/2021 06:47:07] DB opened
+[07/11/2021 06:47:07] DB closed
+[07/11/2021 06:47:07] DB opened
+[07/11/2021 06:47:07] Admin and Client initialiced
+[07/11/2021 06:47:07] Horses initialiced
+[07/11/2021 06:47:07] Races initialiced
+[07/11/2021 06:47:07] RaceHorses initialiced
+[07/11/2021 06:47:07] DB Initialiced
+[07/11/2021 06:47:07] DB closed
+[07/11/2021 06:47:11] DB opened
+[07/11/2021 06:47:11] DB closed
+[07/11/2021 06:49:48] 
+
+----------------------------------
+
+[07/11/2021 06:49:48] Previous DB deleted
+[07/11/2021 06:49:48] DB opened
+[07/11/2021 06:49:48] DB closed
+[07/11/2021 06:49:48] DB opened
+[07/11/2021 06:49:48] Admin and Client initialiced
+[07/11/2021 06:49:48] Horses initialiced
+[07/11/2021 06:49:48] Races initialiced
+[07/11/2021 06:49:48] RaceHorses initialiced
+[07/11/2021 06:49:48] DB Initialiced
+[07/11/2021 06:49:48] DB closed
+[07/11/2021 06:49:53] DB opened
+[07/11/2021 06:49:53] DB closed
+[07/11/2021 06:51:51] 
+
+----------------------------------
+
+[07/11/2021 06:51:51] Previous DB deleted
+[07/11/2021 06:51:51] DB opened
+[07/11/2021 06:51:52] DB closed
+[07/11/2021 06:51:52] DB opened
+[07/11/2021 06:51:52] Admin and Client initialiced
+[07/11/2021 06:51:52] Horses initialiced
+[07/11/2021 06:51:52] Races initialiced
+[07/11/2021 06:51:52] RaceHorses initialiced
+[07/11/2021 06:51:52] DB Initialiced
+[07/11/2021 06:51:52] DB closed
+[07/11/2021 06:51:55] DB opened
+[07/11/2021 06:51:55] DB closed
+[07/11/2021 06:52:03] DB opened
+[07/11/2021 06:52:03] DB closed
+[07/11/2021 06:52:04] DB opened
+[07/11/2021 06:52:04] Race date: Wed Nov 17 00:00:00 CET 2021
+[07/11/2021 06:52:04] DB closed
+[07/11/2021 06:52:06] DB opened
+[07/11/2021 06:52:06] Race date: Wed Nov 17 00:00:00 CET 2021
+[07/11/2021 06:52:06] DB closed
+[07/11/2021 06:52:10] DB opened
+[07/11/2021 06:52:10] DB closed
+[07/11/2021 06:52:10] DB opened
+[07/11/2021 06:52:10] DB closed
+[07/11/2021 06:52:10] DB opened
+[07/11/2021 06:52:10] DB closed
+[07/11/2021 06:52:24] DB opened
+[07/11/2021 06:52:24] DB closed
+[07/11/2021 06:52:46] 
+
+----------------------------------
+
+[07/11/2021 06:52:46] Previous DB deleted
+[07/11/2021 06:52:46] DB opened
+[07/11/2021 06:52:47] DB closed
+[07/11/2021 06:52:47] DB opened
+[07/11/2021 06:52:47] Admin and Client initialiced
+[07/11/2021 06:52:47] Horses initialiced
+[07/11/2021 06:52:47] Races initialiced
+[07/11/2021 06:52:47] RaceHorses initialiced
+[07/11/2021 06:52:47] DB Initialiced
+[07/11/2021 06:52:47] DB closed
+[07/11/2021 06:52:52] DB opened
+[07/11/2021 06:52:53] DB closed
+[07/11/2021 06:53:35] 
+
+----------------------------------
+
+[07/11/2021 06:53:35] Previous DB deleted
+[07/11/2021 06:53:35] DB opened
+[07/11/2021 06:53:35] DB closed
+[07/11/2021 06:53:35] DB opened
+[07/11/2021 06:53:35] Admin and Client initialiced
+[07/11/2021 06:53:35] Horses initialiced
+[07/11/2021 06:53:35] Races initialiced
+[07/11/2021 06:53:35] RaceHorses initialiced
+[07/11/2021 06:53:35] DB Initialiced
+[07/11/2021 06:53:35] DB closed
+[07/11/2021 06:53:40] DB opened
+[07/11/2021 06:53:40] DB closed
+[07/11/2021 06:54:48] 
+
+----------------------------------
+
+[07/11/2021 06:54:48] Previous DB deleted
+[07/11/2021 06:54:48] DB opened
+[07/11/2021 06:54:48] DB closed
+[07/11/2021 06:54:48] DB opened
+[07/11/2021 06:54:48] Admin and Client initialiced
+[07/11/2021 06:54:48] Horses initialiced
+[07/11/2021 06:54:48] Races initialiced
+[07/11/2021 06:54:48] RaceHorses initialiced
+[07/11/2021 06:54:48] DB Initialiced
+[07/11/2021 06:54:48] DB closed
+[07/11/2021 06:54:52] DB opened
+[07/11/2021 06:54:52] DB closed
+[07/11/2021 06:55:17] 
+
+----------------------------------
+
+[07/11/2021 06:55:17] Previous DB deleted
+[07/11/2021 06:55:17] DB opened
+[07/11/2021 06:55:17] DB closed
+[07/11/2021 06:55:17] DB opened
+[07/11/2021 06:55:17] Admin and Client initialiced
+[07/11/2021 06:55:17] Horses initialiced
+[07/11/2021 06:55:17] Races initialiced
+[07/11/2021 06:55:17] RaceHorses initialiced
+[07/11/2021 06:55:17] DB Initialiced
+[07/11/2021 06:55:17] DB closed
+[07/11/2021 06:55:19] DB opened
+[07/11/2021 06:55:19] DB closed
+[07/11/2021 06:56:02] 
+
+----------------------------------
+
+[07/11/2021 06:56:02] Previous DB deleted
+[07/11/2021 06:56:02] DB opened
+[07/11/2021 06:56:02] DB closed
+[07/11/2021 06:56:02] DB opened
+[07/11/2021 06:56:02] Admin and Client initialiced
+[07/11/2021 06:56:02] Horses initialiced
+[07/11/2021 06:56:02] Races initialiced
+[07/11/2021 06:56:02] RaceHorses initialiced
+[07/11/2021 06:56:02] DB Initialiced
+[07/11/2021 06:56:02] DB closed
+[07/11/2021 06:56:06] DB opened
+[07/11/2021 06:56:06] DB closed
+[07/11/2021 06:56:11] DB opened
+[07/11/2021 06:56:11] DB closed
+[07/11/2021 06:56:13] DB opened
+[07/11/2021 06:56:13] Race date: Wed Nov 17 00:00:00 CET 2021
+[07/11/2021 06:56:13] DB closed
+[07/11/2021 06:56:14] DB opened
+[07/11/2021 06:56:14] Race date: Wed Nov 17 00:00:00 CET 2021
+[07/11/2021 06:56:14] DB closed
+[07/11/2021 06:56:22] DB opened
+[07/11/2021 06:56:22] DB closed

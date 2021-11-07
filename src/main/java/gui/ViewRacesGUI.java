@@ -34,7 +34,7 @@ public class ViewRacesGUI extends JFrame {
 
 
 	public ViewRacesGUI(MainGUI mainFrame, String language) {
-		setLocation(new Point(610, 260));
+		setLocation(new Point(100, 100));
 		setUndecorated(true);
 		getContentPane().setFont(new Font(FONT, Font.PLAIN, 11));
 		setBackground(Color.WHITE);
@@ -49,6 +49,7 @@ public class ViewRacesGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
+		this.setLocationRelativeTo(null);
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		panel.setBackground(new Color(32, 178, 170));

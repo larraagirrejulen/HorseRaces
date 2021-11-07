@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+import java.awt.Point;
 
 @SuppressWarnings("serial")
 public class AdminGUI extends JFrame {
@@ -18,6 +19,7 @@ public class AdminGUI extends JFrame {
 	private JPanel contentPane;
 
 	public AdminGUI(MainGUI mainFrame, String language) {
+		setLocation(new Point(100, 100));
 		setUndecorated(true);
 
 		setBounds(800, 800, 500, 400);
@@ -27,6 +29,7 @@ public class AdminGUI extends JFrame {
 		contentPane.setBackground(new Color(32, 178, 170));
 		contentPane.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		setContentPane(contentPane);
 
 

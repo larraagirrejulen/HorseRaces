@@ -36,7 +36,6 @@ public class WalletGUI extends JFrame {
 	private JLabel lblError;
 
 	public WalletGUI(Client client, ClientGUI clientFrame, String language) {
-		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 
@@ -139,6 +138,8 @@ public class WalletGUI extends JFrame {
 		btnClose.setFont(new Font(FONT, Font.PLAIN, 10));
 		btnClose.setBackground(new Color(0, 128, 128));
 		btnClose.setForeground(Color.WHITE);
+		
+		this.setLocationRelativeTo(null);
 
 		currentBalancelbl = new JLabel(ResourceBundle.getBundle(language).getString(BALANCE_LBL) + client.getWallet() + " $");
 		currentBalancelbl.setOpaque(true);

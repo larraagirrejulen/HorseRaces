@@ -58,6 +58,7 @@ public class ViewRacesClientGUI extends JFrame {
 		this.setTitle(ResourceBundle.getBundle(language).getString("CreateNewRace"));
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 		getContentPane().setLayout(null);
+		this.setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 700, 500);

@@ -30,6 +30,8 @@ public class HorseStatsGUI extends JFrame {
 			}
 		});
 
+		this.setLocationRelativeTo(null);
+		
 		setBounds(800, 800, 500, 400);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 255, 255));

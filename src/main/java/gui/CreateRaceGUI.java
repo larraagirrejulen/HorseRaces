@@ -81,6 +81,7 @@ public class CreateRaceGUI extends JFrame {
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
 		this.setTitle(ResourceBundle.getBundle(language).getString("CreateNewRace"));
+		this.setLocationRelativeTo(null);
 
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 

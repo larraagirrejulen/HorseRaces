@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Point;
 import java.util.ResourceBundle;
 
 import javax.swing.JButton;
@@ -32,12 +31,12 @@ public class ClientGUI extends JFrame {
 	}
 
 	public ClientGUI(Client cl, MainGUI mainFrame, String language) {
-		setLocation(new Point(610, 260));
 		setUndecorated(true);
 
 		setBounds(100, 100, 700, 500);
 		setBackground(Color.WHITE);
 
+		this.setLocationRelativeTo(null);
 		this.language1=language;
 		this.client = cl;
 

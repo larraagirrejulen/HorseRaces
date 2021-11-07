@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Point;
 import java.util.ResourceBundle;
 
 import javax.swing.JButton;
@@ -25,16 +24,16 @@ public class RegisterGUI extends JFrame {
 	private RegisterGUI nireFrame = this;
 
 	public RegisterGUI(MainGUI mainFrame, String language) {
-		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);
-
+		
 		setBounds(100, 100, 700, 500);
 		JPanel contentPane = new JPanel();
 		contentPane.setBackground(new Color(32, 178, 170));
 		contentPane.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 
 		JTextField userNameField = new JTextField();
 		userNameField.setBorder(new MatteBorder(0, 0, 3, 0,  new Color(0, 0, 51)));

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.Point;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
@@ -70,7 +69,6 @@ public class MainGUI extends JFrame {
 	}
 
 	public MainGUI() {
-		setLocation(new Point(610, 260));
 		setUndecorated(true);
 		setBackground(Color.WHITE);
 
@@ -81,6 +79,7 @@ public class MainGUI extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 128, 128), 3));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 
 		JComboBox<String> comboBox = new JComboBox<>();
 		comboBox.setForeground(new Color(255, 255, 255));
