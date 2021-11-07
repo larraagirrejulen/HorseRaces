@@ -96,14 +96,11 @@ public class ConfigXML {
 			  businessLogicPort = getTagValue("businessLogicPort", config);
 		
 			  businessLogicName = getTagValue("businessLogicName", config);
+			 
 		
 			  locale = getTagValue("locale", config);
 		
-		
-		
-		
-		
-			  getTagValue("dbFilename", config);
+			  dbFilename = getTagValue("dbFilename", config);
 		
 				//Two possible values: true (no instance of RemoteServer needs to be launched) or false (RemoteServer needs to be run first)
 			  value= ((Element)config.getElementsByTagName("database").item(0)).getAttribute("local");

@@ -26,7 +26,7 @@ public class WalletGUI extends JFrame {
 	private static final String INVALID_AMOUNT_LBL = "InvalidAmount";
 	private static final String FONT = "Verdana";
 	private WalletGUI frame = this;
-	private static BLFacade facade;
+	private static BLFacade facade = MainGUI.getBusinessLogic();
 	private JPanel contentPane;
 	private JButton btnAddMoney;
 	private JButton btnRestMoney;

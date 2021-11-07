@@ -6,6 +6,7 @@ import java.util.List;
 
 import configuration.ConfigXML;
 import data_access.DataAccess;
+import domain.Bet;
 import domain.Client;
 import domain.Horse;
 import domain.Race;
@@ -22,8 +23,7 @@ import iterator.ExtendedIterator;
 public class BLFacadeImplementation implements BLFacade {
 
 	DataAccess dbManager;
-	ConfigXML c=ConfigXML.getInstance();
-	boolean openMode = c.getDataBaseOpenMode().equals("initialize");
+	boolean openMode = ConfigXML.getInstance().getDataBaseOpenMode().equals("initialize");
 
 	public BLFacadeImplementation()  {		
 		
@@ -270,6 +270,14 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.open(false);
 		dbManager.deleteAcount(client);
 		dbManager.close();
+	}
+	
+	@Override
+	public List<Bet> getClientBets(Client client){
+		dbManager.open(false);
+		List<Bet> bets = dbManager.getClientBets(client);
+		dbManager.close();
+		return bets;
 	}
 
 }

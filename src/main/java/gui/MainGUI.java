@@ -33,7 +33,7 @@ import domain.Registered;
 public class MainGUI extends JFrame {
 
 	private static BLFacade appFacadeInterface;
-	private MainGUI frame = this;
+	private static MainGUI frame = new MainGUI();
 	private String language = "Etiquetas_en";
 	private static final String FONT = "Verdana";
 	private static final String PSWLBL = "Verdana";
@@ -46,6 +46,9 @@ public class MainGUI extends JFrame {
 	private JButton viewRacesButton;
 	private DefaultComboBoxModel<String> selectedLanguage = new DefaultComboBoxModel<>();
 
+	public static MainGUI getInstance() {
+		return frame;
+	}
 
 	public static BLFacade getBusinessLogic(){
 		return appFacadeInterface;
@@ -67,7 +70,7 @@ public class MainGUI extends JFrame {
 		registerButton.setText(ResourceBundle.getBundle(language).getString("Register"));
 		viewRacesButton.setText(ResourceBundle.getBundle(language).getString("UpcomingRace"));
 	}
-
+	
 	public MainGUI() {
 		setUndecorated(true);
 		setBackground(Color.WHITE);
@@ -207,7 +210,7 @@ public class MainGUI extends JFrame {
 		lblNewLabel1.setBounds(302, 46, 133, 127);
 		contentPane.add(lblNewLabel1);
 
-		viewRacesButton.addActionListener(input -> {new ViewRacesGUI(frame, language).setVisible(true); frame.dispose();});
+		viewRacesButton.addActionListener(input -> {new ViewRacesGUI(language).setVisible(true); frame.dispose();});
 
 		registerButton.addActionListener(input -> {frame.setVisible(false); new RegisterGUI(frame, language).setVisible(true);});
 

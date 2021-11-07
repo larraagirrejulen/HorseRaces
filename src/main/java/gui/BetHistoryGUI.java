@@ -6,8 +6,11 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.LineBorder;
+import javax.swing.table.AbstractTableModel;
 
+import adapter.ClientBetAdapter;
 import business_logic.BLFacade;
 import domain.Client;
 import javax.swing.JTable;
@@ -19,6 +22,12 @@ public class BetHistoryGUI extends JFrame {
 	private BetHistoryGUI frame = this;
 	private static BLFacade facade = MainGUI.getBusinessLogic();
 
+	public void createTable(AbstractTableModel model) {        
+	    JTable table=new JTable(model);    
+	    table.setBounds(30,40,200,300);          
+	    JScrollPane sp=new JScrollPane(table);    
+	    frame.add(sp);
+	}
 	
 	public BetHistoryGUI (Client client, ClientGUI clientFrame) {
 
@@ -34,7 +43,7 @@ public class BetHistoryGUI extends JFrame {
 		setContentPane(contentPane);
 		this.setLocationRelativeTo(null);
 
-		
+		this.createTable(new ClientBetAdapter(client, facade));
 		
 		
 		//Button to log out

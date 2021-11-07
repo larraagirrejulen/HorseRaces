@@ -3,6 +3,7 @@ package business_logic;
 import java.util.Date;
 import java.util.List;
 
+import domain.Bet;
 import domain.Client;
 import domain.Horse;
 import domain.Race;
@@ -138,5 +139,7 @@ public interface BLFacade{
 	 * @param client client to remove
 	 */
 	public void deleteAcount(Client client);
+	
+	public List<Bet> getClientBets(Client client);
 
 }

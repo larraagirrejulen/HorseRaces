@@ -56,10 +56,12 @@ public class DataAccess  {
      * Initializes the data base with default objects
      */
 	public void initializeDB(){
+		db.getTransaction().begin();
 		initializeUsers();
 		ArrayList<Horse> horses = initializeHorses();
 		ArrayList<Race> races = initializeRaces();
 		initializeRaceHorses(horses, races);
+		db.getTransaction().commit();
 		log.addLine("DB Initialiced");
 	}
 
@@ -79,6 +81,10 @@ public class DataAccess  {
 		RaceHorse raceHorse3 = new RaceHorse(1.7, race, horses.get(7));
 		race.addRaceHorse(raceHorse3);
 		race1.addRaceHorse(raceHorse3);
+		db.persist(raceHorse0);
+		db.persist(raceHorse1);
+		db.persist(raceHorse2);
+		db.persist(raceHorse3);
 		log.addLine("RaceHorses initialiced");
 	}
 
@@ -143,7 +149,7 @@ public class DataAccess  {
 			properties.put("javax.persistence.jdbc.user", config.getUser());
 			properties.put("javax.persistence.jdbc.password", config.getPassword());
 			emf = Persistence.createEntityManagerFactory("objectdb://"+  config.getDatabaseNode()+":"+ config.getDatabasePort()+"/"+fileName, properties);
-    	}
+		}
 		db = emf.createEntityManager();
 	}
 
@@ -187,9 +193,9 @@ public class DataAccess  {
 	
 	public Race getNextRace() {
 		Race nextRace = null;
-		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished==False", Race.class);
+		TypedQuery<Race> query = db.createQuery("SELECT rc FROM Race rc WHERE rc.finished=False", Race.class);
 		List<Race> races = query.getResultList();
-		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())>0) nextRace = rc;
+		for(Race rc: races) if(nextRace == null || nextRace.getDate().compareTo(rc.getDate())<0) nextRace = rc;
 		
 		
 		return nextRace;
@@ -412,6 +418,12 @@ public class DataAccess  {
 		db.remove(cl);
 		db.getTransaction().commit();
 		log.addLine("Client acount removed: " + cl.getUserName());
+	}
+	
+	public List<Bet> getClientBets(Client client){
+		TypedQuery<Bet> query = db.createQuery("SELECT FROM Bet b WHERE b.client = ?1",Bet.class);
+		query.setParameter(1, client);
+		return query.getResultList();
 	}
 
 }

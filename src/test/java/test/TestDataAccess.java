@@ -28,9 +28,8 @@ public class TestDataAccess {
 
 	
 	public void open(){
-		
 		System.out.println("Opening TestDataAccess instance ");
-
+		
 		String fileName=c.getDbFilename();
 		
 		if (c.isDatabaseLocal()) {

@@ -21,9 +21,6 @@ public class ApplicationLauncher {
 		Locale.setDefault(new Locale(c.getLocale()));
 
 		log.addLine("Locale: "+Locale.getDefault());
-
-		MainGUI gui=new MainGUI();
-		gui.setVisible(true);
 		
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
@@ -31,6 +28,8 @@ public class ApplicationLauncher {
 			BLFacade appFacadeInterface = new BLFacadeFactory().createBLFacade(c);
 			
 			MainGUI.setBussinessLogic(appFacadeInterface);
+
+			MainGUI.getInstance().setVisible(true);
 
 		}catch (Exception e) {
 			log.addLine("Error in ApplicationLauncher: "+e.toString());
