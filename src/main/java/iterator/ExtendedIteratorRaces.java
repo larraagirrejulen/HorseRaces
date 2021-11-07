@@ -1,6 +1,7 @@
 package iterator;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import domain.Race;
 
@@ -19,10 +20,14 @@ public class ExtendedIteratorRaces implements ExtendedIterator<Race>{
 	}
 
 	@Override
-	public Race next() {
-		Race race = races.get(this.position);
-		this.position++;
-		return race;
+	public Race next() throws NoSuchElementException{
+		if(this.position == races.size()) {
+			throw new NoSuchElementException();
+		}else {
+			Race race = races.get(this.position);
+			this.position++;
+			return race;
+		}
 	}
 	
 	@Override

@@ -7,6 +7,7 @@ import business_logic.BLFacade;
 import domain.Bet;
 import domain.Client;
 
+@SuppressWarnings("serial")
 public class ClientBetAdapter extends AbstractTableModel {
 	
 	private transient List<Bet> bets;
@@ -18,7 +19,6 @@ public class ClientBetAdapter extends AbstractTableModel {
 	
 	@Override
 	public int getRowCount() {
-		System.out.println("a");
 		if(bets == null) {
 			return 0;
 		}else {
@@ -28,19 +28,16 @@ public class ClientBetAdapter extends AbstractTableModel {
 
 	@Override
 	public int getColumnCount() {
-		System.out.println("b");
 		return colNames.length;
 	}
 	
 	@Override 
     public String getColumnName(int col) { 
-		System.out.println("c");
         return colNames[col]; 
     }
 	
 	@Override
 	public Class<?> getColumnClass(int col) {
-		System.out.println("d");
 	    if (col == 0) {
 	        return Integer.class;
 	    }else if(col == 1){
@@ -54,7 +51,6 @@ public class ClientBetAdapter extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		System.out.println("e");
 		Bet bet = bets.get(rowIndex);
 		Object returnObj = null;
 		if(columnIndex == 0) {
